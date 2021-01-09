@@ -1,0 +1,19 @@
+body{
+	background-image: url("background.gif");
+}
+
+div{
+	background-color:#222222;
+	border-radius:20px;
+	margin:auto;
+	
+}
+
+canvas{
+	border-radius: 20px;
+	width:1324px;
+	height:576px;
+	position:absolute;
+	top:5px;
+	left:25px;
+}
