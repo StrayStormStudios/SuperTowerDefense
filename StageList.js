@@ -2,7 +2,7 @@
 */
 function StageList(){
 	this.stages = new Array();
-	this.addStage0();	
+	this.addStage0();
 	this.addStage1();
 	this.addStage2();
 	this.addStage3();
@@ -22,7 +22,7 @@ StageList.prototype.addStage0 = function(){
 	//set up main variables
 	var id = 0;
 	var backgroundImage = new Image();
-	backgroundImage.src = "background1.png";
+	backgroundImage.src = "Images/background1.png";
 	var money = 1000;
 	var lives = 25;
 	var stage = new Stage(id, backgroundImage, money, lives);
@@ -58,7 +58,7 @@ StageList.prototype.addStage1 = function(){
 	//set up main variables
 	var id = 1;
 	var backgroundImage = new Image();
-	backgroundImage.src = "Stage1-1.png";
+	backgroundImage.src = "Images/stage1-1.png";
 	var money = 150;
 	var lives = 50;
 	var stage = new Stage(id, backgroundImage, money, lives);
@@ -95,7 +95,7 @@ StageList.prototype.addStage2 = function(){
 	//set up main variables
 	var id = 2;
 	var backgroundImage = new Image();
-	backgroundImage.src = "Stage1-2.png";
+	backgroundImage.src = "Images/stage1-2.png";
 	var money = 100;
 	var lives = 50;
 	var stage = new Stage(id, backgroundImage, money, lives);
@@ -135,7 +135,7 @@ StageList.prototype.addStage3 = function(){
 	//set up main variables
 	var id = 3;
 	var backgroundImage = new Image();
-	backgroundImage.src = "Stage1-3.png";
+	backgroundImage.src = "Images/stage1-3.png";
 	var money = 100;
 	var lives = 50;
 	var stage = new Stage(id, backgroundImage, money, lives);
@@ -235,7 +235,7 @@ StageList.prototype.addStage4 = function(){
 	//set up main variables
 	var id = 4;
 	var backgroundImage = new Image();
-	backgroundImage.src = "Stage1-4.png";
+	backgroundImage.src = "Images/stage1-4.png";
 	var money = 100;
 	var lives = 50;
 	var stage = new Stage(id, backgroundImage, money, lives);
@@ -277,7 +277,7 @@ StageList.prototype.addStage5 = function(){
 	//set up main variables
 	var id = 5;
 	var backgroundImage = new Image();
-	backgroundImage.src = "Stage1-5.png";
+	backgroundImage.src = "Images/stage1-5.png";
 	var money = 100;
 	var lives = 50;
 	var stage = new Stage(id, backgroundImage, money, lives);
@@ -340,7 +340,7 @@ StageList.prototype.addStage6 = function(){
 	//set up main variables
 	var id = 6;
 	var backgroundImage = new Image();
-	backgroundImage.src = "Stage1-6.png";
+	backgroundImage.src = "Images/stage1-6.png";
 	var money = 450;
 	var lives = 85;
 	var stage = new Stage(id, backgroundImage, money, lives);
@@ -388,7 +388,7 @@ StageList.prototype.addStage7 = function(){
 	//set up main variables
 	var id = 7;
 	var backgroundImage = new Image();
-	backgroundImage.src = "Stage1-7.png";
+	backgroundImage.src = "Images/stage1-7.png";
 	var money = 100;
 	var lives = 50;
 	var stage = new Stage(id, backgroundImage, money, lives);
@@ -458,7 +458,7 @@ StageList.prototype.addStage8 = function(){
 	//set up main variables
 	var id = 8;
 	var backgroundImage = new Image();
-	backgroundImage.src = "Stage1-8.png";
+	backgroundImage.src = "Images/stage1-8.png";
 	var money = 100;
 	var lives = 50;
 	var stage = new Stage(id, backgroundImage, money, lives);
@@ -510,7 +510,7 @@ StageList.prototype.addStage9 = function(){
 	//set up main variables
 	var id = 9;
 	var backgroundImage = new Image();
-	backgroundImage.src = "Stage1-9.png";
+	backgroundImage.src = "Images/stage1-9.png";
 	var money = 100;
 	var lives = 50;
 	var stage = new Stage(id, backgroundImage, money, lives);
@@ -547,7 +547,7 @@ StageList.prototype.addStage10 = function(){
 	//set up main variables
 	var id = 10;
 	var backgroundImage = new Image();
-	backgroundImage.src = "Stage1-10.png";
+	backgroundImage.src = "Images/stage1-10.png";
 	var money = 100;
 	var lives = 50;
 	var stage = new Stage(id, backgroundImage, money, lives);
@@ -603,7 +603,7 @@ StageList.prototype.addStage11 = function(){
 	//set up main variables
 	var id = 11;
 	var backgroundImage = new Image();
-	backgroundImage.src = "background1.png";
+	backgroundImage.src = "Images/background1.png";
 	var money = 100;
 	var lives = 50;
 	var stage = new Stage(id, backgroundImage, money, lives);

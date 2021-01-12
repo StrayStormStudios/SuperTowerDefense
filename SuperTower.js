@@ -72,7 +72,7 @@ SuperTower.curSpeed = SuperTower.gameSpeed; //the current delay
 */
 SuperTower.init = function() {
 	//setup layers
-	SuperTower.backgroundImage.src ="background1.png";
+	SuperTower.backgroundImage.src ="Images/background1.png";
 	SuperTower.layerBackgroundImage = document.getElementById("layerBackgroundImage");
 	SuperTower.ctxBackgroundImage = SuperTower.layerBackgroundImage.getContext("2d");
 	SuperTower.layerStage = document.getElementById("layerStage");

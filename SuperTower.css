@@ -1,12 +1,11 @@
 body{
-	background-image: url("background.gif");
+	background-image: url("Images/background.gif");
 }
 
 div{
 	background-color:#222222;
 	border-radius:20px;
 	margin:auto;
-	
 }
 
 canvas{
