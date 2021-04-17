@@ -9,7 +9,7 @@ Completed sometime during my jounior year in highschool (2017).
 Vist [Live Deployment Here](https://chrisbarnes2000.github.io/SuperTowerDefense/)
 Drag and Drop Towers from the Right Side Menu on to the Field to Defened Yourself from the oncoming waves of varying shapes.
 
-## Known [![GitHub](https://img.shields.io/github/issues/ChrisBarnes2000/SuperTowerDefense.svg?style=flat-square)](https://github.com/chrisbarnes2000/SuperTowerDefense/issues)
+## Known Issues [![GitHub Issues](https://img.shields.io/github/issues/ChrisBarnes2000/SuperTowerDefense.svg?style=flat-square)](https://github.com/chrisbarnes2000/SuperTowerDefense/issues)
 
 - Armored Enemy Takes 5 Health On Death (issue with update)
 - Background/Stage Doesn't Change (issue with update)

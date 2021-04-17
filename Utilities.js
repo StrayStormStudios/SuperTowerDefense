@@ -1,8 +1,7 @@
-/*Global variables 
-*
-*/
-function Utilities(){};
-
+/*Global variables
+ *
+ */
+function Utilities() {}
 
 /**
  * Draws a rounded rectangle using the current state of the canvas.
@@ -13,7 +12,7 @@ function Utilities(){};
  * @param {Number} y The top left y coordinate
  * @param {Number} width The width of the rectangle
  * @param {Number} height The height of the rectangle
- * @param {Number} [radius = 5] The corner radius; It can also be an object 
+ * @param {Number} [radius = 5] The corner radius; It can also be an object
  *                 to specify different radii for corners
  * @param {Number} [radius.tl = 0] Top left
  * @param {Number} [radius.tr = 0] Top right
@@ -22,17 +21,17 @@ function Utilities(){};
  * @param {Boolean} [fill = false] Whether to fill the rectangle.
  * @param {Boolean} [stroke = true] Whether to stroke the rectangle.
  */
-Utilities.roundRect = function(ctx, x, y, width, height, radius, fill, stroke) {
-  if (typeof stroke == 'undefined') {
+Utilities.roundRect = function (ctx, x, y, width, height, radius, fill, stroke) {
+  if (typeof stroke == "undefined") {
     stroke = true;
   }
-  if (typeof radius === 'undefined') {
+  if (typeof radius === "undefined") {
     radius = 5;
   }
-  if (typeof radius === 'number') {
-    radius = {tl: radius, tr: radius, br: radius, bl: radius};
+  if (typeof radius === "number") {
+    radius = { tl: radius, tr: radius, br: radius, bl: radius };
   } else {
-    var defaultRadius = {tl: 0, tr: 0, br: 0, bl: 0};
+    var defaultRadius = { tl: 0, tr: 0, br: 0, bl: 0 };
     for (var side in defaultRadius) {
       radius[side] = radius[side] || defaultRadius[side];
     }
@@ -51,12 +50,8 @@ Utilities.roundRect = function(ctx, x, y, width, height, radius, fill, stroke) {
   if (fill) {
     ctx.fill();
   }
-	
+
   if (stroke) {
     ctx.stroke();
   }
-
-}
-
-
-
+};
