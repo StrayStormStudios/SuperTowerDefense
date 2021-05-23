@@ -28,8 +28,10 @@ Please make sure to update tests as appropriate.
 
 ## Versions & Change Log
 
-Version 1A:  Basic Backgrounds
+### Version 2A: Create stage files and draw the enemy paths
 
-Version 1B:  Background with Layers and Towers Pulling from their own file
+### Version 1A: Basic Backgrounds
 
-Version 1C:  Show mouse position on Screen
+### Version 1B: Background with Layers and Towers Pulling from their own file
+
+### Version 1C: Show mouse position on Screen

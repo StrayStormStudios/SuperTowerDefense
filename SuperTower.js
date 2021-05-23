@@ -24,6 +24,12 @@ SuperTower.ctxUIDynamic;
 SuperTower.mouseX;
 SuperTower.mouseY;
 
+//stages
+SuperTower.stageList;
+//current stage/wave
+SuperTower.stage;
+SuperTower.wave;
+
 SuperTower.backgroundImage = new Image();
 
 /* Initializes the game with initial states and calls the main game loop
@@ -55,6 +61,12 @@ SuperTower.init = function () {
     SuperTower.mouseX = e.clientX - rect.left;
     SuperTower.mouseY = e.clientY - rect.top;
   });
+
+  //create stages
+  SuperTower.createStages();
+
+  SuperTower.stage = 0;
+  SuperTower.wave = 0;
 
   //redraw everything
   SuperTower.drawAll();
