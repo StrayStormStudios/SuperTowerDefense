@@ -41,6 +41,9 @@ function Path(
 
   //derived fields
   this.vectors = new Array(); //normalized direction vectors between points
+  this.rotations = new Array(); //The rotations between points (in radians)
+  this.vectorLengths = new Array(); //The length between each point in the path
+  this.totalLength; //the total length of the path.
   this.rectangles = new Array(); //the points of each rectangle (used for gradients)
   this.rectanglesPrint = new Array(); //The points for each rectangle (used for printing)
   this.getRectangles();
@@ -235,6 +238,8 @@ Path.prototype.getRectangles = function () {
 
     //get a normalized dx, dy
     var dMag = Math.sqrt(dx * dx + dy * dy);
+    //push the length of the vector
+    this.vectorLengths.push(dMag);
     var pVector;
     if (dMag == 0) {
       //zero length vectors... just push the original ones
@@ -243,6 +248,13 @@ Path.prototype.getRectangles = function () {
       pVector = new Point(dx / dMag, dy / dMag);
     }
     this.vectors.push(pVector);
+    //find rotation
+    var rotation = Math.acos(pVector.x);
+    if (dy < 0) {
+      rotation = Math.PI * 2 - rotation;
+    }
+    this.rotations.push(rotation);
+
     //console.log(dx + "," + dy);
     //get perpendicular vectors
     var pdx = -1 * dy;
@@ -286,6 +298,12 @@ Path.prototype.getRectangles = function () {
     curRectanglePrint.push(p4);
     this.rectangles.push(curRectangle);
     this.rectanglesPrint.push(curRectanglePrint);
+  }
+
+  this.totalLength = 0;
+  //get the total length
+  for (var i = 0; i < this.vectorLengths.length; i++) {
+    this.totalLength += this.vectorLengths[i];
   }
 };
 

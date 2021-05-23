@@ -72,8 +72,8 @@ StageList.prototype.addStage1 = function () {
   points1[0] = new Point(30, 198);
   points1[1] = new Point(240, 198);
   points1[2] = new Point(240, 450);
-  points1[3] = new Point(488, 450);
-  points1[4] = new Point(488, 390);
+  points1[3] = new Point(495, 450);
+  points1[4] = new Point(495, 390);
   points1[5] = new Point(740, 390);
   points1[6] = new Point(740, 530);
 

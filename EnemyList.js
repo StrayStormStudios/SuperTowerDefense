@@ -10,19 +10,106 @@ function EnemyList() {}
  * @param {Number} distanceTravelled (used for spawning monsters during split)
  * @return {Enemy} The enemy created
  */
-EnemyList.createEnemy = new (function (type, frame, path, distanceTravelled) {
+EnemyList.createEnemy = function (type, frame, path, distanceTravelled) {
+  //Basic enemies that gradually get stronger
+
+  //basic Enemy that has 100 health, 0 armor, 0.8 speed, 1 damage, and may split
   if (type == "basic") {
     return EnemyList.createBasicEnemy(type, frame, path, distanceTravelled);
-  } else if (type == "fast") {
+  }
+  //Easy Enemy that has 300 health, 50 armor, 0.8speed, 2 damage, and may split
+  else if (type == "easy") {
+    return EnemyList.createEasyEnemy(type, frame, path, distanceTravelled);
+  }
+  //Normal Enemy that has 500 health, 100 armor, 1.0 speed, 3 damage, and may split
+  else if (type == "normal") {
+    return EnemyList.createNormalEnemy(type, frame, path, distanceTravelled);
+  }
+  //Difficult Enemy that has 700 health, 200 armor, 1.0 speed, 4 damage, and may split
+  else if (type == "difficult") {
+    return EnemyList.createDifficultEnemy(type, frame, path, distanceTravelled);
+  }
+  //Hard Enemy that has 900 health, 300 armor, 2.0 speed, 5 damage, and may split
+  else if (type == "hard") {
+    return EnemyList.createHardEnemy(type, frame, path, distanceTravelled);
+  }
+  //Extreme Enemy that has 1500 health, 450 armor, 3.0 speed, 8 damage, and may split
+  else if (type == "extreme") {
+    return EnemyList.createExtremeEnemy(type, frame, path, distanceTravelled);
+  }
+
+  //Fast enemies that gradually get faster and stronger
+  //Fast Enemy that has 200 health, 0 armor, 2.5 speed, 1 damage, and may split
+  else if (type == "fast") {
     return EnemyList.createFastEnemy(type, frame, path, distanceTravelled);
   }
-  //armored enemy that is slow, and splits into basic enemies
+  //Fast Enemy that has 400 health, 100 armor, 5.0 speed, 5 damage, and may split
+  else if (type == "athleat") {
+    return EnemyList.createAthleatEnemy(type, frame, path, distanceTravelled);
+  }
+  //Fast Enemy that has 600 health, 100 armor, 10.0 speed, 10 damage, and may split
+  else if (type == "shark") {
+    return EnemyList.createSharkEnemy(type, frame, path, distanceTravelled);
+  }
+  //Fast Enemy that has 800 health, 0 armor, 20.0 speed, 25 damage, and may split
+  else if (type == "lighting") {
+    return EnemyList.createLightingEnemy(type, frame, path, distanceTravelled);
+  }
+  //Fast Enemy that has 1000 health, 200 armor, 45.0 speed, 45 damage, and may split
+  else if (type == "flash") {
+    return EnemyList.createFlashEnemy(type, frame, path, distanceTravelled);
+  }
+  //Fast Enemy that has 1500 health, 200 armor, 65.0 speed, 50 damage, and may split
+  else if (type == "LiSpeed") {
+    return EnemyList.createLightSpeedEnemy(
+      type,
+      frame,
+      path,
+      distanceTravelled
+    );
+  }
+
+  //Armored enemies that gradually get slower but stronger
+  //Armored Enemy that has 350 health, 500 armor, 2.5 speed, 10 damage, and may split
   else if (type == "armored") {
     return EnemyList.createArmoredEnemy(type, frame, path, distanceTravelled);
-  } else {
+  }
+  //Sheilded Enemy that has 550 health, 600 armor, 2.0 speed, 5 damage, and may split
+  else if (type == "shield") {
+    return EnemyList.createSheildedEnemy(type, frame, path, distanceTravelled);
+  }
+  //Bariar Enemy that has 700 health, 700 armor, 1.5 speed, 5 damage, and may split
+  else if (type == "barrier") {
+    return EnemyList.createBarrieredEnemy(type, frame, path, distanceTravelled);
+  }
+  //Wall Enemy that has 900 health, 800 armor, 1.5 speed, 5 damage, and may split
+  else if (type == "wall") {
+    return EnemyList.createWalledEnemy(type, frame, path, distanceTravelled);
+  }
+  //Tank Enemy that has 1200 health, 1150 armor, 1.0 speed, 15 damage, and may split
+  else if (type == "tank") {
+    return EnemyList.createTankEnemy(type, frame, path, distanceTravelled);
+  }
+
+  //Slow enemies that gradually get slower and weeker
+  //Fast Enemy that has 600 health, 200 armor, 3.0 speed, 5 damage, and may split
+  else if (type == "slow") {
+    return EnemyList.createSlowEnemy(type, frame, path, distanceTravelled);
+  }
+  //Fast Enemy that has 650 health, 50 armor, 4.0 speed, 3 damage, and may split
+  else if (type == "sleepy") {
+    return EnemyList.createSleepyEnemy(type, frame, path, distanceTravelled);
+  }
+  //Fast Enemy that has 700 health, 0 armor, 5.0 speed, 1 damage, and may split
+  else if (type == "frozen") {
+    return EnemyList.createFrozenEnemy(type, frame, path, distanceTravelled);
+  }
+
+  //default back to basic if no others are picked
+  else {
     return EnemyList.createBasicEnemy(type, frame, path, distanceTravelled);
   }
-})();
+};
 
 /* Defines a Basic enemy
  @param {String} type The type of enemy
@@ -31,12 +118,7 @@ EnemyList.createEnemy = new (function (type, frame, path, distanceTravelled) {
 * @param {Number} distanceTravelled (used for spawning monsters during split) 
 * @return {Enemy} The enemy created
 */
-EnemyList.createBasicEnemy = new (function (
-  type,
-  frame,
-  path,
-  distanceTravelled
-) {
+EnemyList.createBasicEnemy = function (type, frame, path, distanceTravelled) {
   var health = 100;
   var armor = 0;
   var money = 1;
@@ -67,7 +149,7 @@ EnemyList.createBasicEnemy = new (function (
     distanceTravelled
   );
   return curEnemy;
-})();
+};
 
 /* Defines a Easy enemy
  @param {String} type The type of enemy
@@ -76,12 +158,7 @@ EnemyList.createBasicEnemy = new (function (
 * @param {Number} distanceTravelled (used for spawning monsters during split) 
 * @return {Enemy} The enemy created
 */
-EnemyList.createEasyEnemy = new (function (
-  type,
-  frame,
-  path,
-  distanceTravelled
-) {
+EnemyList.createEasyEnemy = function (type, frame, path, distanceTravelled) {
   var health = 300;
   var armor = 50;
   var money = 2;
@@ -112,7 +189,7 @@ EnemyList.createEasyEnemy = new (function (
     distanceTravelled
   );
   return curEnemy;
-})();
+};
 
 /* Defines a Normal enemy
  @param {String} type The type of enemy
@@ -121,12 +198,7 @@ EnemyList.createEasyEnemy = new (function (
 * @param {Number} distanceTravelled (used for spawning monsters during split) 
 * @return {Enemy} The enemy created
 */
-EnemyList.createNormalEnemy = new (function (
-  type,
-  frame,
-  path,
-  distanceTravelled
-) {
+EnemyList.createNormalEnemy = function (type, frame, path, distanceTravelled) {
   var health = 500;
   var armor = 100;
   var money = 5;
@@ -157,7 +229,7 @@ EnemyList.createNormalEnemy = new (function (
     distanceTravelled
   );
   return curEnemy;
-})();
+};
 
 /* Defines a Difficult enemy
  @param {String} type The type of enemy
@@ -166,7 +238,7 @@ EnemyList.createNormalEnemy = new (function (
 * @param {Number} distanceTravelled (used for spawning monsters during split) 
 * @return {Enemy} The enemy created
 */
-EnemyList.createDifficultEnemy = new (function (
+EnemyList.createDifficultEnemy = function (
   type,
   frame,
   path,
@@ -202,7 +274,7 @@ EnemyList.createDifficultEnemy = new (function (
     distanceTravelled
   );
   return curEnemy;
-})();
+};
 
 /* Defines a Hard enemy
  @param {String} type The type of enemy
@@ -211,12 +283,7 @@ EnemyList.createDifficultEnemy = new (function (
 * @param {Number} distanceTravelled (used for spawning monsters during split) 
 * @return {Enemy} The enemy created
 */
-EnemyList.createHardEnemy = new (function (
-  type,
-  frame,
-  path,
-  distanceTravelled
-) {
+EnemyList.createHardEnemy = function (type, frame, path, distanceTravelled) {
   var health = 900;
   var armor = 300;
   var money = 15;
@@ -247,7 +314,7 @@ EnemyList.createHardEnemy = new (function (
     distanceTravelled
   );
   return curEnemy;
-})();
+};
 
 /* Defines a Extreme enemy
  @param {String} type The type of enemy
@@ -256,12 +323,7 @@ EnemyList.createHardEnemy = new (function (
 * @param {Number} distanceTravelled (used for spawning monsters during split) 
 * @return {Enemy} The enemy created
 */
-EnemyList.createExtremeEnemy = new (function (
-  type,
-  frame,
-  path,
-  distanceTravelled
-) {
+EnemyList.createExtremeEnemy = function (type, frame, path, distanceTravelled) {
   var health = 1500;
   var armor = 450;
   var money = 35;
@@ -292,7 +354,7 @@ EnemyList.createExtremeEnemy = new (function (
     distanceTravelled
   );
   return curEnemy;
-})();
+};
 
 /* Defines a Fast enemy
  @param {String} type The type of enemy
@@ -301,12 +363,7 @@ EnemyList.createExtremeEnemy = new (function (
 * @param {Number} distanceTravelled (used for spawning monsters during split) 
 * @return {Enemy} The enemy created
 */
-EnemyList.createFastEnemy = new (function (
-  type,
-  frame,
-  path,
-  distanceTravelled
-) {
+EnemyList.createFastEnemy = function (type, frame, path, distanceTravelled) {
   var health = 200;
   var armor = 0;
   var money = 2;
@@ -316,7 +373,7 @@ EnemyList.createFastEnemy = new (function (
   var color2 = "#000000"; //black
   var color3 = "#cccc00"; //yellow
   var color4 = "#0000cc"; //dark blue
-  var drawingFunction = 1;
+  var drawingFunction = 2;
   var deathSplit = new Array();
 
   var curEnemy = new Enemy(
@@ -337,7 +394,7 @@ EnemyList.createFastEnemy = new (function (
     distanceTravelled
   );
   return curEnemy;
-})();
+};
 
 /* Defines a Athleat enemy
  @param {String} type The type of enemy
@@ -346,12 +403,7 @@ EnemyList.createFastEnemy = new (function (
 * @param {Number} distanceTravelled (used for spawning monsters during split) 
 * @return {Enemy} The enemy created
 */
-EnemyList.createAthleatEnemy = new (function (
-  type,
-  frame,
-  path,
-  distanceTravelled
-) {
+EnemyList.createAthleatEnemy = function (type, frame, path, distanceTravelled) {
   var health = 400;
   var armor = 100;
   var money = 5;
@@ -382,7 +434,7 @@ EnemyList.createAthleatEnemy = new (function (
     distanceTravelled
   );
   return curEnemy;
-})();
+};
 
 /* Defines a shark enemy
  * @param {String} type The type of enemy
@@ -391,12 +443,7 @@ EnemyList.createAthleatEnemy = new (function (
  * @param {Number} distanceTravelled (used for spawning monsters during split)
  * @return {Enemy} The enemy created
  */
-EnemyList.createLoudEnemy = new (function (
-  type,
-  frame,
-  path,
-  distanceTravelled
-) {
+EnemyList.createSharkEnemy = function (type, frame, path, distanceTravelled) {
   var health = 600;
   var armor = 100;
   var money = 10;
@@ -427,7 +474,7 @@ EnemyList.createLoudEnemy = new (function (
     distanceTravelled
   );
   return curEnemy;
-})();
+};
 
 /* Defines a Lighting enemy
  * @param {String} type The type of enemy
@@ -436,7 +483,7 @@ EnemyList.createLoudEnemy = new (function (
  * @param {Number} distanceTravelled (used for spawning monsters during split)
  * @return {Enemy} The enemy created
  */
-EnemyList.createLightingEnemy = new (function (
+EnemyList.createLightingEnemy = function (
   type,
   frame,
   path,
@@ -472,7 +519,7 @@ EnemyList.createLightingEnemy = new (function (
     distanceTravelled
   );
   return curEnemy;
-})();
+};
 
 /* Defines a Flash enemy
  @param {String} type The type of enemy
@@ -481,12 +528,7 @@ EnemyList.createLightingEnemy = new (function (
 * @param {Number} distanceTravelled (used for spawning monsters during split) 
 * @return {Enemy} The enemy created
 */
-EnemyList.createFlashEnemy = new (function (
-  type,
-  frame,
-  path,
-  distanceTravelled
-) {
+EnemyList.createFlashEnemy = function (type, frame, path, distanceTravelled) {
   var health = 1000;
   var armor = 200;
   var money = 30;
@@ -517,7 +559,7 @@ EnemyList.createFlashEnemy = new (function (
     distanceTravelled
   );
   return curEnemy;
-})();
+};
 
 /* Defines a Light enemy
  @param {String} type The type of enemy
@@ -526,7 +568,7 @@ EnemyList.createFlashEnemy = new (function (
 * @param {Number} distanceTravelled (used for spawning monsters during split) 
 * @return {Enemy} The enemy created
 */
-EnemyList.createLightEnemy = new (function (
+EnemyList.createLightSpeedEnemy = function (
   type,
   frame,
   path,
@@ -562,7 +604,7 @@ EnemyList.createLightEnemy = new (function (
     distanceTravelled
   );
   return curEnemy;
-})();
+};
 
 /* Defines a Armored enemy
  * @param {String} type The type of enemy
@@ -571,12 +613,7 @@ EnemyList.createLightEnemy = new (function (
  * @param {Number} distanceTravelled (used for spawning monsters during split)
  * @return {Enemy} The enemy created
  */
-EnemyList.createArmoredEnemy = new (function (
-  type,
-  frame,
-  path,
-  distanceTravelled
-) {
+EnemyList.createArmoredEnemy = function (type, frame, path, distanceTravelled) {
   var health = 350;
   var armor = 500;
   var money = 10;
@@ -588,11 +625,11 @@ EnemyList.createArmoredEnemy = new (function (
   var color4 = "#0000cc"; //dark blue
   var drawingFunction = 1;
   var deathSplit = new Array();
-  deathsplit.push("basic");
-  deathsplit.push("basic");
-  deathsplit.push("basic");
-  deathsplit.push("basic");
-  deathsplit.push("basic");
+  deathSplit.push("basic");
+  deathSplit.push("basic");
+  deathSplit.push("basic");
+  deathSplit.push("basic");
+  deathSplit.push("basic");
 
   var curEnemy = new Enemy(
     type,
@@ -612,7 +649,7 @@ EnemyList.createArmoredEnemy = new (function (
     distanceTravelled
   );
   return curEnemy;
-})();
+};
 
 /* Defines a Shielded enemy
  @param {String} type The type of enemy
@@ -621,7 +658,7 @@ EnemyList.createArmoredEnemy = new (function (
 * @param {Number} distanceTravelled (used for spawning monsters during split) 
 * @return {Enemy} The enemy created
 */
-EnemyList.createSheildedEnemy = new (function (
+EnemyList.createSheildedEnemy = function (
   type,
   frame,
   path,
@@ -638,8 +675,8 @@ EnemyList.createSheildedEnemy = new (function (
   var color4 = "#0000cc"; //dark blue
   var drawingFunction = 1;
   var deathSplit = new Array();
-  deathsplit.push("basic");
-  deathsplit.push("basic");
+  deathSplit.push("basic");
+  deathSplit.push("basic");
 
   var curEnemy = new Enemy(
     type,
@@ -659,16 +696,16 @@ EnemyList.createSheildedEnemy = new (function (
     distanceTravelled
   );
   return curEnemy;
-})();
+};
 
-/* Defines a Barriered enemy
+/* Defines a Barrier enemy
  @param {String} type The type of enemy
 * @param {Integer} The current frame
 * @param {Path} The monster's path
 * @param {Number} distanceTravelled (used for spawning monsters during split) 
 * @return {Enemy} The enemy created
 */
-EnemyList.createBarrieredEnemy = new (function (
+EnemyList.createBarrieredEnemy = function (
   type,
   frame,
   path,
@@ -685,8 +722,8 @@ EnemyList.createBarrieredEnemy = new (function (
   var color4 = "#0000cc"; //dark blue
   var drawingFunction = 1;
   var deathSplit = new Array();
-  deathsplit.push("basic");
-  deathsplit.push("basic");
+  deathSplit.push("basic");
+  deathSplit.push("basic");
 
   var curEnemy = new Enemy(
     type,
@@ -706,21 +743,16 @@ EnemyList.createBarrieredEnemy = new (function (
     distanceTravelled
   );
   return curEnemy;
-})();
+};
 
-/* Defines a Walled enemy 
+/* Defines a Wall enemy 
  @param {String} type The type of enemy
 * @param {Integer} The current frame
 * @param {Path} The monster's path
 * @param {Number} distanceTravelled (used for spawning monsters during split) 
 * @return {Enemy} The enemy created
 */
-EnemyList.createWalledEnemy = new (function (
-  type,
-  frame,
-  path,
-  distanceTravelled
-) {
+EnemyList.createWalledEnemy = function (type, frame, path, distanceTravelled) {
   var health = 900;
   var armor = 800;
   var money = 40;
@@ -732,8 +764,8 @@ EnemyList.createWalledEnemy = new (function (
   var color4 = "#0000cc"; //dark blue
   var drawingFunction = 1;
   var deathSplit = new Array();
-  deathsplit.push("basic");
-  deathsplit.push("basic");
+  deathSplit.push("basic");
+  deathSplit.push("basic");
 
   var curEnemy = new Enemy(
     type,
@@ -753,7 +785,7 @@ EnemyList.createWalledEnemy = new (function (
     distanceTravelled
   );
   return curEnemy;
-})();
+};
 
 /* Defines a tank enemy
  * @param {String} type The type of enemy
@@ -762,12 +794,7 @@ EnemyList.createWalledEnemy = new (function (
  * @param {Number} distanceTravelled (used for spawning monsters during split)
  * @return {Enemy} The enemy created
  */
-EnemyList.createTankEnemy = new (function (
-  type,
-  frame,
-  path,
-  distanceTravelled
-) {
+EnemyList.createTankEnemy = function (type, frame, path, distanceTravelled) {
   var health = 1200;
   var armor = 1150;
   var money = 55;
@@ -779,10 +806,10 @@ EnemyList.createTankEnemy = new (function (
   var color4 = "#0000cc"; //dark blue
   var drawingFunction = 1;
   var deathSplit = new Array();
-  deathsplit.push("armored");
-  deathsplit.push("armored");
-  deathsplit.push("basic");
-  deathsplit.push("basic");
+  deathSplit.push("armored");
+  deathSplit.push("armored");
+  deathSplit.push("basic");
+  deathSplit.push("basic");
 
   var curEnemy = new Enemy(
     type,
@@ -802,7 +829,7 @@ EnemyList.createTankEnemy = new (function (
     distanceTravelled
   );
   return curEnemy;
-})();
+};
 
 /* Defines a Slow enemy
  @param {String} type The type of enemy
@@ -811,12 +838,7 @@ EnemyList.createTankEnemy = new (function (
 * @param {Number} distanceTravelled (used for spawning monsters during split) 
 * @return {Enemy} The enemy created
 */
-EnemyList.createSlowEnemy = new (function (
-  type,
-  frame,
-  path,
-  distanceTravelled
-) {
+EnemyList.createSlowEnemy = function (type, frame, path, distanceTravelled) {
   var health = 600;
   var armor = 200;
   var money = 10;
@@ -828,8 +850,8 @@ EnemyList.createSlowEnemy = new (function (
   var color4 = "#0000cc"; //dark blue
   var drawingFunction = 1;
   var deathSplit = new Array();
-  deathsplit.push("basic");
-  deathsplit.push("basic");
+  deathSplit.push("basic");
+  deathSplit.push("basic");
 
   var curEnemy = new Enemy(
     type,
@@ -849,7 +871,7 @@ EnemyList.createSlowEnemy = new (function (
     distanceTravelled
   );
   return curEnemy;
-})();
+};
 
 /* Defines a Sleepy enemy
  @param {String} type The type of enemy
@@ -858,25 +880,20 @@ EnemyList.createSlowEnemy = new (function (
 * @param {Number} distanceTravelled (used for spawning monsters during split) 
 * @return {Enemy} The enemy created
 */
-EnemyList.createSleepyEnemy = new (function (
-  type,
-  frame,
-  path,
-  distanceTravelled
-) {
-  var health = 600;
-  var armor = 200;
+EnemyList.createSleepyEnemy = function (type, frame, path, distanceTravelled) {
+  var health = 650;
+  var armor = 50;
   var money = 10;
-  var speed = 3;
-  var damage = 5;
+  var speed = 4;
+  var damage = 3;
   var color1 = "#555555"; //grey
   var color2 = "#000000"; //black
   var color3 = "#005555"; //dark purple
   var color4 = "#0000cc"; //dark blue
   var drawingFunction = 1;
   var deathSplit = new Array();
-  deathsplit.push("basic");
-  deathsplit.push("basic");
+  deathSplit.push("basic");
+  deathSplit.push("basic");
 
   var curEnemy = new Enemy(
     type,
@@ -896,7 +913,7 @@ EnemyList.createSleepyEnemy = new (function (
     distanceTravelled
   );
   return curEnemy;
-})();
+};
 
 /* Defines a Frozen enemy
  @param {String} type The type of enemy
@@ -905,25 +922,20 @@ EnemyList.createSleepyEnemy = new (function (
 * @param {Number} distanceTravelled (used for spawning monsters during split) 
 * @return {Enemy} The enemy created
 */
-EnemyList.createFrozenEnemy = new (function (
-  type,
-  frame,
-  path,
-  distanceTravelled
-) {
-  var health = 600;
-  var armor = 200;
+EnemyList.createFrozenEnemy = function (type, frame, path, distanceTravelled) {
+  var health = 700;
+  var armor = 0;
   var money = 10;
-  var speed = 3;
-  var damage = 5;
+  var speed = 5;
+  var damage = 1;
   var color1 = "#555555"; //grey
   var color2 = "#000000"; //black
   var color3 = "#005555"; //dark purple
   var color4 = "#0000cc"; //dark blue
   var drawingFunction = 1;
   var deathSplit = new Array();
-  deathsplit.push("basic");
-  deathsplit.push("basic");
+  deathSplit.push("basic");
+  deathSplit.push("basic");
 
   var curEnemy = new Enemy(
     type,
@@ -943,4 +955,4 @@ EnemyList.createFrozenEnemy = new (function (
     distanceTravelled
   );
   return curEnemy;
-})();
+};

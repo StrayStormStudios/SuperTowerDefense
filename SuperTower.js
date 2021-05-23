@@ -11,12 +11,14 @@ function SuperTower() {}
 //Canvas Layers
 SuperTower.layerBackgroundImage;
 SuperTower.layerStage;
+SuperTower.layerEnemies;
 SuperTower.layerUIStatic;
 SuperTower.layerUIDynamic;
 
 //Canvas Context
 SuperTower.ctxBackgroundImage;
 SuperTower.ctxStage;
+SuperTower.ctxEnemies;
 SuperTower.ctxUIStatic;
 SuperTower.ctxUIDynamic;
 
@@ -33,6 +35,13 @@ SuperTower.backgroundImage = new Image();
 SuperTower.stage;
 SuperTower.wave;
 
+//currentFrame
+SuperTower.frame;
+
+//Enemies
+SuperTower.enemies;
+SuperTower.enemyWaves;
+
 /* Initializes the game with initial states and calls the main game loop
  */
 SuperTower.init = function () {
@@ -45,6 +54,8 @@ SuperTower.init = function () {
     SuperTower.layerBackgroundImage.getContext("2d");
   SuperTower.layerStage = document.getElementById("layerStage");
   SuperTower.ctxStage = SuperTower.layerStage.getContext("2d");
+  SuperTower.layerEnemies = document.getElementById("layerEnemies");
+  SuperTower.ctxEnemies = SuperTower.layerEnemies.getContext("2d");
   SuperTower.layerUIStatic = document.getElementById("layerUIStatic");
   SuperTower.ctxUIStatic = SuperTower.layerUIStatic.getContext("2d");
   SuperTower.layerUIDynamic = document.getElementById("layerUIDynamic");
@@ -63,11 +74,19 @@ SuperTower.init = function () {
     SuperTower.mouseY = e.clientY - rect.top;
   });
 
+  //Set Frame
+  SuperTower.frame = 0;
+
   //Create Stages
   SuperTower.createStages();
 
-  SuperTower.stage = 7;
+  SuperTower.stage = 0;
   SuperTower.wave = 0;
+
+  //create Enemies
+  SuperTower.enemies = new Enemies();
+  //SuperTower.enemies.add("fast", SuperTower.frame, SuperTower.stageList.stages[0].paths[0],0);
+  SuperTower.enemyWaves = new EnemyWaves(SuperTower.enemies, SuperTower.frame);
 
   //redraw everything
   SuperTower.drawAll();
@@ -78,6 +97,7 @@ SuperTower.init = function () {
 
 /*Main game loop, this should run multiple times each second*/
 SuperTower.playGame = function () {
+  SuperTower.enemyWaves.spawnEnemies(SuperTower.frame);
   SuperTower.drawAll();
 };
 
@@ -91,6 +111,9 @@ SuperTower.drawAll = function () {
     SuperTower.mouseY
   );
   SuperTower.stageList.draw(SuperTower.ctxStage, SuperTower.stage);
+  //draw enemies
+  SuperTower.enemies.drawAll(SuperTower.ctxEnemies, SuperTower.frame);
+  SuperTower.frame++;
 };
 
 SuperTower.drawDynamic = function () {
@@ -103,4 +126,17 @@ SuperTower.drawDynamic = function () {
 
 SuperTower.createStages = function () {
   SuperTower.stageList = new StageList();
+};
+
+//sets a new Stage
+SuperTower.setStage = function (stage) {
+  //clear the old stage
+  SuperTower.ctxStage.clearRect(0, 0, Background.WIDTH, Background.HEIGHT);
+
+  SuperTower.stage = stage;
+};
+
+//sets a new Wave
+SuperTower.setWave = function (wave) {
+  SuperTower.wave = wave;
 };

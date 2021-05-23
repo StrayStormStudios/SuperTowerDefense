@@ -23,7 +23,7 @@
           This text is displayed if your browser does not support HTML5 Canvas.
         </canvas>
         <canvas
-          id="layerUIStatic"
+          id="layerEnemies"
           style="z-index: 3"
           height="576px"
           width="1024"
@@ -31,8 +31,16 @@
           This text is displayed if your browser does not support HTML5 Canvas.
         </canvas>
         <canvas
-          id="layerUIDynamic"
+          id="layerUIStatic"
           style="z-index: 4"
+          height="576px"
+          width="1024"
+        >
+          This text is displayed if your browser does not support HTML5 Canvas.
+        </canvas>
+        <canvas
+          id="layerUIDynamic"
+          style="z-index: 5"
           height="576px"
           width="1024"
         >
@@ -40,10 +48,12 @@
         </canvas>
       </div>
 
-      <script src="EnemyList.js">
-        </scrpit>
-              <script src="Enemy.js">
-      </script>
+      <script src="EnemyWaves.js"></script>
+      <script src="EnemySpawn.js"></script>
+      <script src="Enemies.js"></script>
+      <script src="EnemyList.js"></script>
+      <script src="EnemyDrawing.js"></script>
+      <script src="Enemy.js"></script>
       <script src="Point.js"></script>
       <script src="Path.js"></script>
       <script src="Stage.js"></script>

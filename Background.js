@@ -216,7 +216,15 @@ Background.drawStageStatic = function (ctx) {
 
 Background.drawStageDynamic = function (ctx) {
   //Stage Text
-  Background.drawText(ctx, 934, 89, "Stage: 1-1", 22, false, true);
+  Background.drawText(
+    ctx,
+    934,
+    89,
+    "Stage: " + (SuperTower.stage + 1) + "-" + (SuperTower.wave + 1),
+    22,
+    false,
+    true
+  );
 };
 
 Background.drawBuildTowerMenuStatic = function (ctx) {

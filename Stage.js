@@ -44,6 +44,8 @@ Stage.prototype.addPath = function (
 };
 
 Stage.prototype.draw = function (ctx) {
+  //Draw a rectangle over the entire area
+
   for (var i = 0; i < this.paths.length; i++) {
     this.paths[i].draw(ctx);
   }
