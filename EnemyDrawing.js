@@ -218,49 +218,50 @@ EnemyDrawing.draw4 = function (
   ctx.fillStyle = color3;
   ctx.strokeStyle = color4;
 
-  //Top
-  //draw a trianlge
-  ctx.beginPath();
-  ctx.moveTo(0, 0);
-  ctx.lineTo(-20, -40);
-  ctx.lineTo(-15, -40);
-  ctx.lineTo(0, 0);
-  ctx.fill();
-  ctx.stroke();
-  //draw a trianlge
-  ctx.beginPath();
-  ctx.moveTo(0, 0);
-  ctx.lineTo(-10, -40);
-  ctx.lineTo(-5, -40);
-  ctx.lineTo(0, 0);
-  ctx.fill();
-  ctx.stroke();
-  //draw a trianlge
-  ctx.beginPath();
-  ctx.moveTo(0, 0);
-  ctx.lineTo(0, -40);
-  ctx.lineTo(5, -40);
-  ctx.lineTo(0, 0);
-  ctx.fill();
-  ctx.stroke();
-  //draw a trianlge
-  ctx.beginPath();
-  ctx.moveTo(0, 0);
-  ctx.lineTo(10, -40);
-  ctx.lineTo(15, -40);
-  ctx.lineTo(0, 0);
-  ctx.fill();
-  ctx.stroke();
-  //draw a trianlge
-  ctx.beginPath();
-  ctx.moveTo(0, 0);
-  ctx.lineTo(20, -40);
-  ctx.lineTo(25, -40);
-  ctx.lineTo(0, 0);
-  ctx.fill();
-  ctx.stroke();
-
-  /*Left
+  /*
+//Top
+	//draw a trianlge
+	ctx.beginPath();
+	ctx.moveTo(0, 0);
+	ctx.lineTo(-20, -40);
+	ctx.lineTo(-15, -40);
+	ctx.lineTo(0, 0);
+	ctx.fill();
+	ctx.stroke();
+	//draw a trianlge
+	ctx.beginPath();
+	ctx.moveTo(0, 0);
+	ctx.lineTo(-10, -40);
+	ctx.lineTo(-5, -40);
+	ctx.lineTo(0, 0);
+	ctx.fill();
+	ctx.stroke();
+	//draw a trianlge
+	ctx.beginPath();
+	ctx.moveTo(0, 0);
+	ctx.lineTo(0, -40);
+	ctx.lineTo(5, -40);
+	ctx.lineTo(0, 0);
+	ctx.fill();
+	ctx.stroke();
+	//draw a trianlge
+	ctx.beginPath();
+	ctx.moveTo(0, 0);
+	ctx.lineTo(10, -40);
+	ctx.lineTo(15, -40);
+	ctx.lineTo(0, 0);
+	ctx.fill();
+	ctx.stroke();
+	//draw a trianlge
+	ctx.beginPath();
+	ctx.moveTo(0, 0);
+	ctx.lineTo(20, -40);
+	ctx.lineTo(25, -40);
+	ctx.lineTo(0, 0);
+	ctx.fill();
+	ctx.stroke();
+	
+//Left
 	//draw a trianlge
 	ctx.beginPath();
 	ctx.moveTo(0, 0);
@@ -293,49 +294,49 @@ EnemyDrawing.draw4 = function (
 	ctx.lineTo(0, 0);
 	ctx.fill();
 	ctx.stroke();
-*/
-  //Bottom
-  //draw a trianlge
-  ctx.beginPath();
-  ctx.moveTo(0, 0);
-  ctx.lineTo(-20, 40);
-  ctx.lineTo(-15, 40);
-  ctx.lineTo(0, 0);
-  ctx.fill();
-  ctx.stroke();
-  //draw a trianlge
-  ctx.beginPath();
-  ctx.moveTo(0, 0);
-  ctx.lineTo(-10, 40);
-  ctx.lineTo(-5, 40);
-  ctx.lineTo(0, 0);
-  ctx.fill();
-  ctx.stroke();
-  //draw a trianlge
-  ctx.beginPath();
-  ctx.moveTo(0, 0);
-  ctx.lineTo(0, 40);
-  ctx.lineTo(5, 40);
-  ctx.lineTo(0, 0);
-  ctx.fill();
-  ctx.stroke();
-  //draw a trianlge
-  ctx.beginPath();
-  ctx.moveTo(0, 0);
-  ctx.lineTo(10, 40);
-  ctx.lineTo(15, 40);
-  ctx.lineTo(0, 0);
-  ctx.fill();
-  ctx.stroke();
-  //draw a trianlge
-  ctx.beginPath();
-  ctx.moveTo(0, 0);
-  ctx.lineTo(20, 40);
-  ctx.lineTo(25, 40);
-  ctx.lineTo(0, 0);
-  ctx.fill();
-  ctx.stroke();
 
+//Bottom
+	//draw a trianlge
+	ctx.beginPath();
+	ctx.moveTo(0, 0);
+	ctx.lineTo(-20, 40);
+	ctx.lineTo(-15, 40);
+	ctx.lineTo(0, 0);
+	ctx.fill();
+	ctx.stroke();
+	//draw a trianlge
+	ctx.beginPath();
+	ctx.moveTo(0, 0);
+	ctx.lineTo(-10, 40);
+	ctx.lineTo(-5, 40);
+	ctx.lineTo(0, 0);
+	ctx.fill();
+	ctx.stroke();
+	//draw a trianlge
+	ctx.beginPath();
+	ctx.moveTo(0, 0);
+	ctx.lineTo(0, 40);
+	ctx.lineTo(5, 40);
+	ctx.lineTo(0, 0);
+	ctx.fill();
+	ctx.stroke();
+	//draw a trianlge
+	ctx.beginPath();
+	ctx.moveTo(0, 0);
+	ctx.lineTo(10, 40);
+	ctx.lineTo(15, 40);
+	ctx.lineTo(0, 0);
+	ctx.fill();
+	ctx.stroke();
+	//draw a trianlge
+	ctx.beginPath();
+	ctx.moveTo(0, 0);
+	ctx.lineTo(20, 40);
+	ctx.lineTo(25, 40);
+	ctx.lineTo(0, 0);
+	ctx.fill();
+	ctx.stroke();
+*/
   //Right
   //draw a trianlge
   ctx.beginPath();
@@ -369,6 +370,7 @@ EnemyDrawing.draw4 = function (
   ctx.lineTo(0, 0);
   ctx.fill();
   ctx.stroke();
+
   //restore the shape (get red of all our rotation, translation, scale, ect)
   ctx.restore();
 };

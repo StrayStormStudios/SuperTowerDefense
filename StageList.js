@@ -124,7 +124,7 @@ StageList.prototype.addStage2 = function () {
   points1[8] = new Point(198, 490);
   points1[9] = new Point(198, 540);
 
-  var width = 13.0;
+  var width = 12.0;
 
   var color = "#007799";
   var highlightColor = "#0099bb";
@@ -188,7 +188,7 @@ StageList.prototype.addStage3 = function () {
   points1[25] = new Point(434, 460);
   points1[26] = new Point(434, 535);
 
-  var width = 10.0;
+  var width = 13.0;
 
   var color = "#007799";
   var highlightColor = "#0099bb";
@@ -359,7 +359,7 @@ StageList.prototype.addStage5 = function () {
   points1[31] = new Point(750, 465);
   points1[32] = new Point(750, 530);
 
-  var width = 5.0;
+  var width = 10.0;
 
   var color = "#007799";
   var highlightColor = "#0099bb";
@@ -543,7 +543,7 @@ StageList.prototype.addStage8 = function () {
   points1[6] = new Point(165, 435);
   points1[7] = new Point(220, 530);
 
-  var width = 10.0;
+  var width = 15.0;
 
   var color = "#007799";
   var highlightColor = "#0099bb";
@@ -606,7 +606,7 @@ StageList.prototype.addStage9 = function () {
   points1[0] = new Point(35, 340);
   points1[1] = new Point(210, 380);
   points1[2] = new Point(400, 475);
-  points1[3] = new Point(540, 380);
+  points1[3] = new Point(535, 375);
   points1[4] = new Point(615, 350);
   points1[5] = new Point(755, 320);
   points1[6] = new Point(830, 320);
@@ -650,7 +650,7 @@ StageList.prototype.addStage10 = function () {
   points1[0] = new Point(45, 130);
   points1[1] = new Point(430, 325);
 
-  var width = 10.0;
+  var width = 15.0;
 
   var color = "#007799";
   var highlightColor = "#0099bb";

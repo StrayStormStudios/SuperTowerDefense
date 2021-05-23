@@ -80,8 +80,8 @@ SuperTower.init = function () {
   //Create Stages
   SuperTower.createStages();
 
-  SuperTower.stage = 0;
-  SuperTower.wave = 0;
+  SuperTower.stage = 0; //starts at 0
+  SuperTower.wave = 0; //starts at 0
 
   //create Enemies
   SuperTower.enemies = new Enemies();

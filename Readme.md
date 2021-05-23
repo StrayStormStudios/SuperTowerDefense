@@ -28,6 +28,10 @@ Please make sure to update tests as appropriate.
 
 ## Versions & Change Log
 
+### Version 3C: Fix Enemies & Towers
+
+### Version 3B: Fix Enemies
+
 ### Version 3A: Add Enemies
 
 ### Version 2C: Better looking Paths
