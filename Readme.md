@@ -11,10 +11,6 @@ Drag and Drop Towers from the Right Side Menu on to the Field to Defened Yoursel
 
 ## Known Issues [![GitHub Issues](https://img.shields.io/github/issues/ChrisBarnes2000/SuperTowerDefense.svg?style=flat-square)](https://github.com/chrisbarnes2000/SuperTowerDefense/issues)
 
-- Armored Enemy Takes 5 Health On Death (issue with update)
-- Background/Stage Doesn't Change (issue with update)
-- Sound only works when it wants to...
-
 ## Installation
 
 ```bash
@@ -32,20 +28,8 @@ Please make sure to update tests as appropriate.
 
 ## Versions & Change Log
 
-#### Version 5: Draw Towers, Create Towers, place Towers
+Version 1A:  Basic Backgrounds
 
-#### Version 4: Draw Waves
+Version 1B:  Background with Layers and Towers Pulling from their own file
 
-#### Version 3A: Add Enemies
-
-#### Version 2C: Better looking Paths
-
-#### Version 2B: Add my own stages and pathing
-
-#### Version 2: Create stage files and draw the enemy paths
-
-#### Version 1C:  Show mouse position on Screen
-
-#### Version 1B: Background with Layers and Towers Pulling from their own file
-
-#### Version 1A:  Basic Backgrounds
+Version 1C:  Show mouse position on Screen

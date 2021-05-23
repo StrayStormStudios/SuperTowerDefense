@@ -4,7 +4,7 @@ Background.WIDTH = 1024;
 Background.HEIGHT = 576;
 
 Background.SCREEN_X = 25;
-Background.SCREEN_Y = 125;
+Background.SCREEN_Y = 115;
 Background.SCREEN_WIDTH = 820;
 Background.SCREEN_HEIGHT = 430;
 
@@ -13,13 +13,19 @@ Background.grd;
 Background.grd2;
 
 //draws the background layer
-Background.drawAll = function (ctxBackgroundImage, ctxUIStatic, ctxUIDynamic, backgroundImage, mouseX, mouseY) {
+Background.drawAll = function (
+  ctxBackgroundImage,
+  ctxUIStatic,
+  ctxUIDynamic,
+  backgroundImage,
+  mouseX,
+  mouseY
+) {
   Background.drawBackgroundImage(ctxBackgroundImage, backgroundImage);
   Background.drawStatic(ctxUIStatic);
   Background.drawDynamic(ctxUIDynamic, mouseX, mouseY);
 };
 
-//Cut out Draw BackGround Image
 Background.drawBackgroundImage = function (ctx, backgroundImage) {
   //Draw a rectangle over the entire area
   ctx.clearRect(0, 0, Background.WIDTH, Background.HEIGHT);
@@ -32,7 +38,6 @@ Background.drawBackgroundImage = function (ctx, backgroundImage) {
   ctx.drawImage(backgroundImage, Background.SCREEN_X, Background.SCREEN_Y);
 };
 
-//Draw all Static Things
 Background.drawStatic = function (ctx) {
   //Draw a rectangle over the entire area
   ctx.clearRect(0, 0, Background.WIDTH, Background.HEIGHT);
@@ -43,6 +48,9 @@ Background.drawStatic = function (ctx) {
   //draw background stageCircle
   Background.drawStageStatic(ctx);
 
+  //draw background Build Towers menu
+  Background.drawBuildTowerMenuStatic(ctx);
+
   //draw background Upgrade Tower menu
   Background.drawUpgradeTowerMenuStatic(ctx);
 
@@ -51,43 +59,31 @@ Background.drawStatic = function (ctx) {
 
   //draw Title
   Background.drawTitleStatic(ctx);
-
-  //draw background Build Towers menu
-  Background.drawBuildTowerMenuStatic(ctx);
-
-  //draw Tower Status
-  Background.drawTowerStatusStatic(ctx);
 };
 
-//draw all Dynamic Things
 Background.drawDynamic = function (ctx, mouseX, mouseY) {
   //Draw a rectangle over the entire area
-  ctx.clearRect(0, 0, Background.WIDTH + 300, Background.HEIGHT);
+  ctx.clearRect(0, 0, Background.WIDTH, Background.HEIGHT);
 
   Background.drawStageDynamic(ctx);
+  Background.drawBuildTowerMenuDynamic(ctx);
   Background.drawUpgradeTowerMenuDynamic(ctx);
   Background.drawHealthMoneyDisplayDynamic(ctx);
-  //Background.drawMousePosition(ctx, mouseX, mouseY);
-
-  Background.drawBuildTowerMenuDynamic(ctx);
-
-  //Tower Status Background
-  Background.drawTowerStatusDynamic(ctx);
+  Background.drawMousePosition(ctx, mouseX, mouseY);
 };
 
-//draw screen
 Background.drawScreenCoverStatic = function (ctx) {
   /*
    *    Screen Cover
    */
   // Create gradient for screen
-  grd = ctx.createLinearGradient(150.0, 20, 150.0, Background.HEIGHT + 10);
+  grd = ctx.createLinearGradient(150.0, 20, 150.0, Background.HEIGHT + 20);
   grd.addColorStop(0.0, "rgba(80, 80, 80, 1.000)");
   grd.addColorStop(0.02, "rgba(51, 51, 51, 1.000)");
   grd.addColorStop(0.95, "rgba(51, 51, 51, 1.000)");
   grd.addColorStop(1.0, "rgba(60, 60, 60, 1.000)");
 
-  grd2 = ctx.createLinearGradient(0, 150.0, Background.WIDTH, 150.0);
+  grd2 = ctx.createLinearGradient(0, 150.0, 0 + Background.WIDTH, 150.0);
   grd2.addColorStop(0.0, "rgba(80, 80, 80, 1.000)");
   grd2.addColorStop(0.018, "rgba(51, 51, 51, 1.000)");
   grd2.addColorStop(0.965, "rgba(51, 51, 51, 1.000)");
@@ -97,7 +93,7 @@ Background.drawScreenCoverStatic = function (ctx) {
     ctx,
     0,
     20,
-    Background.WIDTH - 10,
+    Background.WIDTH - 20,
     Background.HEIGHT - 20,
     Background.SCREEN_X,
     Background.SCREEN_Y,
@@ -138,7 +134,7 @@ Background.drawScreenCoverStatic = function (ctx) {
     Background.SCREEN_X - 10,
     Background.SCREEN_Y - 10,
     Background.SCREEN_WIDTH + 18,
-    Background.SCREEN_HEIGHT + 18,
+    Background.SCREEN_HEIGHT + 20,
     Background.SCREEN_X,
     Background.SCREEN_Y,
     Background.SCREEN_WIDTH,
@@ -151,7 +147,6 @@ Background.drawScreenCoverStatic = function (ctx) {
   );
 };
 
-//path, speed stage background,
 Background.drawStageStatic = function (ctx) {
   /*
    *    Top Circle
@@ -163,10 +158,17 @@ Background.drawStageStatic = function (ctx) {
   ctx.translate(-93, 0);
   ctx.fillStyle = "#222222";
   ctx.beginPath();
-  ctx.arc(Background.WIDTH - 85, 77, 77, 0, 2 * Math.PI);
+  ctx.arc(Background.WIDTH - 81, 81, 81, 0, 2 * Math.PI);
   ctx.closePath();
   // Create gradient
-  grd = ctx.createRadialGradient(Background.WIDTH - 110, 40, 0.0, Background.WIDTH - 110, 40, 138.0);
+  grd = ctx.createRadialGradient(
+    Background.WIDTH - 110,
+    40,
+    0.0,
+    Background.WIDTH - 110,
+    40,
+    138.0
+  );
   grd.addColorStop(0.015, "rgba(90, 90, 90, 1.000)");
   grd.addColorStop(0.199, "rgba(81, 81, 81, 1.000)");
   grd.addColorStop(0.937, "rgba(41, 41, 41, 1.000)");
@@ -183,11 +185,18 @@ Background.drawStageStatic = function (ctx) {
   ctx.translate(-102, 9);
   ctx.fillStyle = "#cccccc";
   ctx.beginPath();
-  ctx.arc(Background.WIDTH - 76, 68, 68, 0, 2 * Math.PI);
+  ctx.arc(Background.WIDTH - 72, 72, 72, 0, 2 * Math.PI);
   ctx.closePath();
 
   // Create gradient
-  grd = ctx.createRadialGradient(Background.WIDTH - 38, 96, 0.0, Background.WIDTH - 38, 96, 117.0);
+  grd = ctx.createRadialGradient(
+    Background.WIDTH - 38,
+    96,
+    0.0,
+    Background.WIDTH - 38,
+    96,
+    117.0
+  );
   grd.addColorStop(0.015, "rgba(90, 90, 90, 1.000)");
   grd.addColorStop(0.199, "rgba(81, 81, 81, 1.000)");
   grd.addColorStop(0.937, "rgba(41, 41, 41, 1.000)");
@@ -198,103 +207,158 @@ Background.drawStageStatic = function (ctx) {
   ctx.fill();
   ctx.restore();
 
-  //Speed Text Background
-  Background.setBorderGradient(ctx, 870, 32, 120, 40, false);
-  Background.roundRectGradient(ctx, 870, 32, 120, 40, 20, true, false);
-  Background.setGreenGradient(ctx, 872, 34, 116, 36, false, true);
-  Background.roundRectGradient(ctx, 872, 34, 116, 36, 18, true, false, false);
-
   //Stage Text Background
-  Background.setBorderGradient(ctx, 870, 75, 120, 40, false);
-  Background.roundRectGradient(ctx, 870, 75, 120, 40, 20, true, false);
-  Background.setGreenGradient(ctx, 872, 77, 116, 36, false, true);
-  Background.roundRectGradient(ctx, 872, 77, 116, 36, 18, true, false, false);
+  Background.setBorderGradient(ctx, 860, 58, 150, 40, false);
+  Background.roundRectGradient(ctx, 860, 58, 150, 40, 20, true, false);
+  Background.setGreenGradient(ctx, 862, 60, 146, 36, false, true);
+  Background.roundRectGradient(ctx, 862, 60, 146, 36, 18, true, false, false);
 };
 
-//stage and speed display
 Background.drawStageDynamic = function (ctx) {
-  if (SuperTower.gameSpeed == 0) {
-    //Speed Text
-    Background.drawText(ctx, 930, 62, "Speed: MAX", 16, false, true);
-  } else if (SuperTower.gameSpeed == 4) {
-    //Speed Text
-    Background.drawText(ctx, 930, 62, "Speed: MIN", 16, false, true);
-  } else {
-    //Speed Text
-    Background.drawText(ctx, 930, 62, "Speed: " + SuperTower.gameSpeed, 18, false, true);
-  }
   //Stage Text
-  Background.drawText(ctx, 929, 105, "Stage: " + (SuperTower.stage + 1) + "-" + (SuperTower.wave + 1), 18, false, true);
+  Background.drawText(ctx, 934, 89, "Stage: 1-1", 22, false, true);
 };
 
-//display build tower
 Background.drawBuildTowerMenuStatic = function (ctx) {
   //border
-  Background.setBorderGradient(ctx, Background.WIDTH - 160.0, 150, 130, 220, true);
-  Background.roundRectGradient(ctx, Background.WIDTH - 160.0, 150, 130, 220, 20, true, false);
+  Background.setBorderGradient(
+    ctx,
+    Background.WIDTH - 160.0,
+    160,
+    130,
+    220,
+    true
+  );
+  Background.roundRectGradient(
+    ctx,
+    Background.WIDTH - 160.0,
+    160,
+    130,
+    220,
+    20,
+    true,
+    false
+  );
 
   //Build Tower Text Background
-  Background.setBorderGradient(ctx, 868, 156, 120, 28, false);
-  Background.roundRectGradient(ctx, 868, 156, 120, 28, 14, true, false);
-  Background.setGreenGradient(ctx, 870, 158, 116, 24, false, true);
-  Background.roundRectGradient(ctx, 870, 158, 116, 24, 14, true, false, false);
+  Background.setBorderGradient(ctx, 868, 166, 120, 28, false);
+  Background.roundRectGradient(ctx, 868, 166, 120, 28, 14, true, false);
+  Background.setGreenGradient(ctx, 870, 168, 116, 24, false, true);
+  Background.roundRectGradient(ctx, 870, 168, 116, 24, 14, true, false, false);
 };
 
-//display cannons
 Background.drawBuildTowerMenuDynamic = function (ctx) {
   //Build Tower Text
-  Background.drawText(ctx, 927, 177, "Build Tower", 15, false, true);
+  Background.drawText(ctx, 927, 187, "Build Tower", 15, false, true);
 
   //Build Cannon Buttons
-  Background.drawBuildCannonButton(ctx, 870, 188, false, false, false, 1);
-  Background.drawBuildCannonButton(ctx, 930, 188, false, false, false, 2);
-  Background.drawBuildCannonButton(ctx, 870, 248, false, false, false, 3);
-  Background.drawBuildCannonButton(ctx, 930, 248, true, true, true, 4);
-  Background.drawBuildCannonButton(ctx, 870, 308, true, false, false, 5);
-  Background.drawBuildCannonButton(ctx, 930, 308, true, false, false, 6);
+  Background.drawBuildCannonButton(ctx, 870, 198, false, false, false);
+  Background.drawBuildCannonButton(ctx, 930, 198, false, false, false);
+  Background.drawBuildCannonButton(ctx, 870, 258, false, false, false);
+  Background.drawBuildCannonButton(ctx, 930, 258, true, true, true);
+  Background.drawBuildCannonButton(ctx, 870, 318, true, false, false);
+  Background.drawBuildCannonButton(ctx, 930, 318, true, false, false);
 };
 
-//box info
-Background.drawBuildCannonButton = function (ctx, x, y, isDisabled, isHover, isSelected, type) {
-  //see if it is disabled
-  var cost = SuperTower.towerMenu.getCost(type);
-  var name = SuperTower.towerMenu.getName(type);
-  //is it disabled?
-  var isDisabled = cost >= SuperTower.cash;
-  //are we hovering?
-  var isHover = type == SuperTower.towerMenu.towerHighlighted;
-  //are we selected?
-  var isSelected = type == SuperTower.towerMenu.towerSelected;
-
+Background.drawBuildCannonButton = function (
+  ctx,
+  x,
+  y,
+  isDisabled,
+  isHover,
+  isSelected
+) {
   //Draw border of cannon button
   if (!isSelected || isDisabled) {
     Background.setBorderGradient(ctx, x, y, 56, 58, false);
   } else {
     Background.setBorderGradient(ctx, x, y, 56, 58, true);
   }
-  Background.roundRectGradient(ctx, x, y, 56, 58, 14, true, false, true);
+  Background.roundRectGradient(ctx, x, y, 56, 58, 14, true, false);
 
   //Draw Tower Type Text
   Background.setBorderGradient(ctx, x + 6, y + 2, 44, 14, false);
   Background.roundRectGradient(ctx, x + 6, y + 2, 44, 14, 5, true, false);
-  Background.setGreenGradient(ctx, x + 7, y + 3, 42, 12, isDisabled, isSelected || isHover);
-  Background.roundRectGradient(ctx, x + 7, y + 3, 42, 12, 5, true, false, false);
-  Background.drawText(ctx, x + 27, y + 12, name, 8, isDisabled, isSelected || isHover);
+  Background.setGreenGradient(
+    ctx,
+    x + 7,
+    y + 3,
+    42,
+    12,
+    isDisabled,
+    isSelected || isHover
+  );
+  Background.roundRectGradient(
+    ctx,
+    x + 7,
+    y + 3,
+    42,
+    12,
+    5,
+    true,
+    false,
+    false
+  );
+  Background.drawText(
+    ctx,
+    x + 27,
+    y + 12,
+    "Cannon",
+    8,
+    isDisabled,
+    isSelected || isHover
+  );
 
   //Draw Price Text
   Background.setBorderGradient(ctx, x + 6, y + 41, 44, 14, false);
   Background.roundRectGradient(ctx, x + 6, y + 41, 44, 14, 5, true, false);
-  Background.setGreenGradient(ctx, x + 7, y + 42, 42, 12, isDisabled, isSelected || isHover);
-  Background.roundRectGradient(ctx, x + 7, y + 42, 42, 12, 5, true, false, false);
-  Background.drawText(ctx, x + 27, y + 52, "$" + cost, 8, isDisabled, isSelected || isHover);
+  Background.setGreenGradient(
+    ctx,
+    x + 7,
+    y + 42,
+    42,
+    12,
+    isDisabled,
+    isSelected || isHover
+  );
+  Background.roundRectGradient(
+    ctx,
+    x + 7,
+    y + 42,
+    42,
+    12,
+    5,
+    true,
+    false,
+    false
+  );
+  Background.drawText(
+    ctx,
+    x + 27,
+    y + 52,
+    "$25",
+    8,
+    isDisabled,
+    isSelected || isHover
+  );
 
-  var isHighlighted = isSelected && !isDisabled;
-
-  SuperTower.towerMenu.drawAll(ctx);
+  //Cannons
+  if (isSelected && !isDisabled) {
+    Background.drawCannon(ctx, x + 29, y + 29, 0.75, 0.75, 0, true);
+  } else {
+    Background.drawCannon(ctx, x + 29, y + 29, 0.75, 0.75, 0, false);
+  }
 };
 
-//cannon box
-Background.drawCannon = function (ctx, x, y, scaleX, scaleY, rotation, isHighlighted) {
+Background.drawCannon = function (
+  ctx,
+  x,
+  y,
+  scaleX,
+  scaleY,
+  rotation,
+  isHighlighted
+) {
   ctx.fillStyle = "#555566";
   if (isHighlighted) {
     ctx.strokeStyle = "#00ff00";
@@ -304,7 +368,7 @@ Background.drawCannon = function (ctx, x, y, scaleX, scaleY, rotation, isHighlig
   ctx.save();
   ctx.translate(x, y);
   ctx.scale(scaleX, scaleY);
-  ctx.rotate(rotation);
+  ctx.rotate((rotation * Math.PI) / 180);
 
   ctx.beginPath();
   ctx.arc(0, 0, 15, 0, 2 * Math.PI);
@@ -336,427 +400,134 @@ Background.drawCannon = function (ctx, x, y, scaleX, scaleY, rotation, isHighlig
 
 Background.drawUpgradeTowerMenuStatic = function (ctx) {
   //Large Inset Border
-  Background.setBorderGradient(ctx, Background.WIDTH - 160, 410, 130, 160, true);
-  Background.roundRectGradient(ctx, Background.WIDTH - 160, 410, 130, 160, 20, true, false);
+  Background.setBorderGradient(
+    ctx,
+    Background.WIDTH - 160,
+    390,
+    130,
+    160,
+    true
+  );
+  Background.roundRectGradient(
+    ctx,
+    Background.WIDTH - 160,
+    390,
+    130,
+    160,
+    20,
+    true,
+    false
+  );
 
   //Top Inset Border
-  Background.setBorderGradient(ctx, 869, 416, 120, 57, true);
-  Background.roundRectGradient(ctx, 869, 416, 120, 57, 14, true, false);
+  Background.setBorderGradient(ctx, 869, 396, 120, 57, true);
+  Background.roundRectGradient(ctx, 869, 396, 120, 57, 14, true, false);
+
+  //Upgrade Towers Text Background
+  Background.setBorderGradient(ctx, 873, 399, 114, 25, false);
+  Background.roundRectGradient(ctx, 873, 399, 114, 25, 12, true, false);
+  Background.setGreenGradient(ctx, 875, 401, 110, 21, false, true);
+  Background.roundRectGradient(ctx, 875, 401, 110, 21, 12, true, false, false);
+
+  //Tower Type Text Background
+  Background.setBorderGradient(ctx, 912, 426, 72, 25, false);
+  Background.roundRectGradient(ctx, 912, 426, 72, 25, 14, true, false);
+  Background.setGreenGradient(ctx, 914, 428, 68, 21, false, true);
+  Background.roundRectGradient(ctx, 914, 428, 68, 21, 12, true, false, false);
 
   //Bottom Inset Border
-  Background.setBorderGradient(ctx, 869, 478, 120, 86, true);
-  Background.roundRectGradient(ctx, 869, 478, 120, 86, 14, true, false);
+  Background.setBorderGradient(ctx, 869, 458, 120, 86, true);
+  Background.roundRectGradient(ctx, 869, 458, 120, 86, 14, true, false);
+  //Upgrade Insets
+  Background.setBorderGradient(ctx, 873, 462, 112, 38, false);
+  Background.roundRectGradient(ctx, 873, 462, 112, 38, 14, true, false);
+  Background.setBorderGradient(ctx, 873, 502, 112, 38, false);
+  Background.roundRectGradient(ctx, 873, 502, 112, 38, 14, true, false);
 };
 
 Background.drawUpgradeTowerMenuDynamic = function (ctx) {
-  var selectedTower = SuperTower.towers.selectedTower;
-  //Upgrade Towers Text Background
-  Background.setBorderGradient(ctx, 873, 419, 114, 25, false);
-  Background.roundRectGradient(ctx, 873, 419, 114, 25, 12, true, false);
-  if (selectedTower == null) {
-    //Upgrade Tower Green Background
-    Background.setGreenGradient(ctx, 875, 421, 110, 21, true, false);
-    Background.roundRectGradient(ctx, 875, 421, 110, 21, 12, true, false, false);
-    //Upgrade Towers Text
-    Background.drawText(ctx, 930, 437, "UpgradeTower", 12, true, false);
-    //Tower Type Text Background
-    Background.setBorderGradient(ctx, 890, 446, 94, 25, false);
-    Background.roundRectGradient(ctx, 890, 446, 94, 25, 14, true, false);
-    Background.setGreenGradient(ctx, 892, 448, 90, 21, true, false);
-    Background.roundRectGradient(ctx, 892, 448, 90, 21, 12, true, false, false);
-    //Tower Type Text
-    Background.drawText(ctx, 935, 463, "None Selected", 10, true, false);
-  } else {
-    //Upgrade Towers Text Background
-    Background.setGreenGradient(ctx, 875, 421, 110, 21, false, true);
-    Background.roundRectGradient(ctx, 875, 421, 110, 21, 12, true, false, false);
-    //Upgrade Towers Text
-    Background.drawText(ctx, 930, 437, "UpgradeTower", 12, false, true);
-    //Tower Type Text Background
-    Background.setBorderGradient(ctx, 912, 446, 72, 25, false);
-    Background.roundRectGradient(ctx, 912, 446, 72, 25, 14, true, false);
-    Background.setGreenGradient(ctx, 914, 448, 68, 21, false, true);
-    Background.roundRectGradient(ctx, 914, 448, 68, 21, 12, true, false, false);
-    //Tower Type Text
-    Background.drawText(ctx, 949, 464, selectedTower.name, 12, false, true);
-  }
-  //draw the selected tower
-  if (selectedTower != null) {
-    var type = selectedTower.drawType;
-    var color1 = selectedTower.color1;
-    var color2 = selectedTower.color2;
-    var color3 = selectedTower.color3;
-    var color4 = selectedTower.color4;
-    var highlightColor = selectedTower.highlightColor;
-    var rotation = selectedTower.rotation;
-    if (type == 1) {
-      TowerDrawing.draw1(
-        ctx,
-        891,
-        458,
-        0.75,
-        0.75,
-        rotation,
-        true,
-        false,
-        color1,
-        color2,
-        color3,
-        color4,
-        highlightColor
-      );
-    } else if (type == 2) {
-      TowerDrawing.draw2(
-        ctx,
-        891,
-        458,
-        0.75,
-        0.75,
-        rotation,
-        true,
-        false,
-        color1,
-        color2,
-        color3,
-        color4,
-        highlightColor
-      );
-    } else if (type == 3) {
-      TowerDrawing.draw3(
-        ctx,
-        891,
-        458,
-        0.75,
-        0.75,
-        rotation,
-        true,
-        false,
-        color1,
-        color2,
-        color3,
-        color4,
-        highlightColor
-      );
-    } else if (type == 4) {
-      TowerDrawing.draw4(
-        ctx,
-        891,
-        458,
-        0.75,
-        0.75,
-        rotation,
-        true,
-        false,
-        color1,
-        color2,
-        color3,
-        color4,
-        highlightColor
-      );
-    } else if (type == 5) {
-      TowerDrawing.draw5(
-        ctx,
-        891,
-        458,
-        0.75,
-        0.75,
-        rotation,
-        true,
-        false,
-        color1,
-        color2,
-        color3,
-        color4,
-        highlightColor
-      );
-    } else if (type == 6) {
-      TowerDrawing.draw6(
-        ctx,
-        891,
-        458,
-        0.75,
-        0.75,
-        rotation,
-        true,
-        false,
-        color1,
-        color2,
-        color3,
-        color4,
-        highlightColor
-      );
-    }
-  }
-  if (selectedTower != null) {
-    //First Upgrade
-    var firstDisabled = true;
-    var firstHighlighted = false;
-    var firstUpgradeLevel = "";
-    var firstUpgradeCost = "";
-    var firstUpgradeName = "";
-    if (selectedTower.currentUpgradeOne >= selectedTower.upgradesOne.length) {
-      firstUpgradeName = "Fully Upgraded";
-      firstUpgradeLevel = "Max Level";
-      firstUpgradeCost = "N/A";
-    } else {
-      //read in the current upgrade
-      var curUpgrade = selectedTower.upgradesOne[selectedTower.currentUpgradeOne];
-      firstUpgradeLevel = "Level " + (selectedTower.currentUpgradeOne + 1);
-      firstUpgradeCost = "$" + curUpgrade.cost;
-      firstUpgradeName = curUpgrade.name;
-      if (curUpgrade.cost < SuperTower.cash) {
-        firstDisabled = false;
-        if (SuperTower.towerMenu.upgradeHighlighted == 1) firstHighlighted = true;
-      }
-    }
-    //Upgrade Insets
-    Background.setBorderGradient(ctx, 873, 482, 112, 38, false);
-    Background.roundRectGradient(ctx, 873, 482, 112, 38, 14, true, false);
-    //Name
-    Background.setBorderGradient(ctx, 878, 485, 102, 16, false);
-    Background.roundRectGradient(ctx, 878, 485, 102, 16, 6, true, false);
-    Background.setGreenGradient(ctx, 879, 486, 100, 14, firstDisabled, firstHighlighted);
-    Background.roundRectGradient(ctx, 879, 486, 100, 14, 5, true, false, false);
-    Background.drawText(ctx, 929, 497, firstUpgradeName, 9, firstDisabled, firstHighlighted);
-    //Level
-    Background.setBorderGradient(ctx, 878, 501, 65, 16, false);
-    Background.roundRectGradient(ctx, 878, 501, 65, 16, 6, true, false);
-    Background.setGreenGradient(ctx, 879, 502, 63, 14, firstDisabled, firstHighlighted);
-    Background.roundRectGradient(ctx, 879, 502, 63, 14, 5, true, false, false);
-    Background.drawText(ctx, 910, 513, firstUpgradeLevel, 9, firstDisabled, firstHighlighted);
-    //Cost
-    Background.setBorderGradient(ctx, 943, 501, 38, 16, false);
-    Background.roundRectGradient(ctx, 943, 501, 38, 16, 6, true, false);
-    Background.setGreenGradient(ctx, 944, 502, 36, 14, firstDisabled, firstHighlighted);
-    Background.roundRectGradient(ctx, 944, 502, 36, 14, 5, true, false, false);
-    Background.drawText(ctx, 960, 513, firstUpgradeCost, 9, firstDisabled, firstHighlighted);
+  //Upgrade Towers Text
+  Background.drawText(ctx, 930, 417, "UpgradeTower", 12, false, true);
+  //Tower Type Text
+  Background.drawText(ctx, 949, 444, "Cannon", 12, false, true);
+  //cannon
+  Background.drawCannon(ctx, 891, 438, 0.75, 0.75, 0, true);
 
-    //Second Upgrade
-    var secondDisabled = true;
-    var secondHighlighted = false;
-    var secondUpgradeLevel = "";
-    var secondUpgradeCost = "";
-    var secondUpgradeName = "";
-    if (selectedTower.currentUpgradeTwo >= selectedTower.upgradesTwo.length) {
-      secondUpgradeName = "Fully Upgraded";
-      secondUpgradeLevel = "Max Level";
-      secondUpgradeCost = "N/A";
-    } else {
-      //read in the current upgrade
-      var curUpgrade = selectedTower.upgradesTwo[selectedTower.currentUpgradeTwo];
-      secondUpgradeLevel = "Level " + (selectedTower.currentUpgradeTwo + 1);
-      secondUpgradeCost = "$" + curUpgrade.cost;
-      secondUpgradeName = curUpgrade.name;
-      if (curUpgrade.cost < SuperTower.cash) {
-        secondDisabled = false;
-        if (SuperTower.towerMenu.upgradeHighlighted == 2) secondHighlighted = true;
-      }
-    }
-    Background.setBorderGradient(ctx, 873, 522, 112, 38, false);
-    Background.roundRectGradient(ctx, 873, 522, 112, 38, 14, true, false);
-    Background.setBorderGradient(ctx, 878, 525, 102, 16, false);
-    Background.roundRectGradient(ctx, 878, 525, 102, 16, 6, true, false);
-    Background.setGreenGradient(ctx, 879, 526, 100, 14, secondDisabled, secondHighlighted);
-    Background.roundRectGradient(ctx, 879, 526, 100, 14, 5, true, false, false);
-    Background.drawText(ctx, 929, 537, secondUpgradeName, 9, secondDisabled, secondHighlighted);
-    Background.setBorderGradient(ctx, 878, 541, 65, 16, false);
-    Background.roundRectGradient(ctx, 878, 541, 65, 16, 6, true, false);
-    Background.setGreenGradient(ctx, 879, 542, 63, 14, secondDisabled, secondHighlighted);
-    Background.roundRectGradient(ctx, 879, 542, 63, 14, 5, true, false, false);
-    Background.drawText(ctx, 910, 553, secondUpgradeLevel, 9, secondDisabled, secondHighlighted);
-    Background.setBorderGradient(ctx, 943, 541, 38, 16, false);
-    Background.roundRectGradient(ctx, 943, 541, 38, 16, 6, true, false);
-    Background.setGreenGradient(ctx, 944, 542, 36, 14, secondDisabled, secondHighlighted);
-    Background.roundRectGradient(ctx, 944, 542, 36, 14, 5, true, false, false);
-    Background.drawText(ctx, 960, 553, secondUpgradeCost, 9, secondDisabled, secondHighlighted);
-  }
+  //First Upgrade
+  Background.setBorderGradient(ctx, 878, 465, 102, 16, false);
+  Background.roundRectGradient(ctx, 878, 465, 102, 16, 6, true, false);
+  Background.setGreenGradient(ctx, 879, 466, 100, 14, false, false);
+  Background.roundRectGradient(ctx, 879, 466, 100, 14, 5, true, false, false);
+  Background.drawText(ctx, 929, 477, "Upgrade Power", 9, false, false);
+  Background.setBorderGradient(ctx, 878, 481, 65, 16, false);
+  Background.roundRectGradient(ctx, 878, 481, 65, 16, 6, true, false);
+  Background.setGreenGradient(ctx, 879, 482, 63, 14, false, false);
+  Background.roundRectGradient(ctx, 879, 482, 63, 14, 5, true, false, false);
+  Background.drawText(ctx, 910, 493, "Level 1", 9, false, false);
+  Background.setBorderGradient(ctx, 943, 481, 38, 16, false);
+  Background.roundRectGradient(ctx, 943, 481, 38, 16, 6, true, false);
+  Background.setGreenGradient(ctx, 944, 482, 36, 14, false, false);
+  Background.roundRectGradient(ctx, 944, 482, 36, 14, 5, true, false, false);
+  Background.drawText(ctx, 960, 493, "$25", 9, false, false);
+  //Second Upgrade
+  Background.setBorderGradient(ctx, 878, 505, 102, 16, false);
+  Background.roundRectGradient(ctx, 878, 505, 102, 16, 6, true, false);
+  Background.setGreenGradient(ctx, 879, 506, 100, 14, true, false);
+  Background.roundRectGradient(ctx, 879, 506, 100, 14, 5, true, false, false);
+  Background.drawText(ctx, 929, 517, "Upgrade Range", 9, true, false);
+  Background.setBorderGradient(ctx, 878, 521, 65, 16, false);
+  Background.roundRectGradient(ctx, 878, 521, 65, 16, 6, true, false);
+  Background.setGreenGradient(ctx, 879, 522, 63, 14, true, false);
+  Background.roundRectGradient(ctx, 879, 522, 63, 14, 5, true, false, false);
+  Background.drawText(ctx, 910, 533, "Level 3", 9, true, false);
+  Background.setBorderGradient(ctx, 943, 521, 38, 16, false);
+  Background.roundRectGradient(ctx, 943, 521, 38, 16, 6, true, false);
+  Background.setGreenGradient(ctx, 944, 522, 36, 14, true, false);
+  Background.roundRectGradient(ctx, 944, 522, 36, 14, 5, true, false, false);
+  Background.drawText(ctx, 960, 533, "$250", 9, true, false);
 };
 
-//Live,Money,Kills,Missed (left side) BackGorund
 Background.drawHealthMoneyDisplayStatic = function (ctx) {
   //Inset Border
-  Background.setBorderGradient(ctx, 15, 30, 220, 70, true);
-  Background.roundRectGradient(ctx, 15, 30, 220, 70, 20, true, false);
+  Background.setBorderGradient(ctx, 30, 30, 150, 70, true);
+  Background.roundRectGradient(ctx, 30, 30, 150, 70, 20, true, false);
 
   //Money text background
-  Background.setBorderGradient(ctx, 25, 35, 110, 28, false);
-  Background.roundRectGradient(ctx, 25, 35, 110, 28, 14, true, false);
-  Background.setGreenGradient(ctx, 27, 37, 106, 24, false, true);
-  Background.roundRectGradient(ctx, 27, 37, 106, 24, 12, true, false, false);
+  Background.setBorderGradient(ctx, 40, 35, 130, 28, false);
+  Background.roundRectGradient(ctx, 40, 35, 130, 28, 14, true, false);
+  Background.setGreenGradient(ctx, 42, 37, 126, 24, false, true);
+  Background.roundRectGradient(ctx, 42, 37, 126, 24, 12, true, false, false);
 
   //Lives background
-  Background.setBorderGradient(ctx, 25, 66, 110, 28, false);
-  Background.roundRectGradient(ctx, 25, 66, 110, 28, 14, true, false);
-  Background.setGreenGradient(ctx, 27, 68, 106, 24, false, true);
-  Background.roundRectGradient(ctx, 27, 68, 106, 24, 12, true, false, false);
-
-  //kills text background
-  Background.setBorderGradient(ctx, 140, 35, 0, 28, false);
-  Background.roundRectGradient(ctx, 140, 35, 90, 28, 14, true, false);
-  Background.setGreenGradient(ctx, 142, 37, 86, 24, false, true);
-  Background.roundRectGradient(ctx, 142, 37, 86, 24, 12, true, false, false);
-
-  //missed background
-  Background.setBorderGradient(ctx, 140, 66, 90, 28, false);
-  Background.roundRectGradient(ctx, 140, 66, 90, 28, 14, true, false);
-  Background.setGreenGradient(ctx, 142, 68, 86, 24, false, true);
-  Background.roundRectGradient(ctx, 142, 68, 86, 24, 12, true, false, false);
+  Background.setBorderGradient(ctx, 40, 66, 130, 28, false);
+  Background.roundRectGradient(ctx, 40, 66, 130, 28, 14, true, false);
+  Background.setGreenGradient(ctx, 42, 68, 126, 24, false, true);
+  Background.roundRectGradient(ctx, 42, 68, 126, 24, 12, true, false, false);
 };
 
-//Lives,Money,Kills,Missed (left side) Text
 Background.drawHealthMoneyDisplayDynamic = function (ctx) {
-  //Lives text
-  Background.drawText(ctx, 79, 57, "Lives: " + SuperTower.lives, 12, false, true);
   //Money text
-  Background.drawText(ctx, 79, 87, "Cash: $" + SuperTower.cash, 12, false, true);
-  //kills text
-  Background.drawText(ctx, 184, 57, "Kills: " + SuperTower.kills, 12, false, true);
-  //missed text
-  Background.drawText(ctx, 184, 87, "Missed: " + SuperTower.missed, 12, false, true);
+  Background.drawText(ctx, 104, 57, "Cash: $100", 15, false, true);
+  //Lives text
+  Background.drawText(ctx, 104, 87, "Lives: 10", 15, false, true);
 };
 
-//Tower Status (right Side) BackGround
-Background.drawTowerStatusStatic = function (ctx) {
-  //Inset Border
-  Background.setBorderGradient(ctx, 1065, 30, 220, 258, true);
-  Background.roundRectGradient(ctx, 1065, 30, 220, 258, 20, true, false);
-
-  //Tower Status text background
-  Background.setBorderGradient(ctx, 1082, 45, 190, 34, false);
-  Background.roundRectGradient(ctx, 1082, 45, 190, 34, 14, true, false);
-  Background.setGreenGradient(ctx, 1087, 47, 186, 30, false, true);
-  Background.roundRectGradient(ctx, 1087, 47, 186, 30, 12, true, false, false);
-
-  //Tower Status text
-  Background.drawText(ctx, 1182, 72, "Tower Stauts", 18, false, true);
-};
-
-//Tower Status (right side) Text
-Background.drawTowerStatusDynamic = function (ctx, isSelected) {
-  for (var i = SuperTower.towers.towers.length - 1; i >= 0; i--) {
-    var tower = SuperTower.towers.towers[i];
-
-    //are we selected?
-    var isSelected = SuperTower.towers.selectedTower;
-    //Not selected
-    if (isSelected == null) {
-      //Radius background
-      Background.setBorderGradient(ctx, 1082, 85, 190, 28, false);
-      Background.roundRectGradient(ctx, 1082, 85, 190, 28, 14, true, false);
-      Background.setGreenGradient(ctx, 1087, 87, 186, 24, false, true);
-      Background.roundRectGradient(ctx, 1087, 87, 186, 24, 12, true, false, false);
-      //radius text
-      Background.drawText(ctx, 1182, 107, "Radius: N/A", 15, false, true);
-
-      //Damage background
-      Background.setBorderGradient(ctx, 1082, 125, 190, 28, false);
-      Background.roundRectGradient(ctx, 1082, 125, 190, 28, 14, true, false);
-      Background.setGreenGradient(ctx, 1087, 127, 186, 24, false, true);
-      Background.roundRectGradient(ctx, 1087, 127, 186, 24, 12, true, false, false);
-
-      //damage text
-      Background.drawText(ctx, 1182, 147, "Damage: N/A", 15, false, true);
-
-      //ArmorDamage background
-      Background.setBorderGradient(ctx, 1082, 165, 190, 28, false);
-      Background.roundRectGradient(ctx, 1082, 165, 190, 28, 14, true, false);
-      Background.setGreenGradient(ctx, 1087, 167, 186, 24, false, true);
-      Background.roundRectGradient(ctx, 1087, 167, 186, 24, 12, true, false, false);
-
-      //armor damage text
-      Background.drawText(ctx, 1182, 187, "Armor Damage: N/A", 15, false, true);
-
-      //Range background
-      Background.setBorderGradient(ctx, 1082, 205, 190, 28, false);
-      Background.roundRectGradient(ctx, 1082, 205, 190, 28, 14, true, false);
-      Background.setGreenGradient(ctx, 1087, 207, 186, 24, false, true);
-      Background.roundRectGradient(ctx, 1087, 207, 186, 24, 12, true, false, false);
-      //range text
-      Background.drawText(ctx, 1182, 227, "Range: N/A", 15, false, true);
-
-      //Speed background
-      Background.setBorderGradient(ctx, 1082, 245, 190, 28, false);
-      Background.roundRectGradient(ctx, 1082, 245, 190, 28, 14, true, false);
-      Background.setGreenGradient(ctx, 1087, 247, 186, 24, false, true);
-      Background.roundRectGradient(ctx, 1087, 247, 186, 24, 12, true, false, false);
-      //speed text
-      Background.drawText(ctx, 1182, 267, "Speed: N/A", 15, false, true);
-    }
-    //selected
-    else {
-      //check if it is a suport or if it has a buff radius
-      if (isSelected.name == "Support" || isSelected.buffRadius > 0) {
-        //Radius background
-        Background.setBorderGradient(ctx, 1082, 85, 190, 28, false);
-        Background.roundRectGradient(ctx, 1082, 85, 190, 28, 14, true, false);
-        Background.setGreenGradient(ctx, 1087, 87, 186, 24, false, true);
-        Background.roundRectGradient(ctx, 1087, 87, 186, 24, 12, true, false, false);
-        //Name text
-        Background.drawText(ctx, 1182, 107, "Radius: " + isSelected.buffRadius, 15, false, true);
-      } else {
-        //Radius background
-        Background.setBorderGradient(ctx, 1082, 85, 190, 28, false);
-        Background.roundRectGradient(ctx, 1082, 85, 190, 28, 14, true, false);
-        Background.setGreenGradient(ctx, 1087, 87, 186, 24, false, true);
-        Background.roundRectGradient(ctx, 1087, 87, 186, 24, 12, true, false, false);
-        //radius text
-        Background.drawText(ctx, 1182, 107, "Radius: N/A", 15, false, true);
-      }
-
-      //Damage background
-      Background.setBorderGradient(ctx, 1082, 125, 190, 28, false);
-      Background.roundRectGradient(ctx, 1082, 125, 190, 28, 14, true, false);
-      Background.setGreenGradient(ctx, 1087, 127, 186, 24, false, true);
-      Background.roundRectGradient(ctx, 1087, 127, 186, 24, 12, true, false, false);
-
-      //Damage text
-      Background.drawText(ctx, 1182, 147, "Damage: " + isSelected.damage, 15, false, true);
-
-      //ArmorDamage background
-      Background.setBorderGradient(ctx, 1082, 165, 190, 28, false);
-      Background.roundRectGradient(ctx, 1082, 165, 190, 28, 14, true, false);
-      Background.setGreenGradient(ctx, 1087, 167, 186, 24, false, true);
-      Background.roundRectGradient(ctx, 1087, 167, 186, 24, 12, true, false, false);
-
-      //Armor Damage text
-      Background.drawText(ctx, 1182, 187, "Armor Damage: " + isSelected.armorDamage, 12, false, true);
-
-      //Range background
-      Background.setBorderGradient(ctx, 1082, 205, 190, 28, false);
-      Background.roundRectGradient(ctx, 1082, 205, 190, 28, 14, true, false);
-      Background.setGreenGradient(ctx, 1087, 207, 186, 24, false, true);
-      Background.roundRectGradient(ctx, 1087, 207, 186, 24, 12, true, false, false);
-      //Range text
-      Background.drawText(ctx, 1182, 227, "Range: " + isSelected.range, 15, false, true);
-
-      //Speed background
-      Background.setBorderGradient(ctx, 1082, 245, 190, 28, false);
-      Background.roundRectGradient(ctx, 1082, 245, 190, 28, 14, true, false);
-      Background.setGreenGradient(ctx, 1087, 247, 186, 24, false, true);
-      Background.roundRectGradient(ctx, 1087, 247, 186, 24, 12, true, false, false);
-      //Speed text
-      Background.drawText(ctx, 1182, 267, "Speed: " + isSelected.framesPerShot, 15, false, true);
-    }
-  }
-};
-
-//SUPER TOWER DEFENSE display
 Background.drawTitleStatic = function (ctx) {
   //inset border
-  Background.setBorderGradient(ctx, 240, 30, 590, 70, true);
-  Background.roundRectGradient(ctx, 240, 30, 590, 70, 20, true, false);
+  Background.setBorderGradient(ctx, 190, 30, 650, 70, true);
+  Background.roundRectGradient(ctx, 190, 30, 650, 70, 20, true, false);
   //title text
-  Background.setBorderGradient(ctx, 255, 35, 560, 60, false);
-  Background.roundRectGradient(ctx, 255, 35, 560, 60, 30, true, false);
-  Background.setGreenGradient(ctx, 258, 38, 552, 54, false, true);
-  Background.roundRectGradient(ctx, 258, 38, 552, 54, 27, true, false, false);
+  Background.setBorderGradient(ctx, 210, 35, 610, 60, false);
+  Background.roundRectGradient(ctx, 210, 35, 610, 60, 30, true, false);
+  Background.setGreenGradient(ctx, 213, 38, 602, 54, false, true);
+  Background.roundRectGradient(ctx, 213, 38, 602, 54, 27, true, false, false);
   ctx.font = "42pt Impact";
   ctx.textAlign = "center";
   ctx.fillStyle = "rgba(0,0,0, 1.000)";
-  ctx.fillText("Super Tower Defense", 538, 86);
+  ctx.fillText("Super Tower Defense", 523, 86);
   //Background.drawText(ctx, 522, 85, "Super Tower Defense", 42, false, true);
   ctx.fillStyle = "rgba(0,80,80, 1.000)";
-  ctx.fillText("Super Tower Defense", 537, 85);
+  ctx.fillText("Super Tower Defense", 522, 85);
 };
 
 /**
@@ -778,7 +549,17 @@ Background.drawTitleStatic = function (ctx) {
  * @param {Boolean} [stroke = true] Whether to stroke the rectangle.
  * @param {Boolean} [twoGradients = true] Whether to draw a rectangular gradient
  */
-Background.roundRectGradient = function (ctx, x, y, width, height, radius, fill, stroke, twoGradient) {
+Background.roundRectGradient = function (
+  ctx,
+  x,
+  y,
+  width,
+  height,
+  radius,
+  fill,
+  stroke,
+  twoGradient
+) {
   if (typeof stroke == "undefined") {
     stroke = true;
   }
@@ -801,7 +582,12 @@ Background.roundRectGradient = function (ctx, x, y, width, height, radius, fill,
   ctx.lineTo(x + width - radius.tr, y);
   ctx.quadraticCurveTo(x + width, y, x + width, y + radius.tr);
   ctx.lineTo(x + width, y + height - radius.br);
-  ctx.quadraticCurveTo(x + width, y + height, x + width - radius.br, y + height);
+  ctx.quadraticCurveTo(
+    x + width,
+    y + height,
+    x + width - radius.br,
+    y + height
+  );
   ctx.lineTo(x + radius.bl, y + height);
   ctx.quadraticCurveTo(x, y + height, x, y + height - radius.bl);
   ctx.lineTo(x, y + radius.tl);
@@ -827,7 +613,12 @@ Background.roundRectGradient = function (ctx, x, y, width, height, radius, fill,
       ctx.lineTo(x + width - radius.tr, y);
       ctx.quadraticCurveTo(x + width, y, x + width, y + radius.tr);
       ctx.lineTo(x + width, y + height - radius.br);
-      ctx.quadraticCurveTo(x + width, y + height, x + width - radius.br, y + height);
+      ctx.quadraticCurveTo(
+        x + width,
+        y + height,
+        x + width - radius.br,
+        y + height
+      );
       ctx.lineTo(x + radius.bl, y + height);
       ctx.quadraticCurveTo(x, y + height, x, y + height - radius.bl);
       ctx.lineTo(x, y + radius.tl);
@@ -867,7 +658,22 @@ Background.roundRectGradient = function (ctx, x, y, width, height, radius, fill,
  * @param {Boolean} [fill = false] Whether to fill the rectangle.
  * @param {Boolean} [stroke = true] Whether to stroke the rectangle.
  */
-Background.drawScreen = function (ctx, x, y, width, height, x2, y2, width2, height2, radius, fill, stroke, grd, grd2) {
+Background.drawScreen = function (
+  ctx,
+  x,
+  y,
+  width,
+  height,
+  x2,
+  y2,
+  width2,
+  height2,
+  radius,
+  fill,
+  stroke,
+  grd,
+  grd2
+) {
   if (typeof stroke == "undefined") {
     stroke = true;
   }
@@ -889,7 +695,12 @@ Background.drawScreen = function (ctx, x, y, width, height, x2, y2, width2, heig
   ctx.lineTo(x + width - radius.tr, y);
   ctx.quadraticCurveTo(x + width, y, x + width, y + radius.tr);
   ctx.lineTo(x + width, y + height - radius.br);
-  ctx.quadraticCurveTo(x + width, y + height, x + width - radius.br, y + height);
+  ctx.quadraticCurveTo(
+    x + width,
+    y + height,
+    x + width - radius.br,
+    y + height
+  );
   ctx.lineTo(x + radius.bl, y + height);
   ctx.quadraticCurveTo(x, y + height, x, y + height - radius.bl);
   ctx.lineTo(x, y + radius.tl);
@@ -902,7 +713,12 @@ Background.drawScreen = function (ctx, x, y, width, height, x2, y2, width2, heig
   ctx.lineTo(x2, y2 + height2 - radius.bl);
   ctx.quadraticCurveTo(x2, y2 + height2, x2 + radius.bl, y2 + height2);
   ctx.lineTo(x2 + width2 - radius.br, y2 + height2);
-  ctx.quadraticCurveTo(x2 + width2, y2 + height2, x2 + width2, y2 + height2 - radius.br);
+  ctx.quadraticCurveTo(
+    x2 + width2,
+    y2 + height2,
+    x2 + width2,
+    y2 + height2 - radius.br
+  );
   ctx.lineTo(x2 + width2, y2 + radius.tr);
   ctx.quadraticCurveTo(x2 + width2, y2, x2 + width2 - radius.tr, y2);
   ctx.lineTo(x2 + radius.tl, y2);
@@ -928,7 +744,12 @@ Background.drawScreen = function (ctx, x, y, width, height, x2, y2, width2, heig
     ctx.lineTo(x + width - radius.tr, y);
     ctx.quadraticCurveTo(x + width, y, x + width, y + radius.tr);
     ctx.lineTo(x + width, y + height - radius.br);
-    ctx.quadraticCurveTo(x + width, y + height, x + width - radius.br, y + height);
+    ctx.quadraticCurveTo(
+      x + width,
+      y + height,
+      x + width - radius.br,
+      y + height
+    );
     ctx.lineTo(x + radius.bl, y + height);
     ctx.quadraticCurveTo(x, y + height, x, y + height - radius.bl);
     ctx.lineTo(x, y + radius.tl);
@@ -941,7 +762,12 @@ Background.drawScreen = function (ctx, x, y, width, height, x2, y2, width2, heig
     ctx.lineTo(x2, y2 + height2 - radius.bl);
     ctx.quadraticCurveTo(x2, y2 + height2, x2 + radius.bl, y2 + height2);
     ctx.lineTo(x2 + width2 - radius.br, y2 + height2);
-    ctx.quadraticCurveTo(x2 + width2, y2 + height2, x2 + width2, y2 + height2 - radius.br);
+    ctx.quadraticCurveTo(
+      x2 + width2,
+      y2 + height2,
+      x2 + width2,
+      y2 + height2 - radius.br
+    );
     ctx.lineTo(x2 + width2, y2 + radius.tr);
     ctx.quadraticCurveTo(x2 + width2, y2, x2 + width2 - radius.tr, y2);
     ctx.lineTo(x2 + radius.tl, y2);
@@ -958,7 +784,7 @@ Background.drawScreen = function (ctx, x, y, width, height, x2, y2, width2, heig
   }
 };
 
-//Creates Indented / Button style gradients
+//Creates Creates Indented / Button style gradients
 Background.setBorderGradient = function (ctx, x, y, width, height, indented) {
   ctx.fillStyle = "#222222";
   Background.grd = ctx.createLinearGradient(150.0, y, 150.0, y + height);
@@ -989,7 +815,15 @@ Background.setBorderGradient = function (ctx, x, y, width, height, indented) {
 };
 
 //Sets button gradients for green behind text
-Background.setGreenGradient = function (ctx, x, y, width, height, isDisabled, isHighlighted) {
+Background.setGreenGradient = function (
+  ctx,
+  x,
+  y,
+  width,
+  height,
+  isDisabled,
+  isHighlighted
+) {
   ctx.fillStyle = "#222222";
   Background.grd = ctx.createLinearGradient(150.0, y, 150.0, y + height);
   if (isDisabled) {
@@ -1008,7 +842,15 @@ Background.setGreenGradient = function (ctx, x, y, width, height, isDisabled, is
 };
 
 //draws text for the background
-Background.drawText = function (ctx, x, y, text, fontSize, isDisabled, isHighlighted) {
+Background.drawText = function (
+  ctx,
+  x,
+  y,
+  text,
+  fontSize,
+  isDisabled,
+  isHighlighted
+) {
   ctx.font = fontSize + "pt Impact";
   ctx.textAlign = "center";
   ctx.fillStyle = "rgba(10,10,10, 1.000)";
@@ -1024,7 +866,15 @@ Background.drawText = function (ctx, x, y, text, fontSize, isDisabled, isHighlig
   ctx.fillText(text, x, y);
 };
 
-/*//draws the position of the mouse to the screen
-Background.drawMousePosition = function(ctx, mouseX, mouseY){
-	Background.drawText(ctx, 930, 570, "Mouse x: " + mouseX + ",  Mouse y: " + mouseY, 9, false, false);
-}*/
+//draws the position of the mouse to the screen
+Background.drawMousePosition = function (ctx, mouseX, mouseY) {
+  Background.drawText(
+    ctx,
+    930,
+    570,
+    "Mouse x: " + mouseX + ",  Mouse y: " + mouseY,
+    9,
+    false,
+    false
+  );
+};

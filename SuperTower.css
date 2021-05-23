@@ -1,6 +1,5 @@
 body {
-  /* background-image: url("Images/background.gif"); */
-  background-color: darkcyan;
+  background-color: #222222;
 }
 
 div {
@@ -11,7 +10,7 @@ div {
 
 canvas {
   border-radius: 20px;
-  width: 1324px;
+  width: 1024px;
   height: 576px;
   position: absolute;
   top: 5px;

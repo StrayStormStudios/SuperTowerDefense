@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Super Tower!</title>
+    <link rel="stylesheet" type="text/css" href="SuperTower.css" />
+  </head>
+
+  <body>
+    <section>
+      <div
+        id="canvasesdiv"
+        style="position: relative; width: 1054px; height: 606px"
+      >
+        <canvas
+          id="layerBackgroundImage"
+          style="z-index: 1"
+          height="576px"
+          width="1024"
+        >
+          This text is displayed if your browser does not support HTML5 Canvas.
+        </canvas>
+        <canvas id="layerStage" style="z-index: 2" height="576px" width="1024">
+          This text is displayed if your browser does not support HTML5 Canvas.
+        </canvas>
+        <canvas
+          id="layerUIStatic"
+          style="z-index: 3"
+          height="576px"
+          width="1024"
+        >
+          This text is displayed if your browser does not support HTML5 Canvas.
+        </canvas>
+        <canvas
+          id="layerUIDynamic"
+          style="z-index: 4"
+          height="576px"
+          width="1024"
+        >
+          This text is displayed if your browser does not support HTML5 Canvas.
+        </canvas>
+      </div>
+
+      <script src="Utilities.js"></script>
+      <script src="Background.js"></script>
+      <script src="SuperTower.js"></script>
+      <script>
+        SuperTower.init();
+      </script>
+    </section>
+  </body>
+</html>
