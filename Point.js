@@ -1,155 +1,82 @@
-//Point - Defines a point class
-
+/*Point - Defines a point class
+ * @param {Number} x the x coordinate
+ * @param {Number} y the y coordinate
+ */
 function Point(x, y) {
   this.x = x;
   this.y = y;
 }
 
-//returns the distance from two points
-Point.prototype.distanceFrom = function (p) {
-  var xDist = this.x - p.x;
-  var yDist = this.y - p.y;
-  return Math.sqrt(xDist * xDist + yDist * yDist);
-};
-
-Point.prototype.getX = function () {
-  return this.x;
-};
-
-Point.prototype.getY = function () {
-  return this.y;
-};
-
-Point.prototype.setX = function (x) {
-  this.x = x;
-};
-
-Point.prototype.setY = function (y) {
-  this.y = y;
-};
-
-Point.prototype.print = function (x) {
+/*prints the current point in the form (x,y)
+ */
+Point.prototype.print = function () {
   return "(" + this.x + "," + this.y + ")";
 };
 
-/* Draws a rectangle between two points
- * @param {CanvasRenderingContext2D} ctx The canvas context
- * @param {Point[]} points An array of points for the path
- * @param {double} width Half the path's width (path will extend width from center line)
- * @param {String} color The color to draw the path
- * @param {String} highlightColor the color of the middle gradient
- * @param {String} shadowColor The color to draw the dropShadow of the path.
- * @param {Boolean} hide If false, the path is not drawn. If true it is drawn
+/*returns the distance from two points
+ * @param {Point} other another point
+ * @return {Number} The distance between this and other
  */
-Point.prototype.draw = function (
-  point2,
-  ctx,
-  width,
-  color,
-  highlightColor,
-  shadowColor,
-  hide
-) {
-  //console.log(width+ "," + color + "," + highlightColor + "," + shadowColor + "," + hide);
-  if (!hide) {
-    //set color
-    ctx.fillStyle = shadowColor;
-    var xShadow = 0;
-    var yShadow = 3;
-    //get vectors
-    var dx = this.x - point2.x;
-    var dy = this.y - point2.y;
-    //get perpendicular vectors
-    var pdx = -1 * dy;
-    var pdy = dx;
-    //normalize the perpendicular vectors and multiply by width
-    var pMag = Math.sqrt(pdx * pdx + pdy * pdy);
-    var pdx = (pdx * width) / pMag;
-    var pdy = (pdy * width) / pMag;
+Point.prototype.distanceFrom = function (other) {
+  var xDist = this.x - other.x;
+  var yDist = this.y - other.y;
+  return Math.sqrt(xDist * xDist + yDist * yDist);
+};
 
-    for (var i = 0; i < 2; i++) {
-      //draw the box
-      ctx.beginPath();
-      //point 1
-      var x1 = this.x + xShadow + pdx;
-      var y1 = this.y + yShadow + pdy;
-      ctx.moveTo(x1, y1);
-      //point 2
-      var x2 = x1 + -1 * dx;
-      var y2 = y1 + -1 * dy;
-      ctx.lineTo(x2, y2);
-      //point 3
-      var x3 = x2 + -2 * pdx;
-      var y3 = y2 + -2 * pdy;
-      ctx.lineTo(x3, y3);
-      //point 4
-      var x4 = x3 + dx;
-      var y4 = y3 + dy;
-      ctx.lineTo(x4, y4);
-      ctx.lineTo(x1, y1);
-      ctx.closePath();
-      if (i == 1) {
-        ctx.fillStyle = grd;
-      }
-      ctx.fill();
+/* Returns the midpoint between current point and other point
+ * @param {Point} other another point
+ * @return {Point} The midpoint
+ */
+Point.prototype.midpoint = function (other) {
+  var x = (this.x + other.x) / 2.0;
+  var y = (this.y + other.y) / 2.0;
+  return new Point(x, y);
+};
 
-      //draw the front circle
-      ctx.beginPath();
-      ctx.arc(this.x + xShadow, this.y + yShadow, width, 0, 2 * Math.PI);
-      ctx.closePath();
-      if (i == 1) {
-        ctx.fillStyle = color;
-        ctx.fillStyle = grd2;
-      }
-      ctx.fill();
-      //draw the end circle
-      ctx.beginPath();
-      ctx.arc(point2.x + xShadow, point2.y + yShadow, width, 0, 2 * Math.PI);
-      ctx.closePath();
-      if (i == 1) {
-        ctx.fillStyle = color;
-        ctx.fillStyle = grd3;
-      }
-      ctx.fill();
+/* returns the cross product of current point and another point
+ * @param {Point} other another point
+ * @return {Number} this X other
+ */
+Point.prototype.crossProduct = function (other) {
+  return this.x * other.y - this.y * other.x;
+};
 
-      //set up gradients
-      ctx.fillStyle = color;
-      var grd = ctx.createLinearGradient(
-        this.x + pdx,
-        this.y + pdy,
-        this.x - pdx,
-        this.y - pdy
-      );
-      grd.addColorStop(0.0, color);
-      grd.addColorStop(0.5, highlightColor);
-      grd.addColorStop(1.0, color);
+/*returns the crossProduct of two vectors
+@param {Point} v The first vector to cross
+@param {point} w The second vector to cross
+@return {Number} The v X w
+*/
+Point.prototype.crossProduct = function (v, w) {
+  return v.x * w.y - v.y * w.x;
+};
 
-      var grd2 = ctx.createRadialGradient(
-        this.x,
-        this.y,
-        0,
-        this.x,
-        this.y,
-        width
-      );
-      grd2.addColorStop(0.0, highlightColor);
-      grd2.addColorStop(0.6, highlightColor);
-      grd2.addColorStop(1.0, color);
+/*returns the vector between two points
+ * @param {Point} other another point
+ * @return {Point} The vector between the two points
+ */
+Point.prototype.getVector = function (other) {
+  var i = other.x - this.x;
+  var j = other.y - this.y;
+  return new Point(i, j);
+};
 
-      var grd3 = ctx.createRadialGradient(
-        point2.x,
-        point2.y,
-        0,
-        point2.x,
-        point2.y,
-        width
-      );
-      grd3.addColorStop(0.0, highlightColor);
-      grd3.addColorStop(0.6, highlightColor);
-      grd3.addColorStop(1.0, color);
+/*returns the normal to the given vector
+ * @return {Point} The vector between the two points
+ */
+Point.prototype.getNormal = function () {
+  var i = -1 * this.y;
+  var j = this.x;
+  return new Point(i, j);
+};
 
-      xShadow = 0;
-      yShadow = 0;
-    }
+/*Normalizes a vector (gives the vector a unit length of 1)
+ * @return {Point}
+ */
+Point.prototype.normalize = function () {
+  if (x == 0 && y == 0) {
+    return new Point(0, 0);
+  } else {
+    var length = this.distanceFrom(new Point(0, 0));
+    return new Point(this.x / length, this.y / length);
   }
 };

@@ -86,7 +86,7 @@ StageList.prototype.addStage1 = function () {
   var startHighlightColor = "#33aaee";
   var endColor = "#004466";
   var endHighlightColor = "#006688";
-  var hide = true;
+  var hide = false;
 
   stage.addPath(
     points1,
@@ -499,15 +499,15 @@ StageList.prototype.addStage7 = function () {
   points1[38] = new Point(365, 320);
   points1[39] = new Point(320, 310);
 
-  var width = 10.0;
+  var width = 12.0;
 
-  var color = "#007799";
+  var color = "#336600"; //007799
   var highlightColor = "#0099bb";
   var shadowColor = "#003333";
-  var startColor = "#0099bb";
-  var startHighlightColor = "#33aaee";
-  var endColor = "#004466";
-  var endHighlightColor = "#006688";
+  var startColor = "#999999"; //cc3300  //0099bb
+  var startHighlightColor = "#4d4d4d"; //992600  //33aaee
+  var endColor = "#4d4d4d"; //802000  //004466
+  var endHighlightColor = "#8c8c8c"; //ff4000  //006688
   var hide = false;
   stage.addPath(
     points1,

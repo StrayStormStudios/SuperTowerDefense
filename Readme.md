@@ -28,6 +28,8 @@ Please make sure to update tests as appropriate.
 
 ## Versions & Change Log
 
+### Version 2C: Better looking Paths
+
 ### Version 2B: Add my own stages and pathing
 
 ### Version 2A: Create stage files and draw the enemy paths

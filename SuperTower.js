@@ -66,7 +66,7 @@ SuperTower.init = function () {
   //Create Stages
   SuperTower.createStages();
 
-  SuperTower.stage = 9;
+  SuperTower.stage = 7;
   SuperTower.wave = 0;
 
   //redraw everything
