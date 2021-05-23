@@ -32,6 +32,8 @@ Please make sure to update tests as appropriate.
 
 ## Versions & Change Log
 
+### Version 6: Add Game Functionality
+
 ### Version 5: Draw Towers, Create Towers, place Towers
 
 ### Version 4: Add Waves
