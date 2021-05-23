@@ -28,6 +28,8 @@ Please make sure to update tests as appropriate.
 
 ## Versions & Change Log
 
+### Version 3A: Add Enemies
+
 ### Version 2C: Better looking Paths
 
 ### Version 2B: Add my own stages and pathing
