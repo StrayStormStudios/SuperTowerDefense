@@ -1,60 +1,50 @@
-/*defines a game stage (path, wave, ect)
- * @param {Number} ID --> the stage id (0,1,2,3... ect)
- * @param {Iamge} backgorundImage the stage's background images
- */
-function stage(id, backgroundImage) {
+function Stage(id, backgroundImage) {
   this.id = id;
   this.backgroundImage = backgroundImage;
-  this.path = new array();
-  //todo... add waves, starting money ect
+  this.paths = new Array();
 }
 
 /*Adds a path to the stage
- * @param [Point[]} points An array of points for the path
- * @param {double} width Half the path's width (Path will extend width form center line)
+ * @param {Point[]} points An array of points for the path
+ * @param {double} width Half the path's width (path will extend width from center line)
  * @param {String} color The color to draw the path
- * @param {String} hightlight color the gradiant highligth of the path
- * @param {String} shadowColor The color of the path's shadowColor
- * @param {String} the starColor the color of the starting circle
- * @param {String} startColorHighlight The highlight color of the starting circle
- * @param {String} endColor The color of the ending circle
- * @param {String} endColorHighlight The highlight color of the ending circle
- * @param {Boolean} hide if false the path is draw, if true the path is not drawn
+ * @param {String} highlightColor The color to draw the gradient highlights
+ * @param {String} shadowColor The color to draw the dropShadow of the path.
+ * @param {String} startColor The color to draw the start of a path
+ * @param {String} startHighlightColor The color of the start for gradient
+ * @param {String} endColor The color to draw the end of a path
+ * @param {String} endHighlightColor The color to draw the end for gradient
+ * @param {Boolean} hide If false, the path is not drawn. If true it is drawn
  */
-Stage.addPath = function (
+Stage.prototype.addPath = function (
   points,
   width,
   color,
-  highlightcolor,
+  highlightColor,
   shadowColor,
-  starColor,
-  startColorHighlight,
+  startColor,
+  startHighlightColor,
   endColor,
-  endColorHighlight,
+  endHighlightColor,
   hide
 ) {
   var path = new Path(
     points,
     width,
     color,
-    highlightcolor,
+    highlightColor,
     shadowColor,
-    starColor,
-    startColorHighlight,
+    startColor,
+    startHighlightColor,
     endColor,
-    endColorHighlight,
+    endHighlightColor,
     hide
   );
   this.paths.push(path);
 };
 
-//draws all paths
 Stage.prototype.draw = function (ctx) {
-  //loop through all the pahts
-  for (var i = 0; i < this.paht.length; i++) {
-    //draw each path
+  for (var i = 0; i < this.paths.length; i++) {
     this.paths[i].draw(ctx);
   }
 };
-
-//save the as stage.js

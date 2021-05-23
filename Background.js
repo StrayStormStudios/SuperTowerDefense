@@ -368,7 +368,7 @@ Background.drawCannon = function (
   ctx.save();
   ctx.translate(x, y);
   ctx.scale(scaleX, scaleY);
-  ctx.rotate((rotation * Math.PI) / 180);
+  ctx.rotate(rotation);
 
   ctx.beginPath();
   ctx.arc(0, 0, 15, 0, 2 * Math.PI);

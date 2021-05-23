@@ -5,8 +5,8 @@
  * html and css.
  */
 //Create the class
-
 function SuperTower() {}
+
 /*Class fields */
 //Canvas Layers
 SuperTower.layerBackgroundImage;
@@ -24,18 +24,19 @@ SuperTower.ctxUIDynamic;
 SuperTower.mouseX;
 SuperTower.mouseY;
 
-//stages
+//Stages
 SuperTower.stageList;
-//current stage/wave
-SuperTower.stage;
-SuperTower.wave;
 
 SuperTower.backgroundImage = new Image();
 
+//current stage / wave
+SuperTower.stage;
+SuperTower.wave;
+
 /* Initializes the game with initial states and calls the main game loop
  */
-
 SuperTower.init = function () {
+  //setup layers
   SuperTower.backgroundImage.src = "background1.png";
   SuperTower.layerBackgroundImage = document.getElementById(
     "layerBackgroundImage"
@@ -62,14 +63,15 @@ SuperTower.init = function () {
     SuperTower.mouseY = e.clientY - rect.top;
   });
 
-  //create stages
+  //Create Stages
   SuperTower.createStages();
 
-  SuperTower.stage = 0;
+  SuperTower.stage = 9;
   SuperTower.wave = 0;
 
   //redraw everything
   SuperTower.drawAll();
+
   //main game loop
   setInterval(SuperTower.playGame, 20);
 };
@@ -84,10 +86,11 @@ SuperTower.drawAll = function () {
     SuperTower.ctxBackgroundImage,
     SuperTower.ctxUIStatic,
     SuperTower.ctxUIDynamic,
-    SuperTower.backgroundImage,
+    SuperTower.stageList.stages[SuperTower.stage].backgroundImage,
     SuperTower.mouseX,
     SuperTower.mouseY
   );
+  SuperTower.stageList.draw(SuperTower.ctxStage, SuperTower.stage);
 };
 
 SuperTower.drawDynamic = function () {
@@ -96,4 +99,8 @@ SuperTower.drawDynamic = function () {
     SuperTower.mouseX,
     SuperTower.mouseY
   );
+};
+
+SuperTower.createStages = function () {
+  SuperTower.stageList = new StageList();
 };
