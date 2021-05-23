@@ -1,49 +1,49 @@
 /*Handles create for a variety of tower types*/
 function TowerType() {}
 
-/*constructs a tpye of tower at a given loctation and returns the object
+/*constructs a type of tower at a given location and returns the object
  * @param {Point} position the tower's x and y position
- * @param {Numebr} rotation the tower's rotation in radians
+ * @param {Number} rotation the tower's rotation in radians
  * @param {Number} type Tower type(1-6)
  */
-ToewrType.createTower = function (position, rotation, type) {
-  if (Type == 1) {
+TowerType.createTower = function (position, rotation, type) {
+  if (type == 1) {
     return TowerType.createTower1(position, rotation);
-  } else if (Type == 2) {
+  } else if (type == 2) {
     return TowerType.createTower2(position, rotation);
-  } else if (Type == 3) {
+  } else if (type == 3) {
     return TowerType.createTower3(position, rotation);
-  } else if (Type == 4) {
+  } else if (type == 4) {
     return TowerType.createTower4(position, rotation);
-  } else if (Type == 5) {
+  } else if (type == 5) {
     return TowerType.createTower5(position, rotation);
-  } else if (Type == 6) {
+  } else if (type == 6) {
     return TowerType.createTower6(position, rotation);
   } else {
-    console.log("Bad Tower type (should be 1-6): values was " + type);
+    console.log("Bad tower type (should be 1-6): value was " + type);
   }
 };
 
-/*constructs a basic cannon tower (tower 1) at a given location and rerturns the object
- *	cannon towers have a large initail damage and then small explosion damage
+/*constructs a basic Cannon tower (tower 1) at a given location and returns the object
+ * 	cannon towers have a large initial damage and then small explosion damage
  * @param {Point} position the tower's x and y position
- * @param {Numebr} rotation the tower's rotation in radians
+ * @param {Number} rotation the tower's rotation in radians
  * @return {Tower} returns the tower
  */
-TowerType.createTower1 = function (position, rotation) {
-  //basic range, damge and speed
+TowerType.createTower1 = function (position, rotation, upgraded) {
+  //basic range, damage and speed
   var range = 80;
-  var damage = 100;
-  var armorDamage = 75;
+  var damage = 25;
+  var armorDamage = 50;
   var framesPerShot = 25;
   var bulletSpeed = 4; //ideally range should be divisible by this value
   var numberShots = 1;
 
   //does this tower fire exploding bullets?
   var explodes = true;
-  var explosionRadius = 10;
-  var explosionDamage = 25;
-  var explosionArmorDamage = 5;
+  var explosionRadius = 20;
+  var explosionDamage = 20;
+  var explosionArmorDamage = 15;
 
   //tower upgrades
   var upgradesOne = new Array();
@@ -51,7 +51,7 @@ TowerType.createTower1 = function (position, rotation) {
   upgradesOne.push(new TowerUpgrade("armorDamage", "Armor Damage+", 50, 100));
   upgradesOne.push(new TowerUpgrade("damage", "Damage++", 100, 200));
   upgradesOne.push(new TowerUpgrade("armorDamage", "Armor Damage++", 150, 200));
-  var upgradeTwo = new Array();
+  var upgradesTwo = new Array();
   upgradesTwo.push(new TowerUpgrade("explosionRadius", "Blast Radius+", 50, 5));
   upgradesTwo.push(
     new TowerUpgrade("explosionDamage", "Blast Damage+", 75, 25)
@@ -70,24 +70,24 @@ TowerType.createTower1 = function (position, rotation) {
   var buffRange = 0;
   var buffFramesPerShot = 0;
 
-  //drawing Infromation
-  var drawtype = 1; //1-6
-  var color1 = "#555566";
+  //drawing information
+  var drawType = 1; //1-6
+  var color1 = "#aaaaaa";
   var color2 = "#444455";
-  var color3 = "#444455";
+  var color3 = "#555566";
   var color4 = "#000000";
   var highlightColor = "#00ff00";
 
   //bullet drawing Information
-  var bulletDrawingType = 1; //1 <-- circle, 2 <- square, 3 <- rectangle,4 <-- long rectangle (laser)
+  var bulletDrawingType = 1; //1 <-- circle, 2 <- square, 3 <-- rectangle, 4 <-- long rectangle (laser)
   var bulletRadius = 4;
   var bulletColor = "#222255";
 
   //explosion drawing Information
   var explosionColor = "#ffcc00";
   var explosionInitialRadius = 2;
-  var explosionGrowthFrames = 5;
-  var explosionInitalAlpha = 0.9;
+  var explosionGrowthFrames = 15;
+  var explosionInitialAlpha = 0.9;
   var explosionFullSizeAlpha = 0.6;
   var explosionFadeFrames = 5;
   var explosionFinalAlpha = 0.2;
@@ -96,7 +96,7 @@ TowerType.createTower1 = function (position, rotation) {
   var name = "Cannon";
   var cost = 25;
 
-  //creeate the new tower and return it
+  //create the new tower and return it
   var tower = new Tower(
     position,
     rotation,
@@ -117,7 +117,7 @@ TowerType.createTower1 = function (position, rotation) {
     buffArmorDamage,
     buffRange,
     buffFramesPerShot,
-    drawtype,
+    drawType,
     color1,
     color2,
     color3,
@@ -127,9 +127,9 @@ TowerType.createTower1 = function (position, rotation) {
     bulletRadius,
     bulletColor,
     explosionColor,
-    explosionInitalRadius,
+    explosionInitialRadius,
     explosionGrowthFrames,
-    explosionInitalAlpha,
+    explosionInitialAlpha,
     explosionFullSizeAlpha,
     explosionFadeFrames,
     explosionFinalAlpha,
@@ -140,7 +140,7 @@ TowerType.createTower1 = function (position, rotation) {
   return tower;
 };
 
-/*constructs a basic machine gun tower (tower 2) at a given location and rerturns the object
+/*constructs a basic Machine Gun tower (tower 2) at a given location and rerturns the object
  *	machine gun towers are single target and small projectiles very fast
  * @param {Point} position the tower's x and y position
  * @param {Numebr} rotation the tower's rotation in radians
@@ -148,9 +148,9 @@ TowerType.createTower1 = function (position, rotation) {
  */
 TowerType.createTower2 = function (position, rotation) {
   //basic range, damge and speed
-  var range = 65;
-  var damage = 100;
-  var armorDamage = 0;
+  var range = 60;
+  var damage = 75;
+  var armorDamage = 5;
   var framesPerShot = 10; //lower the number the faster the bullet
   var bulletSpeed = 5; //ideally range should be divisible by this value
   var numberShots = 2;
@@ -167,7 +167,7 @@ TowerType.createTower2 = function (position, rotation) {
   upgradesOne.push(new TowerUpgrade("armorDamage", "Armor Damage+", 100, 100));
   upgradesOne.push(new TowerUpgrade("damage", "Damage++", 150, 150));
   upgradesOne.push(new TowerUpgrade("armorDamage", "Armor Damage++", 200, 200));
-  var upgradeTwo = new Array();
+  var upgradesTwo = new Array();
   upgradesTwo.push(new TowerUpgrade("range", "Range+", 100, 25));
   upgradesTwo.push(new TowerUpgrade("framesPerShot", "Speed+", 150, 2));
   upgradesTwo.push(new TowerUpgrade("range", "Range++", 200, 10));
@@ -181,32 +181,32 @@ TowerType.createTower2 = function (position, rotation) {
   var buffFramesPerShot = 0;
 
   //drawing Infromation
-  var drawtype = 2; //1-6
-  var color1 = "#5050b0";
-  var color2 = "#6060c0";
-  var color3 = "#000000";
+  var drawType = 2; //1-6
+  var color1 = "#800080";
+  var color2 = "#666666";
+  var color3 = "#0000ff";
   var color4 = "#000000";
   var highlightColor = "#00ff00";
 
   //bullet drawing Information
   var bulletDrawingType = 3; //1 <-- circle, 2 <- square, 3 <- rectangle,4 <-- long rectangle (laser)
   var bulletRadius = 2;
-  var bulletColor = "#552222";
+  var bulletColor = "#712d2d";
 
   //explosion drawing Information
   var explosionColor = "#ffffff";
   var explosionInitialRadius = 0;
   var explosionGrowthFrames = 0;
-  var explosionInitalAlpha = 0;
+  var explosionInitialAlpha = 0;
   var explosionFullSizeAlpha = 0;
   var explosionFadeFrames = 0;
   var explosionFinalAlpha = 0;
 
   //id stuff
   var name = "Machine";
-  var cost = 50;
+  var cost = 75;
 
-  //creeate the new tower and return it
+  //create the new tower and return it
   var tower = new Tower(
     position,
     rotation,
@@ -227,7 +227,7 @@ TowerType.createTower2 = function (position, rotation) {
     buffArmorDamage,
     buffRange,
     buffFramesPerShot,
-    drawtype,
+    drawType,
     color1,
     color2,
     color3,
@@ -237,9 +237,9 @@ TowerType.createTower2 = function (position, rotation) {
     bulletRadius,
     bulletColor,
     explosionColor,
-    explosionInitalRadius,
+    explosionInitialRadius,
     explosionGrowthFrames,
-    explosionInitalAlpha,
+    explosionInitialAlpha,
     explosionFullSizeAlpha,
     explosionFadeFrames,
     explosionFinalAlpha,
@@ -281,7 +281,7 @@ TowerType.createTower3 = function (position, rotation) {
   upgradesOne.push(
     new TowerUpgrade("buffArmorDamage", "Buff A. Dam.++", 750, 100)
   );
-  var upgradeTwo = new Array();
+  var upgradesTwo = new Array();
   upgradesTwo.push(new TowerUpgrade("buffRadius", "Buff Radius+", 200, 50));
   upgradesTwo.push(new TowerUpgrade("buffRange", "Buff Range+", 300, 20));
   upgradesTwo.push(new TowerUpgrade("buffRadius", "Buff Radius++", 500, 50));
@@ -295,9 +295,9 @@ TowerType.createTower3 = function (position, rotation) {
   var buffFramesPerShot = 0;
 
   //drawing Infromation
-  var drawtype = 3; //1-6
-  var color1 = "#50b050";
-  var color2 = "#60c060";
+  var drawType = 3; //1-6
+  var color1 = "#aaaaaa";
+  var color2 = "#000000";
   var color3 = "#000000";
   var color4 = "#000000";
   var highlightColor = "#00ff00";
@@ -311,7 +311,7 @@ TowerType.createTower3 = function (position, rotation) {
   var explosionColor = "#ffffff";
   var explosionInitialRadius = 0;
   var explosionGrowthFrames = 0;
-  var explosionInitalAlpha = 0;
+  var explosionInitialAlpha = 0;
   var explosionFullSizeAlpha = 0;
   var explosionFadeFrames = 0;
   var explosionFinalAlpha = 0;
@@ -319,8 +319,9 @@ TowerType.createTower3 = function (position, rotation) {
   //id stuff
   var name = "Support";
   var cost = 200;
+  var framesPerMoney = 100; //The lower it is the faster it will make money
 
-  //creeate the new tower and return it
+  //create the new tower and return it
   var tower = new Tower(
     position,
     rotation,
@@ -341,7 +342,7 @@ TowerType.createTower3 = function (position, rotation) {
     buffArmorDamage,
     buffRange,
     buffFramesPerShot,
-    drawtype,
+    drawType,
     color1,
     color2,
     color3,
@@ -351,39 +352,40 @@ TowerType.createTower3 = function (position, rotation) {
     bulletRadius,
     bulletColor,
     explosionColor,
-    explosionInitalRadius,
+    explosionInitialRadius,
     explosionGrowthFrames,
-    explosionInitalAlpha,
+    explosionInitialAlpha,
     explosionFullSizeAlpha,
     explosionFadeFrames,
     explosionFinalAlpha,
     name,
-    cost
+    cost,
+    framesPerMoney
   );
 
   return tower;
 };
 
-/*constructs a basic 360 tower (tower 4) at a given location and rerturns the object
- *	360 towers are multy tagrgeted and small projectiles at a decent speed
+/*constructs a basic Spinner tower (tower 4) at a given location and returns the object
+ *	Spinner towers are multy targeted and small projectiles very fast
  * @param {Point} position the tower's x and y position
- * @param {Numebr} rotation the tower's rotation in radians
+ * @param {Number} rotation the tower's rotation in radians
  * @return {Tower} returns the tower
  */
 TowerType.createTower4 = function (position, rotation) {
-  //basic range, damge and speed
-  var range = 100;
+  //basic range, damage and speed
+  var range = 120;
   var damage = 50;
   var armorDamage = 25;
-  var framesPerShot = 18; //lower the number the faster the bullet
+  var framesPerShot = 16; //lower the number the faster the bullet
   var bulletSpeed = 4; //ideally range should be divisible by this value
   var numberShots = 35;
 
   //does this tower fire exploding bullets?
   var explodes = true;
-  var explosionRadius = 5;
-  var explosionDamage = 10;
-  var explosionArmorDamage = 1;
+  var explosionRadius = 15;
+  var explosionDamage = 15;
+  var explosionArmorDamage = 10;
 
   //tower upgrades
   var upgradesOne = new Array();
@@ -391,124 +393,12 @@ TowerType.createTower4 = function (position, rotation) {
   upgradesOne.push(new TowerUpgrade("armorDamage", "Armor Damage+", 100, 100));
   upgradesOne.push(new TowerUpgrade("damage", "Damage++", 150, 200));
   upgradesOne.push(new TowerUpgrade("armorDamage", "Armor Damage++", 200, 200));
-  var upgradeTwo = new Array();
+  var upgradesTwo = new Array();
   upgradesTwo.push(new TowerUpgrade("range", "Range+", 100, 25));
   upgradesTwo.push(new TowerUpgrade("framesPerShot", "Speed+", 150, 2));
   upgradesTwo.push(new TowerUpgrade("range", "Range++", 200, 25));
   upgradesTwo.push(
-    new TowerUpgrade("explosionRadius", "Explosion Rdius++", 250, 2)
-  );
-
-  //does this tower buff other towers?
-  var buffRadius = 50;
-  var buffDamage = 10;
-  var buffArmorDamage = 0;
-  var buffRange = 25;
-  var buffFramesPerShot = 0;
-
-  //drawing Infromation
-  var drawtype = 4; //1-6
-  var color1 = "#000000";
-  var color2 = "#ff8080";
-  var color3 = "#b38600";
-  var color4 = "#b33000";
-  var highlightColor = "#00ff00";
-
-  //bullet drawing Information
-  var bulletDrawingType = 1; //1 <-- circle, 2 <- square, 3 <- rectangle,4 <-- long rectangle (laser)
-  var bulletRadius = 3;
-  var bulletColor = "#552222";
-
-  //explosion drawing Information
-  var explosionColor = "#ffd700";
-  var explosionInitialRadius = 2;
-  var explosionGrowthFrames = 2;
-  var explosionInitalAlpha = 0.9;
-  var explosionFullSizeAlpha = 0.5;
-  var explosionFadeFrames = 5;
-  var explosionFinalAlpha = 0.2;
-
-  //id stuff
-  var name = "Spinner";
-  var cost = 250;
-
-  //creeate the new tower and return it
-  var tower = new Tower(
-    position,
-    rotation,
-    range,
-    damage,
-    armorDamage,
-    framesPerShot,
-    bulletSpeed,
-    numberShots,
-    explodes,
-    explosionRadius,
-    explosionDamage,
-    explosionArmorDamage,
-    upgradesOne,
-    upgradesTwo,
-    buffRadius,
-    buffDamage,
-    buffArmorDamage,
-    buffRange,
-    buffFramesPerShot,
-    drawtype,
-    color1,
-    color2,
-    color3,
-    color4,
-    highlightColor,
-    bulletDrawingType,
-    bulletRadius,
-    bulletColor,
-    explosionColor,
-    explosionInitalRadius,
-    explosionGrowthFrames,
-    explosionInitalAlpha,
-    explosionFullSizeAlpha,
-    explosionFadeFrames,
-    explosionFinalAlpha,
-    name,
-    cost
-  );
-
-  return tower;
-};
-
-/*constructs a basic Turret (tower 5) at a given location and rerturns the object
- *	turret towers are single tagrgeted and small projectiles at a decent speed
- * @param {Point} position the tower's x and y position
- * @param {Numebr} rotation the tower's rotation in radians
- * @return {Tower} returns the tower
- */
-TowerType.createTower5 = function (position, rotation) {
-  //basic range, damge and speed
-  var range = 150;
-  var damage = 80;
-  var armorDamage = 25;
-  var framesPerShot = 5; //lower the number the faster the bullet
-  var bulletSpeed = 5; //ideally range should be divisible by this value
-  var numberShots = 3;
-
-  //does this tower fire exploding bullets?
-  var explodes = true;
-  var explosionRadius = 0;
-  var explosionDamage = 10;
-  var explosionArmorDamage = 1;
-
-  //tower upgrades
-  var upgradesOne = new Array();
-  upgradesOne.push(new TowerUpgrade("damage", "Damage+", 50, 120));
-  upgradesOne.push(new TowerUpgrade("armorDamage", "Armor Damage+", 100, 25));
-  upgradesOne.push(new TowerUpgrade("damage", "Damage++", 150, 100));
-  upgradesOne.push(new TowerUpgrade("armorDamage", "Armor Damage++", 200, 50));
-  var upgradeTwo = new Array();
-  upgradesTwo.push(new TowerUpgrade("range", "Range+", 100, 25));
-  upgradesTwo.push(new TowerUpgrade("framesPerShot", "Speed+", 150, 2));
-  upgradesTwo.push(new TowerUpgrade("range", "Range++", 200, 25));
-  upgradesTwo.push(
-    new TowerUpgrade("explosionRadius", "exploding Bullets++", 250, 4)
+    new TowerUpgrade("explosionRadius", "Explosion Rdius++", 250, 5)
   );
 
   //does this tower buff other towers?
@@ -518,33 +408,33 @@ TowerType.createTower5 = function (position, rotation) {
   var buffRange = 0;
   var buffFramesPerShot = 0;
 
-  //drawing Infromation
-  var drawtype = 5; //1-6
-  var color1 = "#000000";
-  var color2 = "#ff8080";
-  var color3 = "#b38600";
-  var color4 = "#b33000";
+  //drawing information
+  var drawType = 4; //1-6
+  var color1 = "#00ffff";
+  var color2 = "#666666";
+  var color3 = "#cc0000";
+  var color4 = "#999999";
   var highlightColor = "#00ff00";
 
   //bullet drawing Information
-  var bulletDrawingType = 4; //1 <-- circle, 2 <- square, 3 <- rectangle,4 <-- long rectangle (laser)
-  var bulletRadius = 6;
+  var bulletDrawingType = 1; //1 <-- circle, 2 <- square, 3 <-- rectangle, 4 <-- long rectangle (laser)
+  var bulletRadius = 3;
   var bulletColor = "#552222";
 
   //explosion drawing Information
-  var explosionColor = "#ffd700";
+  var explosionColor = color3;
   var explosionInitialRadius = 2;
-  var explosionGrowthFrames = 2;
-  var explosionInitalAlpha = 0.9;
+  var explosionGrowthFrames = 3;
+  var explosionInitialAlpha = 0.9;
   var explosionFullSizeAlpha = 0.5;
-  var explosionFadeFrames = 5;
+  var explosionFadeFrames = 10;
   var explosionFinalAlpha = 0.2;
 
   //id stuff
-  var name = "Turret";
-  var cost = 150;
+  var name = "Spinner";
+  var cost = 250;
 
-  //creeate the new tower and return it
+  //create the new tower and return it
   var tower = new Tower(
     position,
     rotation,
@@ -565,7 +455,7 @@ TowerType.createTower5 = function (position, rotation) {
     buffArmorDamage,
     buffRange,
     buffFramesPerShot,
-    drawtype,
+    drawType,
     color1,
     color2,
     color3,
@@ -575,9 +465,9 @@ TowerType.createTower5 = function (position, rotation) {
     bulletRadius,
     bulletColor,
     explosionColor,
-    explosionInitalRadius,
+    explosionInitialRadius,
     explosionGrowthFrames,
-    explosionInitalAlpha,
+    explosionInitialAlpha,
     explosionFullSizeAlpha,
     explosionFadeFrames,
     explosionFinalAlpha,
@@ -588,26 +478,138 @@ TowerType.createTower5 = function (position, rotation) {
   return tower;
 };
 
-/*constructs a basic luncher tower (tower 6) at a given location and rerturns the object
- *	luncher towers are multy tagrgeted and large projectiles at a decent speed
+/*constructs a basic Turret tower (tower 5) at a given location and returns the object
+ *	Turret towers are single target and medium projectiles very fast
  * @param {Point} position the tower's x and y position
- * @param {Numebr} rotation the tower's rotation in radians
+ * @param {Number} rotation the tower's rotation in radians
+ * @return {Tower} returns the tower
+ */
+TowerType.createTower5 = function (position, rotation) {
+  //basic range, damage and speed
+  var range = 100;
+  var damage = 115;
+  var armorDamage = 20;
+  var framesPerShot = 5; //-1 means it doesn't shoot
+  var bulletSpeed = 8; //ideally range should be divisible by this value
+  var numberShots = 3;
+
+  //does this tower fire exploding bullets?
+  var explodes = true;
+  var explosionRadius = 0;
+  var explosionDamage = 25;
+  var explosionArmorDamage = 20;
+
+  //tower upgrades
+  var upgradesOne = new Array();
+  upgradesOne.push(new TowerUpgrade("damage", "Damage+", 50, 120));
+  upgradesOne.push(new TowerUpgrade("armorDamage", "Armor Damage+", 100, 25));
+  upgradesOne.push(new TowerUpgrade("damage", "Damage++", 150, 100));
+  upgradesOne.push(new TowerUpgrade("armorDamage", "Armor Damage++", 200, 50));
+  var upgradesTwo = new Array();
+  upgradesTwo.push(new TowerUpgrade("range", "Range+", 100, 25));
+  upgradesTwo.push(new TowerUpgrade("framesPerShot", "Speed+", 150, 2));
+  upgradesTwo.push(new TowerUpgrade("range", "Range++", 200, 25));
+  upgradesTwo.push(
+    new TowerUpgrade("explosionRadius", "exploding Bullets++", 250, 20)
+  );
+
+  //does this tower buff other towers?
+  var buffRadius = 0;
+  var buffDamage = 0;
+  var buffArmorDamage = 0;
+  var buffRange = 0;
+  var buffFramesPerShot = 0;
+
+  //drawing information
+  var drawType = 5; //1-6
+  var color1 = "#00008b";
+  var color2 = "#cc0000";
+  var color3 = "#666666";
+  var color4 = "#000000";
+  var highlightColor = "#00ff00";
+
+  //bullet drawing Information
+  var bulletDrawingType = 3; //1 <-- circle, 2 <- square, 3 <-- rectangle, 4 <-- long rectangle (laser)
+  var bulletRadius = 3;
+  var bulletColor = "#552222";
+
+  //explosion drawing Information
+  var explosionColor = color1;
+  var explosionInitialRadius = 2;
+  var explosionGrowthFrames = 2;
+  var explosionInitialAlpha = 0.9;
+  var explosionFullSizeAlpha = 0.5;
+  var explosionFadeFrames = 5;
+  var explosionFinalAlpha = 0.2;
+
+  //id stuff
+  var name = "Turret";
+  var cost = 400;
+
+  //create the new tower and return it
+  var tower = new Tower(
+    position,
+    rotation,
+    range,
+    damage,
+    armorDamage,
+    framesPerShot,
+    bulletSpeed,
+    numberShots,
+    explodes,
+    explosionRadius,
+    explosionDamage,
+    explosionArmorDamage,
+    upgradesOne,
+    upgradesTwo,
+    buffRadius,
+    buffDamage,
+    buffArmorDamage,
+    buffRange,
+    buffFramesPerShot,
+    drawType,
+    color1,
+    color2,
+    color3,
+    color4,
+    highlightColor,
+    bulletDrawingType,
+    bulletRadius,
+    bulletColor,
+    explosionColor,
+    explosionInitialRadius,
+    explosionGrowthFrames,
+    explosionInitialAlpha,
+    explosionFullSizeAlpha,
+    explosionFadeFrames,
+    explosionFinalAlpha,
+    name,
+    cost
+  );
+
+  return tower;
+};
+
+/*constructs a basic launching tower (tower 6) at a given location and returns the object
+ *	Launcher towers are single target and large projectiles
+ * @param {Point} position the tower's x and y position
+ * @param {Number} rotation the tower's rotation in radians
  * @return {Tower} returns the tower
  */
 TowerType.createTower6 = function (position, rotation) {
-  //basic range, damge and speed
-  var range = 300;
-  var damage = 100;
+  //basic range, damage and speed
+  var range = 180;
+  var damage = 150;
   var armorDamage = 80;
-  var framesPerShot = 6; //lower the number the faster the bullet
+  var framesPerShot = 10; //lower number the faster, -1 means it doesn't shoot
   var bulletSpeed = 2; //ideally range should be divisible by this value
   var numberShots = 1;
 
   //does this tower fire exploding bullets?
   var explodes = true;
-  var explosionRadius = 50;
+  var explosionRadius = 60;
   var explosionDamage = 100;
-  var explosionArmorDamage = 25;
+  var explosionArmorDamage = 50;
 
   //tower upgrades
   var upgradesOne = new Array();
@@ -617,7 +619,7 @@ TowerType.createTower6 = function (position, rotation) {
     new TowerUpgrade("explosionDamage", "Explosion Damage+", 150, 50)
   );
   upgradesOne.push(new TowerUpgrade("armorDamage", "Armor Damage++", 200, 20));
-  var upgradeTwo = new Array();
+  var upgradesTwo = new Array();
   upgradesTwo.push(new TowerUpgrade("range", "Range+", 100, 50));
   upgradesTwo.push(new TowerUpgrade("framesPerShot", "Speed+", 150, 2));
   upgradesTwo.push(new TowerUpgrade("range", "Range++", 200, 25));
@@ -632,33 +634,33 @@ TowerType.createTower6 = function (position, rotation) {
   var buffRange = 0;
   var buffFramesPerShot = 0;
 
-  //drawing Infromation
-  var drawtype = 6; //1-6
-  var color1 = "#000000";
-  var color2 = "#ff8080";
-  var color3 = "#b38600";
-  var color4 = "#b33000";
+  //drawing information
+  var drawType = 6; //1-6
+  var color1 = "#136c13";
+  var color2 = "#e67300";
+  var color3 = "#cc0000";
+  var color4 = "#990000";
   var highlightColor = "#00ff00";
 
   //bullet drawing Information
   var bulletDrawingType = 3; //1 <-- circle, 2 <- square, 3 <- rectangle,4 <-- long rectangle (laser)
-  var bulletRadius = 8;
+  var bulletRadius = 6;
   var bulletColor = "#006600";
 
   //explosion drawing Information
   var explosionColor = "#cc3300";
   var explosionInitialRadius = 6;
   var explosionGrowthFrames = 2;
-  var explosionInitalAlpha = 0.9;
+  var explosionInitialAlpha = 0.9;
   var explosionFullSizeAlpha = 0.5;
   var explosionFadeFrames = 5;
   var explosionFinalAlpha = 0.3;
 
   //id stuff
   var name = "Luancher";
-  var cost = 500;
+  var cost = 800;
 
-  //creeate the new tower and return it
+  //create the new tower and return it
   var tower = new Tower(
     position,
     rotation,
@@ -679,7 +681,7 @@ TowerType.createTower6 = function (position, rotation) {
     buffArmorDamage,
     buffRange,
     buffFramesPerShot,
-    drawtype,
+    drawType,
     color1,
     color2,
     color3,
@@ -689,9 +691,9 @@ TowerType.createTower6 = function (position, rotation) {
     bulletRadius,
     bulletColor,
     explosionColor,
-    explosionInitalRadius,
+    explosionInitialRadius,
     explosionGrowthFrames,
-    explosionInitalAlpha,
+    explosionInitialAlpha,
     explosionFullSizeAlpha,
     explosionFadeFrames,
     explosionFinalAlpha,

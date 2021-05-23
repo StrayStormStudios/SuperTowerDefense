@@ -244,7 +244,7 @@ EnemyWaves.prototype.createStageOneWaves = function () {
  */
 EnemyWaves.prototype.createStageTwoWaves = function () {
   //wave 0
-  this.waves.push(new EnemySpawn(1, 0, "basic", 0, 2600));
+  this.waves.push(new EnemySpawn(1, 0, "basic", 0, 800));
   //wave 1
   this.waves.push(new EnemySpawn(1, 1, "basic", 0, 200));
   this.waves.push(new EnemySpawn(1, 1, "basic", 0, 80));
@@ -407,7 +407,7 @@ EnemyWaves.prototype.createStageTwoWaves = function () {
  */
 EnemyWaves.prototype.createStageThreeWaves = function () {
   //wave 0
-  this.waves.push(new EnemySpawn(2, 0, "basic", 0, 1000));
+  this.waves.push(new EnemySpawn(2, 0, "basic", 0, 900));
   //wave 1
   this.waves.push(new EnemySpawn(2, 1, "basic", 0, 200));
   this.waves.push(new EnemySpawn(2, 1, "basic", 0, 200));
@@ -557,7 +557,7 @@ EnemyWaves.prototype.createStageThreeWaves = function () {
  */
 EnemyWaves.prototype.createStageFourWaves = function () {
   //wave 0
-  this.waves.push(new EnemySpawn(3, 0, "normal", 1, 1500));
+  this.waves.push(new EnemySpawn(3, 0, "normal", 1, 1300));
   this.waves.push(new EnemySpawn(3, 0, "normal", 1, 100));
   //wave 1
   this.waves.push(new EnemySpawn(3, 1, "normal", 0, 100));
@@ -828,7 +828,7 @@ EnemyWaves.prototype.createStageSixWaves = function () {
  */
 EnemyWaves.prototype.createStageSevenWaves = function () {
   //wave 0
-  this.waves.push(new EnemySpawn(6, 0, "extreme", 0, 800));
+  this.waves.push(new EnemySpawn(6, 0, "extreme", 0, 700));
   //wave 1
   this.waves.push(new EnemySpawn(6, 1, "normal", 1, 100));
   this.waves.push(new EnemySpawn(6, 1, "normal", 1, 100));

@@ -46,6 +46,7 @@ function Path(
   this.totalLength; //the total length of the path.
   this.rectangles = new Array(); //the points of each rectangle (used for gradients)
   this.rectanglesPrint = new Array(); //The points for each rectangle (used for printing)
+  this.rectanglesBig = new Array(); //rectangles with 1.2 width padding (used for tower placement)
   this.getRectangles();
   this.intersections = new Array(); //The points for the intersections between rectangles
   this.getIntersections();
@@ -53,6 +54,9 @@ function Path(
   this.getStartPoints();
   this.endPoints = new Array(); //The points for the ending cap
   this.getEndPoints();
+
+  this.uvInverses = new Array(); //transformation inverses (used to check if a point is inside path)
+  this.getUVInverses();
 }
 
 /*Draws all parts of the paths
@@ -231,7 +235,7 @@ Path.prototype.drawEndCap = function (ctx) {
  * 			this.rectangles, this.rectanglesPrint, this.vectors
  */
 Path.prototype.getRectangles = function () {
-  for (var i = 0; i < this.points.length - 1; i++) {
+  for (var i = 0, n = this.points.length - 1; i < n; i++) {
     //get vectors
     var dx = this.points[i + 1].x - this.points[i].x;
     var dy = this.points[i + 1].y - this.points[i].y;
@@ -270,34 +274,56 @@ Path.prototype.getRectangles = function () {
     var y1 = this.points[i].y + pdy;
     var p1 = new Point(x1, y1);
     var p1Print = new Point(x1, y1);
+    var p1Big = new Point(
+      p1.x + pdx * 1.1 - pVector.x * 1.3 * this.width,
+      p1.y + pdy * 1.1 - pVector.y * 1.3 * this.width
+    );
     //set up the rectangles
     var curRectangle = new Array();
     var curRectanglePrint = new Array();
+    var curRectangleBig = new Array();
     curRectangle.push(p1);
     curRectanglePrint.push(p1Print);
+    curRectangleBig.push(p1Big);
     //point 2
     var x2 = x1 + dx;
     var y2 = y1 + dy;
     var p2 = new Point(x2, y2);
     var p2Print = new Point(x2, y2);
+    var p2Big = new Point(
+      x2 + pdx * 1.1 + pVector.x * 1.3 * this.width,
+      y2 + pdy * 1.1 + pVector.y * 1.3 * this.width
+    );
     curRectangle.push(p2);
-    curRectanglePrint.push(p2);
+    curRectanglePrint.push(p2Print);
+    curRectangleBig.push(p2Big);
     //point 3
     var x3 = x2 + -2 * pdx;
     var y3 = y2 + -2 * pdy;
     var p3 = new Point(x3, y3);
     var p3Print = new Point(x3, y3);
+    var p3Big = new Point(
+      x3 - pdx * 1.1 + pVector.x * 1.3 * this.width,
+      y3 - pdy * 1.1 + pVector.y * 1.3 * this.width
+    );
     curRectangle.push(p3);
-    curRectanglePrint.push(p3);
+    curRectanglePrint.push(p3Print);
+    curRectangleBig.push(p3Big);
     //point 4
     var x4 = x3 + -1 * dx;
     var y4 = y3 + -1 * dy;
     var p4 = new Point(x4, y4);
     var p4Print = new Point(x4, y4);
+    var p4Big = new Point(
+      x4 - pdx * 1.1 - pVector.x * 1.3 * this.width,
+      y4 - pdy * 1.1 - pVector.y * 1.3 * this.width
+    );
     curRectangle.push(p4);
-    curRectanglePrint.push(p4);
+    curRectanglePrint.push(p4Print);
+    curRectangleBig.push(p4Big);
     this.rectangles.push(curRectangle);
     this.rectanglesPrint.push(curRectanglePrint);
+    this.rectanglesBig.push(curRectangleBig);
   }
 
   this.totalLength = 0;
@@ -443,4 +469,60 @@ Path.prototype.getEndPoints = function () {
 */
 Path.prototype.crossProduct = function (v, w) {
   return v.x * w.y - v.y * w.x;
+};
+
+/*creates transformation inverses... used to decide if a point is inside the path
+ */
+Path.prototype.getUVInverses = function () {
+  for (var i = 0, n = this.rectanglesBig.length; i < n; i++) {
+    //for(var i = 1, n = 2; i < n; i++){
+    //rectangle vectors (u and v)
+    var u = new Point(
+      this.rectanglesBig[i][1].x - this.rectanglesBig[i][0].x,
+      this.rectanglesBig[i][1].y - this.rectanglesBig[i][0].y
+    );
+    var v = new Point(
+      this.rectanglesBig[i][3].x - this.rectanglesBig[i][0].x,
+      this.rectanglesBig[i][3].y - this.rectanglesBig[i][0].y
+    );
+    //find length squared
+    var uMagSquared = u.x * u.x + u.y * u.y;
+    var vMagSquared = v.x * v.x + v.y * v.y;
+    //find the inverse transposed vector
+    var uInverse = new Point(u.x / uMagSquared, u.y / uMagSquared);
+    var vInverse = new Point(v.x / vMagSquared, v.y / vMagSquared);
+    var uvInverse = new Array();
+    //add this transposed vector to the array of inverses
+    uvInverse.push(uInverse);
+    uvInverse.push(vInverse);
+    this.uvInverses.push(uvInverse);
+  }
+};
+
+/*tells whether a point is inside the pathname
+@param {Point} p The point to check
+@return {Boolean} true (inside the rectangle (inclusive)) false (outside the rectangle)
+*/
+Path.prototype.inPath = function (p) {
+  for (var i = 0, n = this.uvInverses.length; i < n; i++) {
+    //subtract current rectangles
+    var pPrime = new Point(
+      p.x - this.rectanglesBig[i][0].x,
+      p.y - this.rectanglesBig[i][0].y
+    );
+    //multiply by inverse matrix
+    var pTransformed = new Point(
+      this.uvInverses[i][0].x * pPrime.x + this.uvInverses[i][0].y * pPrime.y,
+      this.uvInverses[i][1].x * pPrime.x + this.uvInverses[i][1].y * pPrime.y
+    );
+    if (
+      pTransformed.x >= 0 &&
+      pTransformed.x <= 1 &&
+      pTransformed.y >= 0 &&
+      pTransformed.y <= 1
+    ) {
+      return true;
+    }
+  }
+  return false;
 };

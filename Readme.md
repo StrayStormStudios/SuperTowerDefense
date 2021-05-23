@@ -11,9 +11,13 @@ Drag and Drop Towers from the Right Side Menu on to the Field to Defened Yoursel
 
 ## Known Issues [![GitHub Issues](https://img.shields.io/github/issues/ChrisBarnes2000/SuperTowerDefense.svg?style=flat-square)](https://github.com/chrisbarnes2000/SuperTowerDefense/issues)
 
+- Armored Enemy Takes 5 Health On Death (issue with update)
+- Background/Stage Doesn't Change (issue with update)
+- Sound only works when it wants to...
+
 ## Installation
 
-```bash
+```zsh
 git clone https://github.com/chrisbarnes2000/SuperTowerDefnse.git
 cd SuperTowerDefnse
 ```
@@ -28,7 +32,7 @@ Please make sure to update tests as appropriate.
 
 ## Versions & Change Log
 
-#### Version 5: Draw Towers, Create Towers, place Towers
+### Version 5: Draw Towers, Create Towers, place Towers
 
 ### Version 4: Add Waves
 

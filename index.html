@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Super Tower!</title>
+    <link rel="stylesheet" type="text/css" href="SuperTower.css" />
+    <!-- <link rel="shortcut icon" href="favicon.ico"> -->
+    <link rel="shortcut icon" href="favicon2.ico" />
+  </head>
+  <body>
+    <section>
+      <div
+        id="canvasesdiv"
+        style="position: relative; width: 1054px; height: 606px"
+      >
+        <canvas
+          id="layerBackgroundImage"
+          style="z-index: 1"
+          height="576px"
+          width="1324px"
+        >
+          This text is displayed if your browser does not support HTML5 Canvas.
+        </canvas>
+        <canvas
+          id="layerStage"
+          style="z-index: 2"
+          height="576px"
+          width="1324px"
+        >
+          This text is displayed if your browser does not support HTML5 Canvas.
+        </canvas>
+        <canvas
+          id="layerEnemies"
+          style="z-index: 3"
+          height="576px"
+          width="1324px"
+        >
+          This text is displayed if your browser does not support HTML5 Canvas.
+        </canvas>
+        <canvas
+          id="layerBullets"
+          style="z-index: 4"
+          height="576px"
+          width="1324px"
+        >
+          This text is displayed if your browser does not support HTML5 Canvas.
+        </canvas>
+        <canvas
+          id="layerTowers"
+          style="z-index: 5"
+          height="576px"
+          width="1324px"
+        >
+          This text is displayed if your browser does not support HTML5 Canvas.
+        </canvas>
+        <canvas
+          id="layerExplosions"
+          style="z-index: 6"
+          height="576px"
+          width="1324px"
+        >
+          This text is displayed if your browser does not support HTML5 Canvas.
+        </canvas>
+        <canvas
+          id="layerUIStatic"
+          style="z-index: 7"
+          height="576px"
+          width="1324px"
+        >
+          This text is displayed if your browser does not support HTML5 Canvas.
+        </canvas>
+        <canvas
+          id="layerUIDynamic"
+          style="z-index: 8"
+          height="576px"
+          width="1324px"
+        >
+          This text is displayed if your browser does not support HTML5 Canvas.
+        </canvas>
+        <audio src="Nyana.mp3" autoplay loop>
+          <p>
+            If you are reading this, it is because your browser does not support
+            the audio element.
+          </p>
+        </audio>
+      </div>
+      <script src="Explosions.js"></script>
+      <script src="Explosion.js"></script>
+      <script src="Bullets.js"></script>
+      <script src="Bullet.js"></script>
+      <script src="TowerMenu.js"></script>
+      <script src="Towers.js"></script>
+      <script src="TowerType.js"></script>
+      <script src="TowerDrawing.js"></script>
+      <script src="TowerUpgrade.js"></script>
+      <script src="Tower.js"></script>
+      <script src="EnemyWaves.js"></script>
+      <script src="EnemySpawn.js"></script>
+      <script src="Enemies.js"></script>
+      <script src="EnemyList.js"></script>
+      <script src="EnemyDrawing.js"></script>
+      <script src="Enemy.js"></script>
+      <script src="Point.js"></script>
+      <script src="Path.js"></script>
+      <script src="Stage.js"></script>
+      <script src="StageList.js"></script>
+      <script src="Utilities.js"></script>
+      <script src="Background.js"></script>
+      <script src="SuperTower.js"></script>
+      <script>
+        SuperTower.init();
+      </script>
+    </section>
+  </body>
+</html>

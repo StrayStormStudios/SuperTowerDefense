@@ -19,7 +19,32 @@ Enemies.prototype.add = function (type, frame, path, distanceTravelled) {
  *@param {Integer} index, The element to remove
  */
 Enemies.prototype.remove = function (index) {
+  //if this is the last frame, damage the player
+  var curEnemy = this.enemies[index];
+  if (this.enemies[index].lastFrame < SuperTower.frame) {
+    SuperTower.lives -= curEnemy.damage;
+    SuperTower.missed++;
+  } else {
+    SuperTower.cash += curEnemy.money;
+    SuperTower.kills++;
+    //spawn the other enemies
+    for (var i = curEnemy.deathSplit.length - 1; i >= 0; i--) {
+      this.add(
+        curEnemy.deathSplit[i],
+        curEnemy.frame,
+        curEnemy.path,
+        curEnemy.distanceTravelled
+      );
+    }
+  }
+
   this.enemies.splice(index, 1);
+};
+
+Enemies.prototype.removeAll = function () {
+  for (var i = this.enemies.length - 1; i >= 0; i--) {
+    this.remove(i);
+  }
 };
 
 /*Draws all enemies, deletes enemies that have reached the end of the track and returns damage
@@ -32,7 +57,6 @@ Enemies.prototype.drawAll = function (ctx, frame) {
   ctx.clearRect(0, 0, Background.WIDTH, Background.HEIGHT);
   for (var i = this.enemies.length - 1; i >= 0; i--) {
     if (this.enemies[i].draw(ctx, frame)) {
-      damage += this.enemies[i].damage;
       this.remove(i);
     }
   }

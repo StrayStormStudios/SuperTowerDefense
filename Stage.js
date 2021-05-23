@@ -1,7 +1,15 @@
-function Stage(id, backgroundImage) {
+function Stage(id, backgroundImage, money, lives) {
   this.id = id;
   this.backgroundImage = backgroundImage;
   this.paths = new Array();
+  if (typeof money == "undefined") {
+    money = -1;
+  }
+  if (typeof lives == "undefined") {
+    lives = -1;
+  }
+  this.money = money;
+  this.lives = lives;
 }
 
 /*Adds a path to the stage
