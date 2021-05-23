@@ -28,6 +28,8 @@ Please make sure to update tests as appropriate.
 
 ## Versions & Change Log
 
+### Version 4: Add Waves
+
 ### Version 3C: Fix Enemies & Towers
 
 ### Version 3B: Fix Enemies

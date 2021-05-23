@@ -244,7 +244,7 @@ EnemyWaves.prototype.createStageOneWaves = function () {
  */
 EnemyWaves.prototype.createStageTwoWaves = function () {
   //wave 0
-  this.waves.push(new EnemySpawn(1, 0, "basic", 0, 2200));
+  this.waves.push(new EnemySpawn(1, 0, "basic", 0, 2600));
   //wave 1
   this.waves.push(new EnemySpawn(1, 1, "basic", 0, 200));
   this.waves.push(new EnemySpawn(1, 1, "basic", 0, 80));
@@ -557,7 +557,7 @@ EnemyWaves.prototype.createStageThreeWaves = function () {
  */
 EnemyWaves.prototype.createStageFourWaves = function () {
   //wave 0
-  this.waves.push(new EnemySpawn(3, 0, "normal", 1, 100));
+  this.waves.push(new EnemySpawn(3, 0, "normal", 1, 1500));
   this.waves.push(new EnemySpawn(3, 0, "normal", 1, 100));
   //wave 1
   this.waves.push(new EnemySpawn(3, 1, "normal", 0, 100));
@@ -646,90 +646,90 @@ EnemyWaves.prototype.createStageFourWaves = function () {
  */
 EnemyWaves.prototype.createStageFiveWaves = function () {
   //wave 0
-  this.waves.push(new EnemySpawn(4, 0, "normal", 0, 6000));
+  this.waves.push(new EnemySpawn(4, 0, "normal", 0, 600));
   //wave 1
-  this.waves.push(new EnemySpawn(3, 1, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 1, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(4, 1, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(4, 1, "normal", 0, 100));
   //wave 2
-  this.waves.push(new EnemySpawn(3, 2, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 2, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(4, 2, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(4, 2, "normal", 0, 100));
   //wave 3
-  this.waves.push(new EnemySpawn(3, 3, "difficult", 0, 100));
-  this.waves.push(new EnemySpawn(3, 3, "difficult", 0, 10));
+  this.waves.push(new EnemySpawn(4, 3, "difficult", 0, 100));
+  this.waves.push(new EnemySpawn(4, 3, "difficult", 0, 10));
   //wave 4
-  this.waves.push(new EnemySpawn(3, 4, "basic", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "easy", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "difficult", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "hard", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "extreme", 0, 100));
+  this.waves.push(new EnemySpawn(4, 4, "basic", 0, 100));
+  this.waves.push(new EnemySpawn(4, 4, "easy", 0, 100));
+  this.waves.push(new EnemySpawn(4, 4, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(4, 4, "difficult", 0, 100));
+  this.waves.push(new EnemySpawn(4, 4, "hard", 0, 100));
+  this.waves.push(new EnemySpawn(4, 4, "extreme", 0, 100));
   //wave 5
-  this.waves.push(new EnemySpawn(3, 5, "fast", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "athleat", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "shark", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "lightning", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "flash", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "liSpeed", 0, 100));
+  this.waves.push(new EnemySpawn(4, 5, "fast", 0, 100));
+  this.waves.push(new EnemySpawn(4, 5, "athleat", 0, 100));
+  this.waves.push(new EnemySpawn(4, 5, "shark", 0, 100));
+  this.waves.push(new EnemySpawn(4, 5, "lightning", 0, 100));
+  this.waves.push(new EnemySpawn(4, 5, "flash", 0, 100));
+  this.waves.push(new EnemySpawn(4, 5, "liSpeed", 0, 100));
   //wave 6
-  this.waves.push(new EnemySpawn(3, 6, "armored", 0, 100));
-  this.waves.push(new EnemySpawn(3, 6, "shield", 0, 100));
-  this.waves.push(new EnemySpawn(3, 6, "barrier", 0, 100));
-  this.waves.push(new EnemySpawn(3, 6, "wall", 0, 100));
-  this.waves.push(new EnemySpawn(3, 6, "tank", 0, 100));
+  this.waves.push(new EnemySpawn(4, 6, "armored", 0, 100));
+  this.waves.push(new EnemySpawn(4, 6, "shield", 0, 100));
+  this.waves.push(new EnemySpawn(4, 6, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(4, 6, "wall", 0, 100));
+  this.waves.push(new EnemySpawn(4, 6, "tank", 0, 100));
   //wave 7
-  this.waves.push(new EnemySpawn(3, 7, "slow", 0, 100));
-  this.waves.push(new EnemySpawn(3, 7, "sleepy", 0, 100));
-  this.waves.push(new EnemySpawn(3, 7, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(4, 7, "slow", 0, 100));
+  this.waves.push(new EnemySpawn(4, 7, "sleepy", 0, 100));
+  this.waves.push(new EnemySpawn(4, 7, "frozen", 0, 100));
   //wave 8
-  this.waves.push(new EnemySpawn(3, 8, "tank", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "tank", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "wall", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "sleepy", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "liSpeed", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "basic", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "basic", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "difficult", 0, 100));
+  this.waves.push(new EnemySpawn(4, 8, "tank", 0, 100));
+  this.waves.push(new EnemySpawn(4, 8, "tank", 0, 100));
+  this.waves.push(new EnemySpawn(4, 8, "wall", 0, 100));
+  this.waves.push(new EnemySpawn(4, 8, "sleepy", 0, 100));
+  this.waves.push(new EnemySpawn(4, 8, "liSpeed", 0, 100));
+  this.waves.push(new EnemySpawn(4, 8, "basic", 0, 100));
+  this.waves.push(new EnemySpawn(4, 8, "basic", 0, 100));
+  this.waves.push(new EnemySpawn(4, 8, "difficult", 0, 100));
   //wave 9
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(4, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(4, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(4, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(4, 9, "normal", 0, 100));
   //wave 10
-  this.waves.push(new EnemySpawn(3, 10, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(4, 10, "barrier", 0, 100));
   //wave 11
-  this.waves.push(new EnemySpawn(3, 11, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(4, 11, "frozen", 0, 100));
   //wave 12
-  this.waves.push(new EnemySpawn(3, 12, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(4, 12, "barrier", 0, 100));
   //wave 13
-  this.waves.push(new EnemySpawn(3, 13, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(4, 13, "frozen", 0, 100));
   //wave 14
-  this.waves.push(new EnemySpawn(3, 14, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(4, 14, "barrier", 0, 100));
   //wave 15
-  this.waves.push(new EnemySpawn(3, 15, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(4, 15, "frozen", 0, 100));
   //wave 16
-  this.waves.push(new EnemySpawn(3, 16, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(4, 16, "barrier", 0, 100));
   //wave 17
-  this.waves.push(new EnemySpawn(3, 17, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(4, 17, "frozen", 0, 100));
   //wave 18
-  this.waves.push(new EnemySpawn(3, 18, "difficult", 0, 100));
-  this.waves.push(new EnemySpawn(3, 18, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 18, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 18, "easy", 0, 100));
+  this.waves.push(new EnemySpawn(4, 18, "difficult", 0, 100));
+  this.waves.push(new EnemySpawn(4, 18, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(4, 18, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(4, 18, "easy", 0, 100));
   //wave 19
-  this.waves.push(new EnemySpawn(3, 19, "extreme", 0, 100));
-  this.waves.push(new EnemySpawn(3, 19, "tank", 0, 100));
-  this.waves.push(new EnemySpawn(3, 19, "lightning", 0, 100));
-  this.waves.push(new EnemySpawn(3, 19, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(4, 19, "extreme", 0, 100));
+  this.waves.push(new EnemySpawn(4, 19, "tank", 0, 100));
+  this.waves.push(new EnemySpawn(4, 19, "lightning", 0, 100));
+  this.waves.push(new EnemySpawn(4, 19, "normal", 0, 100));
   //wave 20
-  this.waves.push(new EnemySpawn(3, 20, "easy", 0, 100));
-  this.waves.push(new EnemySpawn(3, 20, "athleat", 0, 100));
-  this.waves.push(new EnemySpawn(3, 20, "athleat", 0, 100));
-  this.waves.push(new EnemySpawn(3, 20, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(4, 20, "easy", 0, 100));
+  this.waves.push(new EnemySpawn(4, 20, "athleat", 0, 100));
+  this.waves.push(new EnemySpawn(4, 20, "athleat", 0, 100));
+  this.waves.push(new EnemySpawn(4, 20, "normal", 0, 100));
   //wave 21
-  this.waves.push(new EnemySpawn(3, 21, "fast", 0, 100));
-  this.waves.push(new EnemySpawn(3, 21, "armored", 0, 100));
-  this.waves.push(new EnemySpawn(3, 21, "barrier", 0, 100));
-  this.waves.push(new EnemySpawn(3, 21, "shield", 0, 100));
+  this.waves.push(new EnemySpawn(4, 21, "fast", 0, 100));
+  this.waves.push(new EnemySpawn(4, 21, "armored", 0, 100));
+  this.waves.push(new EnemySpawn(4, 21, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(4, 21, "shield", 0, 100));
 };
 
 /* creates stage Six Stair background
@@ -739,88 +739,88 @@ EnemyWaves.prototype.createStageSixWaves = function () {
   //wave 0
   this.waves.push(new EnemySpawn(5, 0, "hard", 0, 500));
   //wave 1
-  this.waves.push(new EnemySpawn(3, 1, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 1, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(5, 1, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(5, 1, "normal", 0, 100));
   //wave 2
-  this.waves.push(new EnemySpawn(3, 2, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 2, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(5, 2, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(5, 2, "normal", 0, 100));
   //wave 3
-  this.waves.push(new EnemySpawn(3, 3, "difficult", 0, 100));
-  this.waves.push(new EnemySpawn(3, 3, "difficult", 0, 10));
+  this.waves.push(new EnemySpawn(5, 3, "difficult", 0, 100));
+  this.waves.push(new EnemySpawn(5, 3, "difficult", 0, 10));
   //wave 4
-  this.waves.push(new EnemySpawn(3, 4, "basic", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "easy", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "difficult", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "hard", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "extreme", 0, 100));
+  this.waves.push(new EnemySpawn(5, 4, "basic", 0, 100));
+  this.waves.push(new EnemySpawn(5, 4, "easy", 0, 100));
+  this.waves.push(new EnemySpawn(5, 4, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(5, 4, "difficult", 0, 100));
+  this.waves.push(new EnemySpawn(5, 4, "hard", 0, 100));
+  this.waves.push(new EnemySpawn(5, 4, "extreme", 0, 100));
   //wave 5
-  this.waves.push(new EnemySpawn(3, 5, "fast", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "athleat", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "shark", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "lightning", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "flash", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "liSpeed", 0, 100));
+  this.waves.push(new EnemySpawn(5, 5, "fast", 0, 100));
+  this.waves.push(new EnemySpawn(5, 5, "athleat", 0, 100));
+  this.waves.push(new EnemySpawn(5, 5, "shark", 0, 100));
+  this.waves.push(new EnemySpawn(5, 5, "lightning", 0, 100));
+  this.waves.push(new EnemySpawn(5, 5, "flash", 0, 100));
+  this.waves.push(new EnemySpawn(5, 5, "liSpeed", 0, 100));
   //wave 6
-  this.waves.push(new EnemySpawn(3, 6, "armored", 0, 100));
-  this.waves.push(new EnemySpawn(3, 6, "shield", 0, 100));
-  this.waves.push(new EnemySpawn(3, 6, "barrier", 0, 100));
-  this.waves.push(new EnemySpawn(3, 6, "wall", 0, 100));
-  this.waves.push(new EnemySpawn(3, 6, "tank", 0, 100));
+  this.waves.push(new EnemySpawn(5, 6, "armored", 0, 100));
+  this.waves.push(new EnemySpawn(5, 6, "shield", 0, 100));
+  this.waves.push(new EnemySpawn(5, 6, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(5, 6, "wall", 0, 100));
+  this.waves.push(new EnemySpawn(5, 6, "tank", 0, 100));
   //wave 7
-  this.waves.push(new EnemySpawn(3, 7, "slow", 0, 100));
-  this.waves.push(new EnemySpawn(3, 7, "sleepy", 0, 100));
-  this.waves.push(new EnemySpawn(3, 7, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(5, 7, "slow", 0, 100));
+  this.waves.push(new EnemySpawn(5, 7, "sleepy", 0, 100));
+  this.waves.push(new EnemySpawn(5, 7, "frozen", 0, 100));
   //wave 8
-  this.waves.push(new EnemySpawn(3, 8, "tank", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "tank", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "wall", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "sleepy", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "liSpeed", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "basic", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "basic", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "difficult", 0, 100));
+  this.waves.push(new EnemySpawn(5, 8, "tank", 0, 100));
+  this.waves.push(new EnemySpawn(5, 8, "tank", 0, 100));
+  this.waves.push(new EnemySpawn(5, 8, "wall", 0, 100));
+  this.waves.push(new EnemySpawn(5, 8, "sleepy", 0, 100));
+  this.waves.push(new EnemySpawn(5, 8, "liSpeed", 0, 100));
+  this.waves.push(new EnemySpawn(5, 8, "basic", 0, 100));
+  this.waves.push(new EnemySpawn(5, 8, "basic", 0, 100));
+  this.waves.push(new EnemySpawn(5, 8, "difficult", 0, 100));
   //wave 9
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(5, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(5, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(5, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(5, 9, "normal", 0, 100));
   //wave 10
-  this.waves.push(new EnemySpawn(3, 10, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(5, 10, "barrier", 0, 100));
   //wave 11
-  this.waves.push(new EnemySpawn(3, 11, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(5, 11, "frozen", 0, 100));
   //wave 12
-  this.waves.push(new EnemySpawn(3, 12, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(5, 12, "barrier", 0, 100));
   //wave 13
-  this.waves.push(new EnemySpawn(3, 13, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(5, 13, "frozen", 0, 100));
   //wave 14
-  this.waves.push(new EnemySpawn(3, 14, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(5, 14, "barrier", 0, 100));
   //wave 15
-  this.waves.push(new EnemySpawn(3, 15, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(5, 15, "frozen", 0, 100));
   //wave 16
-  this.waves.push(new EnemySpawn(3, 16, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(5, 16, "barrier", 0, 100));
   //wave 17
-  this.waves.push(new EnemySpawn(3, 17, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(5, 17, "frozen", 0, 100));
   //wave 18
-  this.waves.push(new EnemySpawn(3, 18, "difficult", 0, 100));
-  this.waves.push(new EnemySpawn(3, 18, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 18, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 18, "easy", 0, 100));
+  this.waves.push(new EnemySpawn(5, 18, "difficult", 0, 100));
+  this.waves.push(new EnemySpawn(5, 18, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(5, 18, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(5, 18, "easy", 0, 100));
   //wave 19
-  this.waves.push(new EnemySpawn(3, 19, "extreme", 0, 100));
-  this.waves.push(new EnemySpawn(3, 19, "tank", 0, 100));
-  this.waves.push(new EnemySpawn(3, 19, "lightning", 0, 100));
-  this.waves.push(new EnemySpawn(3, 19, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(5, 19, "extreme", 0, 100));
+  this.waves.push(new EnemySpawn(5, 19, "tank", 0, 100));
+  this.waves.push(new EnemySpawn(5, 19, "lightning", 0, 100));
+  this.waves.push(new EnemySpawn(5, 19, "normal", 0, 100));
   //wave 20
-  this.waves.push(new EnemySpawn(3, 20, "easy", 0, 100));
-  this.waves.push(new EnemySpawn(3, 20, "athleat", 0, 100));
-  this.waves.push(new EnemySpawn(3, 20, "athleat", 0, 100));
-  this.waves.push(new EnemySpawn(3, 20, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(5, 20, "easy", 0, 100));
+  this.waves.push(new EnemySpawn(5, 20, "athleat", 0, 100));
+  this.waves.push(new EnemySpawn(5, 20, "athleat", 0, 100));
+  this.waves.push(new EnemySpawn(5, 20, "normal", 0, 100));
   //wave 21
-  this.waves.push(new EnemySpawn(3, 21, "fast", 0, 100));
-  this.waves.push(new EnemySpawn(3, 21, "armored", 0, 100));
-  this.waves.push(new EnemySpawn(3, 21, "barrier", 0, 100));
-  this.waves.push(new EnemySpawn(3, 21, "shield", 0, 100));
+  this.waves.push(new EnemySpawn(5, 21, "fast", 0, 100));
+  this.waves.push(new EnemySpawn(5, 21, "armored", 0, 100));
+  this.waves.push(new EnemySpawn(5, 21, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(5, 21, "shield", 0, 100));
 };
 
 /* creates stage Seven Lava background
@@ -828,90 +828,90 @@ EnemyWaves.prototype.createStageSixWaves = function () {
  */
 EnemyWaves.prototype.createStageSevenWaves = function () {
   //wave 0
-  this.waves.push(new EnemySpawn(6, 0, "extreme", 0, 500));
+  this.waves.push(new EnemySpawn(6, 0, "extreme", 0, 800));
   //wave 1
-  this.waves.push(new EnemySpawn(3, 1, "normal", 1, 100));
-  this.waves.push(new EnemySpawn(3, 1, "normal", 1, 100));
+  this.waves.push(new EnemySpawn(6, 1, "normal", 1, 100));
+  this.waves.push(new EnemySpawn(6, 1, "normal", 1, 100));
   //wave 2
-  this.waves.push(new EnemySpawn(3, 2, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 2, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(6, 2, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(6, 2, "normal", 0, 100));
   //wave 3
-  this.waves.push(new EnemySpawn(3, 3, "difficult", 0, 100));
-  this.waves.push(new EnemySpawn(3, 3, "difficult", 1, 10));
+  this.waves.push(new EnemySpawn(6, 3, "difficult", 0, 100));
+  this.waves.push(new EnemySpawn(6, 3, "difficult", 1, 10));
   //wave 4
-  this.waves.push(new EnemySpawn(3, 4, "basic", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "easy", 1, 100));
-  this.waves.push(new EnemySpawn(3, 4, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "difficult", 1, 100));
-  this.waves.push(new EnemySpawn(3, 4, "hard", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "extreme", 1, 100));
+  this.waves.push(new EnemySpawn(6, 4, "basic", 0, 100));
+  this.waves.push(new EnemySpawn(6, 4, "easy", 1, 100));
+  this.waves.push(new EnemySpawn(6, 4, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(6, 4, "difficult", 1, 100));
+  this.waves.push(new EnemySpawn(6, 4, "hard", 0, 100));
+  this.waves.push(new EnemySpawn(6, 4, "extreme", 1, 100));
   //wave 5
-  this.waves.push(new EnemySpawn(3, 5, "fast", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "athleat", 1, 100));
-  this.waves.push(new EnemySpawn(3, 5, "shark", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "lightning", 1, 100));
-  this.waves.push(new EnemySpawn(3, 5, "flash", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "liSpeed", 1, 100));
+  this.waves.push(new EnemySpawn(6, 5, "fast", 0, 100));
+  this.waves.push(new EnemySpawn(6, 5, "athleat", 1, 100));
+  this.waves.push(new EnemySpawn(6, 5, "shark", 0, 100));
+  this.waves.push(new EnemySpawn(6, 5, "lightning", 1, 100));
+  this.waves.push(new EnemySpawn(6, 5, "flash", 0, 100));
+  this.waves.push(new EnemySpawn(6, 5, "liSpeed", 1, 100));
   //wave 6
-  this.waves.push(new EnemySpawn(3, 6, "armored", 0, 100));
-  this.waves.push(new EnemySpawn(3, 6, "shield", 1, 100));
-  this.waves.push(new EnemySpawn(3, 6, "barrier", 0, 100));
-  this.waves.push(new EnemySpawn(3, 6, "wall", 1, 100));
-  this.waves.push(new EnemySpawn(3, 6, "tank", 0, 100));
+  this.waves.push(new EnemySpawn(6, 6, "armored", 0, 100));
+  this.waves.push(new EnemySpawn(6, 6, "shield", 1, 100));
+  this.waves.push(new EnemySpawn(6, 6, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(6, 6, "wall", 1, 100));
+  this.waves.push(new EnemySpawn(6, 6, "tank", 0, 100));
   //wave 7
-  this.waves.push(new EnemySpawn(3, 7, "slow", 1, 100));
-  this.waves.push(new EnemySpawn(3, 7, "sleepy", 0, 100));
-  this.waves.push(new EnemySpawn(3, 7, "frozen", 1, 100));
+  this.waves.push(new EnemySpawn(6, 7, "slow", 1, 100));
+  this.waves.push(new EnemySpawn(6, 7, "sleepy", 0, 100));
+  this.waves.push(new EnemySpawn(6, 7, "frozen", 1, 100));
   //wave 8
-  this.waves.push(new EnemySpawn(3, 8, "tank", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "tank", 1, 100));
-  this.waves.push(new EnemySpawn(3, 8, "wall", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "sleepy", 1, 100));
-  this.waves.push(new EnemySpawn(3, 8, "liSpeed", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "basic", 1, 100));
-  this.waves.push(new EnemySpawn(3, 8, "basic", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "difficult", 1, 100));
+  this.waves.push(new EnemySpawn(6, 8, "tank", 0, 100));
+  this.waves.push(new EnemySpawn(6, 8, "tank", 1, 100));
+  this.waves.push(new EnemySpawn(6, 8, "wall", 0, 100));
+  this.waves.push(new EnemySpawn(6, 8, "sleepy", 1, 100));
+  this.waves.push(new EnemySpawn(6, 8, "liSpeed", 0, 100));
+  this.waves.push(new EnemySpawn(6, 8, "basic", 1, 100));
+  this.waves.push(new EnemySpawn(6, 8, "basic", 0, 100));
+  this.waves.push(new EnemySpawn(6, 8, "difficult", 1, 100));
   //wave 9
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(6, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(6, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(6, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(6, 9, "normal", 0, 100));
   //wave 10
-  this.waves.push(new EnemySpawn(3, 10, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(6, 10, "barrier", 0, 100));
   //wave 11
-  this.waves.push(new EnemySpawn(3, 11, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(6, 11, "frozen", 0, 100));
   //wave 12
-  this.waves.push(new EnemySpawn(3, 12, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(6, 12, "barrier", 0, 100));
   //wave 13
-  this.waves.push(new EnemySpawn(3, 13, "frozen", 1, 100));
+  this.waves.push(new EnemySpawn(6, 13, "frozen", 1, 100));
   //wave 14
-  this.waves.push(new EnemySpawn(3, 14, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(6, 14, "barrier", 0, 100));
   //wave 15
-  this.waves.push(new EnemySpawn(3, 15, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(6, 15, "frozen", 0, 100));
   //wave 16
-  this.waves.push(new EnemySpawn(3, 16, "barrier", 1, 100));
+  this.waves.push(new EnemySpawn(6, 16, "barrier", 1, 100));
   //wave 17
-  this.waves.push(new EnemySpawn(3, 17, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(6, 17, "frozen", 0, 100));
   //wave 18
-  this.waves.push(new EnemySpawn(3, 18, "difficult", 1, 100));
-  this.waves.push(new EnemySpawn(3, 18, "normal", 1, 100));
-  this.waves.push(new EnemySpawn(3, 18, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 18, "easy", 0, 100));
+  this.waves.push(new EnemySpawn(6, 18, "difficult", 1, 100));
+  this.waves.push(new EnemySpawn(6, 18, "normal", 1, 100));
+  this.waves.push(new EnemySpawn(6, 18, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(6, 18, "easy", 0, 100));
   //wave 19
-  this.waves.push(new EnemySpawn(3, 19, "extreme", 1, 100));
-  this.waves.push(new EnemySpawn(3, 19, "tank", 0, 100));
-  this.waves.push(new EnemySpawn(3, 19, "lightning", 1, 100));
-  this.waves.push(new EnemySpawn(3, 19, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(6, 19, "extreme", 1, 100));
+  this.waves.push(new EnemySpawn(6, 19, "tank", 0, 100));
+  this.waves.push(new EnemySpawn(6, 19, "lightning", 1, 100));
+  this.waves.push(new EnemySpawn(6, 19, "normal", 0, 100));
   //wave 20
-  this.waves.push(new EnemySpawn(3, 20, "easy", 0, 100));
-  this.waves.push(new EnemySpawn(3, 20, "athleat", 1, 100));
-  this.waves.push(new EnemySpawn(3, 20, "athleat", 1, 100));
-  this.waves.push(new EnemySpawn(3, 20, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(6, 20, "easy", 0, 100));
+  this.waves.push(new EnemySpawn(6, 20, "athleat", 1, 100));
+  this.waves.push(new EnemySpawn(6, 20, "athleat", 1, 100));
+  this.waves.push(new EnemySpawn(6, 20, "normal", 0, 100));
   //wave 21
-  this.waves.push(new EnemySpawn(3, 21, "fast", 0, 100));
-  this.waves.push(new EnemySpawn(3, 21, "armored", 0, 100));
-  this.waves.push(new EnemySpawn(3, 21, "barrier", 1, 100));
-  this.waves.push(new EnemySpawn(3, 21, "shield", 0, 100));
+  this.waves.push(new EnemySpawn(6, 21, "fast", 0, 100));
+  this.waves.push(new EnemySpawn(6, 21, "armored", 0, 100));
+  this.waves.push(new EnemySpawn(6, 21, "barrier", 1, 100));
+  this.waves.push(new EnemySpawn(6, 21, "shield", 0, 100));
 };
 
 /* creates stage Eight Snail background
@@ -921,88 +921,88 @@ EnemyWaves.prototype.createStageEightWaves = function () {
   //wave 0
   this.waves.push(new EnemySpawn(7, 0, "tank", 0, 100));
   //wave 1
-  this.waves.push(new EnemySpawn(3, 1, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 1, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(7, 1, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(7, 1, "normal", 0, 100));
   //wave 2
-  this.waves.push(new EnemySpawn(3, 2, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 2, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(7, 2, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(7, 2, "normal", 0, 100));
   //wave 3
-  this.waves.push(new EnemySpawn(3, 3, "difficult", 0, 100));
-  this.waves.push(new EnemySpawn(3, 3, "difficult", 0, 10));
+  this.waves.push(new EnemySpawn(7, 3, "difficult", 0, 100));
+  this.waves.push(new EnemySpawn(7, 3, "difficult", 0, 10));
   //wave 4
-  this.waves.push(new EnemySpawn(3, 4, "basic", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "easy", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "difficult", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "hard", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "extreme", 0, 100));
+  this.waves.push(new EnemySpawn(7, 4, "basic", 0, 100));
+  this.waves.push(new EnemySpawn(7, 4, "easy", 0, 100));
+  this.waves.push(new EnemySpawn(7, 4, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(7, 4, "difficult", 0, 100));
+  this.waves.push(new EnemySpawn(7, 4, "hard", 0, 100));
+  this.waves.push(new EnemySpawn(7, 4, "extreme", 0, 100));
   //wave 5
-  this.waves.push(new EnemySpawn(3, 5, "fast", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "athleat", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "shark", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "lightning", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "flash", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "liSpeed", 0, 100));
+  this.waves.push(new EnemySpawn(7, 5, "fast", 0, 100));
+  this.waves.push(new EnemySpawn(7, 5, "athleat", 0, 100));
+  this.waves.push(new EnemySpawn(7, 5, "shark", 0, 100));
+  this.waves.push(new EnemySpawn(7, 5, "lightning", 0, 100));
+  this.waves.push(new EnemySpawn(7, 5, "flash", 0, 100));
+  this.waves.push(new EnemySpawn(7, 5, "liSpeed", 0, 100));
   //wave 6
-  this.waves.push(new EnemySpawn(3, 6, "armored", 0, 100));
-  this.waves.push(new EnemySpawn(3, 6, "shield", 0, 100));
-  this.waves.push(new EnemySpawn(3, 6, "barrier", 0, 100));
-  this.waves.push(new EnemySpawn(3, 6, "wall", 0, 100));
-  this.waves.push(new EnemySpawn(3, 6, "tank", 0, 100));
+  this.waves.push(new EnemySpawn(7, 6, "armored", 0, 100));
+  this.waves.push(new EnemySpawn(7, 6, "shield", 0, 100));
+  this.waves.push(new EnemySpawn(7, 6, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(7, 6, "wall", 0, 100));
+  this.waves.push(new EnemySpawn(7, 6, "tank", 0, 100));
   //wave 7
-  this.waves.push(new EnemySpawn(3, 7, "slow", 0, 100));
-  this.waves.push(new EnemySpawn(3, 7, "sleepy", 0, 100));
-  this.waves.push(new EnemySpawn(3, 7, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(7, 7, "slow", 0, 100));
+  this.waves.push(new EnemySpawn(7, 7, "sleepy", 0, 100));
+  this.waves.push(new EnemySpawn(7, 7, "frozen", 0, 100));
   //wave 8
-  this.waves.push(new EnemySpawn(3, 8, "tank", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "tank", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "wall", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "sleepy", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "liSpeed", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "basic", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "basic", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "difficult", 0, 100));
+  this.waves.push(new EnemySpawn(7, 8, "tank", 0, 100));
+  this.waves.push(new EnemySpawn(7, 8, "tank", 0, 100));
+  this.waves.push(new EnemySpawn(7, 8, "wall", 0, 100));
+  this.waves.push(new EnemySpawn(7, 8, "sleepy", 0, 100));
+  this.waves.push(new EnemySpawn(7, 8, "liSpeed", 0, 100));
+  this.waves.push(new EnemySpawn(7, 8, "basic", 0, 100));
+  this.waves.push(new EnemySpawn(7, 8, "basic", 0, 100));
+  this.waves.push(new EnemySpawn(7, 8, "difficult", 0, 100));
   //wave 9
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(7, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(7, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(7, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(7, 9, "normal", 0, 100));
   //wave 10
-  this.waves.push(new EnemySpawn(3, 10, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(7, 10, "barrier", 0, 100));
   //wave 11
-  this.waves.push(new EnemySpawn(3, 11, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(7, 11, "frozen", 0, 100));
   //wave 12
-  this.waves.push(new EnemySpawn(3, 12, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(7, 12, "barrier", 0, 100));
   //wave 13
-  this.waves.push(new EnemySpawn(3, 13, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(7, 13, "frozen", 0, 100));
   //wave 14
-  this.waves.push(new EnemySpawn(3, 14, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(7, 14, "barrier", 0, 100));
   //wave 15
-  this.waves.push(new EnemySpawn(3, 15, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(7, 15, "frozen", 0, 100));
   //wave 16
-  this.waves.push(new EnemySpawn(3, 16, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(7, 16, "barrier", 0, 100));
   //wave 17
-  this.waves.push(new EnemySpawn(3, 17, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(7, 17, "frozen", 0, 100));
   //wave 18
-  this.waves.push(new EnemySpawn(3, 18, "difficult", 0, 100));
-  this.waves.push(new EnemySpawn(3, 18, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 18, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 18, "easy", 0, 100));
+  this.waves.push(new EnemySpawn(7, 18, "difficult", 0, 100));
+  this.waves.push(new EnemySpawn(7, 18, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(7, 18, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(7, 18, "easy", 0, 100));
   //wave 19
-  this.waves.push(new EnemySpawn(3, 19, "extreme", 0, 100));
-  this.waves.push(new EnemySpawn(3, 19, "tank", 0, 100));
-  this.waves.push(new EnemySpawn(3, 19, "lightning", 0, 100));
-  this.waves.push(new EnemySpawn(3, 19, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(7, 19, "extreme", 0, 100));
+  this.waves.push(new EnemySpawn(7, 19, "tank", 0, 100));
+  this.waves.push(new EnemySpawn(7, 19, "lightning", 0, 100));
+  this.waves.push(new EnemySpawn(7, 19, "normal", 0, 100));
   //wave 20
-  this.waves.push(new EnemySpawn(3, 20, "easy", 0, 100));
-  this.waves.push(new EnemySpawn(3, 20, "athleat", 0, 100));
-  this.waves.push(new EnemySpawn(3, 20, "athleat", 0, 100));
-  this.waves.push(new EnemySpawn(3, 20, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(7, 20, "easy", 0, 100));
+  this.waves.push(new EnemySpawn(7, 20, "athleat", 0, 100));
+  this.waves.push(new EnemySpawn(7, 20, "athleat", 0, 100));
+  this.waves.push(new EnemySpawn(7, 20, "normal", 0, 100));
   //wave 21
-  this.waves.push(new EnemySpawn(3, 21, "fast", 0, 100));
-  this.waves.push(new EnemySpawn(3, 21, "armored", 0, 100));
-  this.waves.push(new EnemySpawn(3, 21, "barrier", 0, 100));
-  this.waves.push(new EnemySpawn(3, 21, "shield", 0, 100));
+  this.waves.push(new EnemySpawn(7, 21, "fast", 0, 100));
+  this.waves.push(new EnemySpawn(7, 21, "armored", 0, 100));
+  this.waves.push(new EnemySpawn(7, 21, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(7, 21, "shield", 0, 100));
 };
 
 /* creates stage Nine Dual background
@@ -1012,88 +1012,88 @@ EnemyWaves.prototype.createStageNineWaves = function () {
   //wave 0
   this.waves.push(new EnemySpawn(8, 0, "shark", 0, 2200));
   //wave 1
-  this.waves.push(new EnemySpawn(3, 1, "normal", 1, 100));
-  this.waves.push(new EnemySpawn(3, 1, "normal", 1, 100));
+  this.waves.push(new EnemySpawn(8, 1, "normal", 1, 100));
+  this.waves.push(new EnemySpawn(8, 1, "normal", 1, 100));
   //wave 2
-  this.waves.push(new EnemySpawn(3, 2, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 2, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(8, 2, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(8, 2, "normal", 0, 100));
   //wave 3
-  this.waves.push(new EnemySpawn(3, 3, "difficult", 0, 100));
-  this.waves.push(new EnemySpawn(3, 3, "difficult", 1, 10));
+  this.waves.push(new EnemySpawn(8, 3, "difficult", 0, 100));
+  this.waves.push(new EnemySpawn(8, 3, "difficult", 1, 10));
   //wave 4
-  this.waves.push(new EnemySpawn(3, 4, "basic", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "easy", 1, 100));
-  this.waves.push(new EnemySpawn(3, 4, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "difficult", 1, 100));
-  this.waves.push(new EnemySpawn(3, 4, "hard", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "extreme", 1, 100));
+  this.waves.push(new EnemySpawn(8, 4, "basic", 0, 100));
+  this.waves.push(new EnemySpawn(8, 4, "easy", 1, 100));
+  this.waves.push(new EnemySpawn(8, 4, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(8, 4, "difficult", 1, 100));
+  this.waves.push(new EnemySpawn(8, 4, "hard", 0, 100));
+  this.waves.push(new EnemySpawn(8, 4, "extreme", 1, 100));
   //wave 5
-  this.waves.push(new EnemySpawn(3, 5, "fast", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "athleat", 1, 100));
-  this.waves.push(new EnemySpawn(3, 5, "shark", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "lightning", 1, 100));
-  this.waves.push(new EnemySpawn(3, 5, "flash", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "liSpeed", 1, 100));
+  this.waves.push(new EnemySpawn(8, 5, "fast", 0, 100));
+  this.waves.push(new EnemySpawn(8, 5, "athleat", 1, 100));
+  this.waves.push(new EnemySpawn(8, 5, "shark", 0, 100));
+  this.waves.push(new EnemySpawn(8, 5, "lightning", 1, 100));
+  this.waves.push(new EnemySpawn(8, 5, "flash", 0, 100));
+  this.waves.push(new EnemySpawn(8, 5, "liSpeed", 1, 100));
   //wave 6
-  this.waves.push(new EnemySpawn(3, 6, "armored", 0, 100));
-  this.waves.push(new EnemySpawn(3, 6, "shield", 1, 100));
-  this.waves.push(new EnemySpawn(3, 6, "barrier", 0, 100));
-  this.waves.push(new EnemySpawn(3, 6, "wall", 1, 100));
-  this.waves.push(new EnemySpawn(3, 6, "tank", 0, 100));
+  this.waves.push(new EnemySpawn(8, 6, "armored", 0, 100));
+  this.waves.push(new EnemySpawn(8, 6, "shield", 1, 100));
+  this.waves.push(new EnemySpawn(8, 6, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(8, 6, "wall", 1, 100));
+  this.waves.push(new EnemySpawn(8, 6, "tank", 0, 100));
   //wave 7
-  this.waves.push(new EnemySpawn(3, 7, "slow", 1, 100));
-  this.waves.push(new EnemySpawn(3, 7, "sleepy", 0, 100));
-  this.waves.push(new EnemySpawn(3, 7, "frozen", 1, 100));
+  this.waves.push(new EnemySpawn(8, 7, "slow", 1, 100));
+  this.waves.push(new EnemySpawn(8, 7, "sleepy", 0, 100));
+  this.waves.push(new EnemySpawn(8, 7, "frozen", 1, 100));
   //wave 8
-  this.waves.push(new EnemySpawn(3, 8, "tank", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "tank", 1, 100));
-  this.waves.push(new EnemySpawn(3, 8, "wall", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "sleepy", 1, 100));
-  this.waves.push(new EnemySpawn(3, 8, "liSpeed", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "basic", 1, 100));
-  this.waves.push(new EnemySpawn(3, 8, "basic", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "difficult", 1, 100));
+  this.waves.push(new EnemySpawn(8, 8, "tank", 0, 100));
+  this.waves.push(new EnemySpawn(8, 8, "tank", 1, 100));
+  this.waves.push(new EnemySpawn(8, 8, "wall", 0, 100));
+  this.waves.push(new EnemySpawn(8, 8, "sleepy", 1, 100));
+  this.waves.push(new EnemySpawn(8, 8, "liSpeed", 0, 100));
+  this.waves.push(new EnemySpawn(8, 8, "basic", 1, 100));
+  this.waves.push(new EnemySpawn(8, 8, "basic", 0, 100));
+  this.waves.push(new EnemySpawn(8, 8, "difficult", 1, 100));
   //wave 9
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(8, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(8, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(8, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(8, 9, "normal", 0, 100));
   //wave 10
-  this.waves.push(new EnemySpawn(3, 10, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(8, 10, "barrier", 0, 100));
   //wave 11
-  this.waves.push(new EnemySpawn(3, 11, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(8, 11, "frozen", 0, 100));
   //wave 12
-  this.waves.push(new EnemySpawn(3, 12, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(8, 12, "barrier", 0, 100));
   //wave 13
-  this.waves.push(new EnemySpawn(3, 13, "frozen", 1, 100));
+  this.waves.push(new EnemySpawn(8, 13, "frozen", 1, 100));
   //wave 14
-  this.waves.push(new EnemySpawn(3, 14, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(8, 14, "barrier", 0, 100));
   //wave 15
-  this.waves.push(new EnemySpawn(3, 15, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(8, 15, "frozen", 0, 100));
   //wave 16
-  this.waves.push(new EnemySpawn(3, 16, "barrier", 1, 100));
+  this.waves.push(new EnemySpawn(8, 16, "barrier", 1, 100));
   //wave 17
-  this.waves.push(new EnemySpawn(3, 17, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(8, 17, "frozen", 0, 100));
   //wave 18
-  this.waves.push(new EnemySpawn(3, 18, "difficult", 1, 100));
-  this.waves.push(new EnemySpawn(3, 18, "normal", 1, 100));
-  this.waves.push(new EnemySpawn(3, 18, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 18, "easy", 0, 100));
+  this.waves.push(new EnemySpawn(8, 18, "difficult", 1, 100));
+  this.waves.push(new EnemySpawn(8, 18, "normal", 1, 100));
+  this.waves.push(new EnemySpawn(8, 18, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(8, 18, "easy", 0, 100));
   //wave 19
-  this.waves.push(new EnemySpawn(3, 19, "extreme", 1, 100));
-  this.waves.push(new EnemySpawn(3, 19, "tank", 0, 100));
-  this.waves.push(new EnemySpawn(3, 19, "lightning", 1, 100));
-  this.waves.push(new EnemySpawn(3, 19, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(8, 19, "extreme", 1, 100));
+  this.waves.push(new EnemySpawn(8, 19, "tank", 0, 100));
+  this.waves.push(new EnemySpawn(8, 19, "lightning", 1, 100));
+  this.waves.push(new EnemySpawn(8, 19, "normal", 0, 100));
   //wave 20
-  this.waves.push(new EnemySpawn(3, 20, "easy", 0, 100));
-  this.waves.push(new EnemySpawn(3, 20, "athleat", 1, 100));
-  this.waves.push(new EnemySpawn(3, 20, "athleat", 1, 100));
-  this.waves.push(new EnemySpawn(3, 20, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(8, 20, "easy", 0, 100));
+  this.waves.push(new EnemySpawn(8, 20, "athleat", 1, 100));
+  this.waves.push(new EnemySpawn(8, 20, "athleat", 1, 100));
+  this.waves.push(new EnemySpawn(8, 20, "normal", 0, 100));
   //wave 21
-  this.waves.push(new EnemySpawn(3, 21, "fast", 0, 100));
-  this.waves.push(new EnemySpawn(3, 21, "armored", 0, 100));
-  this.waves.push(new EnemySpawn(3, 21, "barrier", 1, 100));
-  this.waves.push(new EnemySpawn(3, 21, "shield", 0, 100));
+  this.waves.push(new EnemySpawn(8, 21, "fast", 0, 100));
+  this.waves.push(new EnemySpawn(8, 21, "armored", 0, 100));
+  this.waves.push(new EnemySpawn(8, 21, "barrier", 1, 100));
+  this.waves.push(new EnemySpawn(8, 21, "shield", 0, 100));
 };
 
 /* creates stage Ten Sand background
@@ -1103,88 +1103,88 @@ EnemyWaves.prototype.createStageTenWaves = function () {
   //wave 0
   this.waves.push(new EnemySpawn(9, 0, "lightning", 0, 500));
   //wave 1
-  this.waves.push(new EnemySpawn(3, 1, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 1, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(9, 1, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(9, 1, "normal", 0, 100));
   //wave 2
-  this.waves.push(new EnemySpawn(3, 2, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 2, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(9, 2, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(9, 2, "normal", 0, 100));
   //wave 3
-  this.waves.push(new EnemySpawn(3, 3, "difficult", 0, 100));
-  this.waves.push(new EnemySpawn(3, 3, "difficult", 0, 10));
+  this.waves.push(new EnemySpawn(9, 3, "difficult", 0, 100));
+  this.waves.push(new EnemySpawn(9, 3, "difficult", 0, 10));
   //wave 4
-  this.waves.push(new EnemySpawn(3, 4, "basic", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "easy", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "difficult", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "hard", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "extreme", 0, 100));
+  this.waves.push(new EnemySpawn(9, 4, "basic", 0, 100));
+  this.waves.push(new EnemySpawn(9, 4, "easy", 0, 100));
+  this.waves.push(new EnemySpawn(9, 4, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(9, 4, "difficult", 0, 100));
+  this.waves.push(new EnemySpawn(9, 4, "hard", 0, 100));
+  this.waves.push(new EnemySpawn(9, 4, "extreme", 0, 100));
   //wave 5
-  this.waves.push(new EnemySpawn(3, 5, "fast", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "athleat", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "shark", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "lightning", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "flash", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "liSpeed", 0, 100));
+  this.waves.push(new EnemySpawn(9, 5, "fast", 0, 100));
+  this.waves.push(new EnemySpawn(9, 5, "athleat", 0, 100));
+  this.waves.push(new EnemySpawn(9, 5, "shark", 0, 100));
+  this.waves.push(new EnemySpawn(9, 5, "lightning", 0, 100));
+  this.waves.push(new EnemySpawn(9, 5, "flash", 0, 100));
+  this.waves.push(new EnemySpawn(9, 5, "liSpeed", 0, 100));
   //wave 6
-  this.waves.push(new EnemySpawn(3, 6, "armored", 0, 100));
-  this.waves.push(new EnemySpawn(3, 6, "shield", 0, 100));
-  this.waves.push(new EnemySpawn(3, 6, "barrier", 0, 100));
-  this.waves.push(new EnemySpawn(3, 6, "wall", 0, 100));
-  this.waves.push(new EnemySpawn(3, 6, "tank", 0, 100));
+  this.waves.push(new EnemySpawn(9, 6, "armored", 0, 100));
+  this.waves.push(new EnemySpawn(9, 6, "shield", 0, 100));
+  this.waves.push(new EnemySpawn(9, 6, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(9, 6, "wall", 0, 100));
+  this.waves.push(new EnemySpawn(9, 6, "tank", 0, 100));
   //wave 7
-  this.waves.push(new EnemySpawn(3, 7, "slow", 0, 100));
-  this.waves.push(new EnemySpawn(3, 7, "sleepy", 0, 100));
-  this.waves.push(new EnemySpawn(3, 7, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(9, 7, "slow", 0, 100));
+  this.waves.push(new EnemySpawn(9, 7, "sleepy", 0, 100));
+  this.waves.push(new EnemySpawn(9, 7, "frozen", 0, 100));
   //wave 8
-  this.waves.push(new EnemySpawn(3, 8, "tank", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "tank", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "wall", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "sleepy", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "liSpeed", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "basic", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "basic", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "difficult", 0, 100));
+  this.waves.push(new EnemySpawn(9, 8, "tank", 0, 100));
+  this.waves.push(new EnemySpawn(9, 8, "tank", 0, 100));
+  this.waves.push(new EnemySpawn(9, 8, "wall", 0, 100));
+  this.waves.push(new EnemySpawn(9, 8, "sleepy", 0, 100));
+  this.waves.push(new EnemySpawn(9, 8, "liSpeed", 0, 100));
+  this.waves.push(new EnemySpawn(9, 8, "basic", 0, 100));
+  this.waves.push(new EnemySpawn(9, 8, "basic", 0, 100));
+  this.waves.push(new EnemySpawn(9, 8, "difficult", 0, 100));
   //wave 9
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(9, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(9, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(9, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(9, 9, "normal", 0, 100));
   //wave 10
-  this.waves.push(new EnemySpawn(3, 10, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(9, 10, "barrier", 0, 100));
   //wave 11
-  this.waves.push(new EnemySpawn(3, 11, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(9, 11, "frozen", 0, 100));
   //wave 12
-  this.waves.push(new EnemySpawn(3, 12, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(9, 12, "barrier", 0, 100));
   //wave 13
-  this.waves.push(new EnemySpawn(3, 13, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(9, 13, "frozen", 0, 100));
   //wave 14
-  this.waves.push(new EnemySpawn(3, 14, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(9, 14, "barrier", 0, 100));
   //wave 15
-  this.waves.push(new EnemySpawn(3, 15, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(9, 15, "frozen", 0, 100));
   //wave 16
-  this.waves.push(new EnemySpawn(3, 16, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(9, 16, "barrier", 0, 100));
   //wave 17
-  this.waves.push(new EnemySpawn(3, 17, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(9, 17, "frozen", 0, 100));
   //wave 18
-  this.waves.push(new EnemySpawn(3, 18, "difficult", 0, 100));
-  this.waves.push(new EnemySpawn(3, 18, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 18, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 18, "easy", 0, 100));
+  this.waves.push(new EnemySpawn(9, 18, "difficult", 0, 100));
+  this.waves.push(new EnemySpawn(9, 18, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(9, 18, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(9, 18, "easy", 0, 100));
   //wave 19
-  this.waves.push(new EnemySpawn(3, 19, "extreme", 0, 100));
-  this.waves.push(new EnemySpawn(3, 19, "tank", 0, 100));
-  this.waves.push(new EnemySpawn(3, 19, "lightning", 0, 100));
-  this.waves.push(new EnemySpawn(3, 19, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(9, 19, "extreme", 0, 100));
+  this.waves.push(new EnemySpawn(9, 19, "tank", 0, 100));
+  this.waves.push(new EnemySpawn(9, 19, "lightning", 0, 100));
+  this.waves.push(new EnemySpawn(9, 19, "normal", 0, 100));
   //wave 20
-  this.waves.push(new EnemySpawn(3, 20, "easy", 0, 100));
-  this.waves.push(new EnemySpawn(3, 20, "athleat", 0, 100));
-  this.waves.push(new EnemySpawn(3, 20, "athleat", 0, 100));
-  this.waves.push(new EnemySpawn(3, 20, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(9, 20, "easy", 0, 100));
+  this.waves.push(new EnemySpawn(9, 20, "athleat", 0, 100));
+  this.waves.push(new EnemySpawn(9, 20, "athleat", 0, 100));
+  this.waves.push(new EnemySpawn(9, 20, "normal", 0, 100));
   //wave 21
-  this.waves.push(new EnemySpawn(3, 21, "fast", 0, 100));
-  this.waves.push(new EnemySpawn(3, 21, "armored", 0, 100));
-  this.waves.push(new EnemySpawn(3, 21, "barrier", 0, 100));
-  this.waves.push(new EnemySpawn(3, 21, "shield", 0, 100));
+  this.waves.push(new EnemySpawn(9, 21, "fast", 0, 100));
+  this.waves.push(new EnemySpawn(9, 21, "armored", 0, 100));
+  this.waves.push(new EnemySpawn(9, 21, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(9, 21, "shield", 0, 100));
 };
 
 /* creates stage Eleven X background
@@ -1194,88 +1194,88 @@ EnemyWaves.prototype.createStageElevenWaves = function () {
   //wave 0
   this.waves.push(new EnemySpawn(10, 0, "flash", 0, 500));
   //wave 1
-  this.waves.push(new EnemySpawn(3, 1, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 1, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(10, 1, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(10, 1, "normal", 0, 100));
   //wave 2
-  this.waves.push(new EnemySpawn(3, 2, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 2, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(10, 2, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(10, 2, "normal", 0, 100));
   //wave 3
-  this.waves.push(new EnemySpawn(3, 3, "difficult", 0, 100));
-  this.waves.push(new EnemySpawn(3, 3, "difficult", 0, 10));
+  this.waves.push(new EnemySpawn(10, 3, "difficult", 0, 100));
+  this.waves.push(new EnemySpawn(10, 3, "difficult", 0, 10));
   //wave 4
-  this.waves.push(new EnemySpawn(3, 4, "basic", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "easy", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "difficult", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "hard", 0, 100));
-  this.waves.push(new EnemySpawn(3, 4, "extreme", 0, 100));
+  this.waves.push(new EnemySpawn(10, 4, "basic", 0, 100));
+  this.waves.push(new EnemySpawn(10, 4, "easy", 0, 100));
+  this.waves.push(new EnemySpawn(10, 4, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(10, 4, "difficult", 0, 100));
+  this.waves.push(new EnemySpawn(10, 4, "hard", 0, 100));
+  this.waves.push(new EnemySpawn(10, 4, "extreme", 0, 100));
   //wave 5
-  this.waves.push(new EnemySpawn(3, 5, "fast", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "athleat", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "shark", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "lightning", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "flash", 0, 100));
-  this.waves.push(new EnemySpawn(3, 5, "liSpeed", 0, 100));
+  this.waves.push(new EnemySpawn(10, 5, "fast", 0, 100));
+  this.waves.push(new EnemySpawn(10, 5, "athleat", 0, 100));
+  this.waves.push(new EnemySpawn(10, 5, "shark", 0, 100));
+  this.waves.push(new EnemySpawn(10, 5, "lightning", 0, 100));
+  this.waves.push(new EnemySpawn(10, 5, "flash", 0, 100));
+  this.waves.push(new EnemySpawn(10, 5, "liSpeed", 0, 100));
   //wave 6
-  this.waves.push(new EnemySpawn(3, 6, "armored", 0, 100));
-  this.waves.push(new EnemySpawn(3, 6, "shield", 0, 100));
-  this.waves.push(new EnemySpawn(3, 6, "barrier", 0, 100));
-  this.waves.push(new EnemySpawn(3, 6, "wall", 0, 100));
-  this.waves.push(new EnemySpawn(3, 6, "tank", 0, 100));
+  this.waves.push(new EnemySpawn(10, 6, "armored", 0, 100));
+  this.waves.push(new EnemySpawn(10, 6, "shield", 0, 100));
+  this.waves.push(new EnemySpawn(10, 6, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(10, 6, "wall", 0, 100));
+  this.waves.push(new EnemySpawn(10, 6, "tank", 0, 100));
   //wave 7
-  this.waves.push(new EnemySpawn(3, 7, "slow", 0, 100));
-  this.waves.push(new EnemySpawn(3, 7, "sleepy", 0, 100));
-  this.waves.push(new EnemySpawn(3, 7, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(10, 7, "slow", 0, 100));
+  this.waves.push(new EnemySpawn(10, 7, "sleepy", 0, 100));
+  this.waves.push(new EnemySpawn(10, 7, "frozen", 0, 100));
   //wave 8
-  this.waves.push(new EnemySpawn(3, 8, "tank", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "tank", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "wall", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "sleepy", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "liSpeed", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "basic", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "basic", 0, 100));
-  this.waves.push(new EnemySpawn(3, 8, "difficult", 0, 100));
+  this.waves.push(new EnemySpawn(10, 8, "tank", 0, 100));
+  this.waves.push(new EnemySpawn(10, 8, "tank", 0, 100));
+  this.waves.push(new EnemySpawn(10, 8, "wall", 0, 100));
+  this.waves.push(new EnemySpawn(10, 8, "sleepy", 0, 100));
+  this.waves.push(new EnemySpawn(10, 8, "liSpeed", 0, 100));
+  this.waves.push(new EnemySpawn(10, 8, "basic", 0, 100));
+  this.waves.push(new EnemySpawn(10, 8, "basic", 0, 100));
+  this.waves.push(new EnemySpawn(10, 8, "difficult", 0, 100));
   //wave 9
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(10, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(10, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(10, 9, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(10, 9, "normal", 0, 100));
   //wave 10
-  this.waves.push(new EnemySpawn(3, 10, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(10, 10, "barrier", 0, 100));
   //wave 11
-  this.waves.push(new EnemySpawn(3, 11, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(10, 11, "frozen", 0, 100));
   //wave 12
-  this.waves.push(new EnemySpawn(3, 12, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(10, 12, "barrier", 0, 100));
   //wave 13
-  this.waves.push(new EnemySpawn(3, 13, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(10, 13, "frozen", 0, 100));
   //wave 14
-  this.waves.push(new EnemySpawn(3, 14, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(10, 14, "barrier", 0, 100));
   //wave 15
-  this.waves.push(new EnemySpawn(3, 15, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(10, 15, "frozen", 0, 100));
   //wave 16
-  this.waves.push(new EnemySpawn(3, 16, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(10, 16, "barrier", 0, 100));
   //wave 17
-  this.waves.push(new EnemySpawn(3, 17, "frozen", 0, 100));
+  this.waves.push(new EnemySpawn(10, 17, "frozen", 0, 100));
   //wave 18
-  this.waves.push(new EnemySpawn(3, 18, "difficult", 0, 100));
-  this.waves.push(new EnemySpawn(3, 18, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 18, "normal", 0, 100));
-  this.waves.push(new EnemySpawn(3, 18, "easy", 0, 100));
+  this.waves.push(new EnemySpawn(10, 18, "difficult", 0, 100));
+  this.waves.push(new EnemySpawn(10, 18, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(10, 18, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(10, 18, "easy", 0, 100));
   //wave 19
-  this.waves.push(new EnemySpawn(3, 19, "extreme", 0, 100));
-  this.waves.push(new EnemySpawn(3, 19, "tank", 0, 100));
-  this.waves.push(new EnemySpawn(3, 19, "lightning", 0, 100));
-  this.waves.push(new EnemySpawn(3, 19, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(10, 19, "extreme", 0, 100));
+  this.waves.push(new EnemySpawn(10, 19, "tank", 0, 100));
+  this.waves.push(new EnemySpawn(10, 19, "lightning", 0, 100));
+  this.waves.push(new EnemySpawn(10, 19, "normal", 0, 100));
   //wave 20
-  this.waves.push(new EnemySpawn(3, 20, "easy", 0, 100));
-  this.waves.push(new EnemySpawn(3, 20, "athleat", 0, 100));
-  this.waves.push(new EnemySpawn(3, 20, "athleat", 0, 100));
-  this.waves.push(new EnemySpawn(3, 20, "normal", 0, 100));
+  this.waves.push(new EnemySpawn(10, 20, "easy", 0, 100));
+  this.waves.push(new EnemySpawn(10, 20, "athleat", 0, 100));
+  this.waves.push(new EnemySpawn(10, 20, "athleat", 0, 100));
+  this.waves.push(new EnemySpawn(10, 20, "normal", 0, 100));
   //wave 21
-  this.waves.push(new EnemySpawn(3, 21, "fast", 0, 100));
-  this.waves.push(new EnemySpawn(3, 21, "armored", 0, 100));
-  this.waves.push(new EnemySpawn(3, 21, "barrier", 0, 100));
-  this.waves.push(new EnemySpawn(3, 21, "shield", 0, 100));
+  this.waves.push(new EnemySpawn(10, 21, "fast", 0, 100));
+  this.waves.push(new EnemySpawn(10, 21, "armored", 0, 100));
+  this.waves.push(new EnemySpawn(10, 21, "barrier", 0, 100));
+  this.waves.push(new EnemySpawn(10, 21, "shield", 0, 100));
 };
 
 /* creates stage Twelve spcae background
@@ -1304,7 +1304,6 @@ EnemyWaves.prototype.createStageTwelveWaves = function () {
   this.waves.push(new EnemySpawn(11, 4, "basic", 0, 20));
   this.waves.push(new EnemySpawn(11, 4, "basic", 1, 20));
   this.waves.push(new EnemySpawn(11, 4, "basic", 0, 20));
-
   //wave 5
   this.waves.push(new EnemySpawn(11, 5, "fast", 1, 300));
   this.waves.push(new EnemySpawn(11, 5, "fast", 0, 20));
@@ -1317,7 +1316,6 @@ EnemyWaves.prototype.createStageTwelveWaves = function () {
   this.waves.push(new EnemySpawn(11, 6, "fast", 0, 10));
   this.waves.push(new EnemySpawn(11, 6, "fast", 1, 10));
   this.waves.push(new EnemySpawn(11, 6, "fast", 0, 10));
-
   //wave 7
   this.waves.push(new EnemySpawn(11, 7, "basic", 1, 100));
   this.waves.push(new EnemySpawn(11, 7, "basic", 0, 20));
@@ -1327,7 +1325,6 @@ EnemyWaves.prototype.createStageTwelveWaves = function () {
   this.waves.push(new EnemySpawn(11, 7, "basic", 0, 20));
   this.waves.push(new EnemySpawn(11, 7, "basic", 1, 20));
   this.waves.push(new EnemySpawn(11, 7, "basic", 0, 20));
-
   //wave 8
   this.waves.push(new EnemySpawn(11, 8, "basic", 1, 100));
   this.waves.push(new EnemySpawn(11, 8, "basic", 0, 20));
@@ -1337,14 +1334,11 @@ EnemyWaves.prototype.createStageTwelveWaves = function () {
   this.waves.push(new EnemySpawn(11, 8, "basic", 0, 20));
   this.waves.push(new EnemySpawn(11, 8, "basic", 1, 20));
   this.waves.push(new EnemySpawn(11, 8, "basic", 0, 20));
-
   //wave 9
   this.waves.push(new EnemySpawn(11, 9, "armored", 0, 200));
-
   //wave 10
   this.waves.push(new EnemySpawn(11, 10, "armored", 1, 200));
   this.waves.push(new EnemySpawn(11, 10, "armored", 0, 50));
-
   //wave 11
   this.waves.push(new EnemySpawn(11, 11, "fast", 1, 100));
   this.waves.push(new EnemySpawn(11, 11, "fast", 0, 10));
@@ -1354,7 +1348,6 @@ EnemyWaves.prototype.createStageTwelveWaves = function () {
   this.waves.push(new EnemySpawn(11, 11, "fast", 0, 10));
   this.waves.push(new EnemySpawn(11, 11, "fast", 1, 10));
   this.waves.push(new EnemySpawn(11, 11, "fast", 0, 10));
-
   //wave 12
   this.waves.push(new EnemySpawn(11, 12, "basic", 1, 50));
   this.waves.push(new EnemySpawn(11, 12, "basic", 0, 20));
@@ -1362,7 +1355,6 @@ EnemyWaves.prototype.createStageTwelveWaves = function () {
   this.waves.push(new EnemySpawn(11, 12, "basic", 0, 20));
   this.waves.push(new EnemySpawn(11, 12, "basic", 1, 20));
   this.waves.push(new EnemySpawn(11, 12, "basic", 0, 20));
-
   //wave 13
   this.waves.push(new EnemySpawn(11, 13, "armored", 1, 200));
   this.waves.push(new EnemySpawn(11, 13, "armored", 0, 50));
@@ -1370,7 +1362,6 @@ EnemyWaves.prototype.createStageTwelveWaves = function () {
   this.waves.push(new EnemySpawn(11, 13, "armored", 0, 50));
   this.waves.push(new EnemySpawn(11, 13, "armored", 1, 50));
   this.waves.push(new EnemySpawn(11, 13, "armored", 0, 50));
-
   //wave 14
   this.waves.push(new EnemySpawn(11, 14, "basic", 1, 80));
   this.waves.push(new EnemySpawn(11, 14, "basic", 0, 20));
@@ -1390,7 +1381,6 @@ EnemyWaves.prototype.createStageTwelveWaves = function () {
   this.waves.push(new EnemySpawn(11, 14, "basic", 0, 20));
   this.waves.push(new EnemySpawn(11, 14, "basic", 1, 20));
   this.waves.push(new EnemySpawn(11, 14, "basic", 0, 20));
-
   //wave 15
   this.waves.push(new EnemySpawn(11, 15, "fast", 1, 100));
   this.waves.push(new EnemySpawn(11, 15, "fast", 0, 10));

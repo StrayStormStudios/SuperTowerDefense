@@ -368,7 +368,7 @@ StageList.prototype.addStage5 = function () {
   var startHighlightColor = "#33aaee";
   var endColor = "#004466";
   var endHighlightColor = "#006688";
-  var hide = true;
+  var hide = false;
   stage.addPath(
     points1,
     width,
