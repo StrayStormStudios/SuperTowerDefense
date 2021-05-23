@@ -29,3 +29,23 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ### License [MIT](https://choosealicense.com/licenses/mit/)
+
+## Versions & Change Log
+
+#### Version 5: Draw Towers, Create Towers, place Towers
+
+#### Version 4: Draw Waves
+
+#### Version 3A: Add Enemies
+
+#### Version 2C: Better looking Paths
+
+#### Version 2B: Add my own stages and pathing
+
+#### Version 2: Create stage files and draw the enemy paths
+
+#### Version 1C:  Show mouse position on Screen
+
+#### Version 1B: Background with Layers and Towers Pulling from their own file
+
+#### Version 1A:  Basic Backgrounds
